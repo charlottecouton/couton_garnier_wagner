@@ -1,0 +1,40 @@
+.ens{
+    /*disposition*/
+    margin-top:50px;
+    padding: 0%;
+}
+
+
+.dept{
+    width: 90%;
+    
+}
+
+.imgdroite{
+    float: right;
+}
+
+.titre{
+    font-size: 50px;
+    color: #D9D4E3;
+    font-weight: 300;
+}
+
+.texte{
+    font-size: 20px;
+    font-weight: 200;
+    color: #D9D4E3;
+}
+
+.gauche{
+    display: flex;
+    align-items: center;
+    padding-right: 3%;
+}
+
+.droite{
+    display: flex;
+    align-items: center;
+    padding-left: 3%;
+    text-align: right;
+}

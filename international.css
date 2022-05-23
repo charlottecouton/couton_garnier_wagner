@@ -1,0 +1,31 @@
+.car{
+    padding-top: 4%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.carousel{
+    width:60%;
+}
+
+.img-car{
+    height:400px;
+}
+
+.titre h1{
+    padding-top:5%;
+    color:#D9D4E3;
+    font-size: 60px;
+}
+
+.titre p{
+    color:#D9D4E3;
+    font-size: 25px;
+    font-weight: 200;
+}
+
+.uni{
+    margin-top:6%;
+    color:#D9D4E3;
+}

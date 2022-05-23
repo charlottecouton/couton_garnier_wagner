@@ -1,0 +1,35 @@
+.dept{
+    padding-top: 5%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.img-dept{
+    height: 85%;
+    border-radius: 10%;
+}
+
+.card{
+    height: 270px;
+    padding: 10%;
+    opacity: 0.9;
+    position: relative;
+    z-index: 1;
+}
+
+
+.menu{
+    color:#1A0A39;
+}
+
+.titre{
+    padding-top:5%;
+    font-size: 20px;
+    color:#D9D4E3;
+    font-weight: 400;
+}
+
+.dropdown-item{
+    position: relative;
+    z-index: 3;
+}
