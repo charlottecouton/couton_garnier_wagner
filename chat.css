@@ -43,3 +43,12 @@
 	font-size: 10;
 	color: #C4C4C4;
 }
+
+.date{
+	text-align: center;
+	font-size: 10px;
+}
+
+.send{
+	padding-left: 93%;
+}
