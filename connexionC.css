@@ -39,3 +39,17 @@
     color: #1A0A39;
 }
 
+.message{
+    align-items: center;
+    justify-content: space-around;
+}
+
+.err-msg{
+    /*style*/
+    background-color:rgb(197, 107, 107);
+    border-radius: 10px;
+
+    /*disposition*/
+    width: 40%;
+    text-align: center;
+}

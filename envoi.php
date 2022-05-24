@@ -7,7 +7,7 @@
      //$mysqli = new mysqli("localhost","root","","chatbox");
      
      /*accès Charlotte*/
-     $mysqli = new mysqli("localhost","root","root","chatbox");
+     $mysqli = new mysqli("localhost","root","root","omnes");
      if($mysqli -> connect_errno)
      {  //Si la connection est fausse
          echo "Failed to connect to MySQL : " . $mysqli -> connect_error;
@@ -23,11 +23,10 @@
     if(isset($_POST['btn_soumettre']) && $_POST['btn_soumettre']=="soumettre")
     {
         //INSERER LES INFO VOULU DANS LA BDD
-        $sql = "INSERT INTO `messages`(`Message`, `Date`,`ID_eleves`,`ID_Profs`,`emetteur`  ) VALUES ('$message',NOW(),'$value','$valueP', 0)";
+        $sql = "INSERT INTO `messages`(`Message`, `Date`,`ID_E`,`ID_P`,`Emetteur`  ) VALUES ('$message',NOW(),'$value','$valueP', 0)";
         
         if (mysqli_query($mysqli, $sql)) {
-            echo "Nouveau message envoye";
-            
+            header("refresh:0,url=index.html");
         }else 
         {
             echo "Erreur : " . $sql . "<br>" . mysqli_error($mysqli);

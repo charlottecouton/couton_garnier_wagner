@@ -4,14 +4,38 @@
     //$mysqli = new mysqli("localhost","root","","chatbox");
     
     /*accès Charlotte*/
-    $mysqli = new mysqli("localhost","root","root","chatbox");
+    $mysqli = new mysqli("localhost","root","root","omnes");
     if($mysqli -> connect_errno)
-    {   //SI CONNECTION ECHOUE
+    {   //Si la connexion echoue
         echo "Failed to connect to MySQL : " . $mysqli -> connect_error;
         exit();
     }
+    
+    $nom = isset($_POST['nom'])?$_POST['nom']:'';
+    
+    if(isset($_POST['btn_soumettre']) && $_POST['btn_soumettre']=="soumettre")
+    {
+        $sql = "SELECT * FROM Etudiants WHERE Nom='$nom'";
 
-    $sql = "SELECT Nom FROM profs";
+        if (mysqli_query($mysqli, $sql)) 
+        {
+            if($result = $mysqli ->query($sql))
+            {
+                if($result -> num_rows >0)
+                {
+                    while($row = $result -> fetch_row() )
+                    {
+                        $id = $row[0];
+                    }   
+                }
+                else 
+                {
+                    echo "Erreur : " . $sql . "<br>" . mysqli_error($mysqli);
+                }
+            }
+        }
+    }
+    $sql = "SELECT * FROM Profs";
     if(mysqli_query($mysqli, $sql)){
 
         if($result = $mysqli ->query($sql)){
@@ -86,14 +110,23 @@
                             </nav>
                         </header>
 
-                        <body class="page">';
+                        <body class="page">
+                          <div class="container liste">';
 
                 while($row = $result->fetch_row()){ 
-                    echo '<form  method=post>
-                    <button class="btn btn-ent btn-outline-light round" type="submit" name="btn_'.$row[0].'" value="'.$row[0].'" formaction="message.php">'.$row[0].'</button>';
-                    echo "</form></body>";
-                    $nom = $row[0];
+                        echo 
+                            '<div class="row profr">
+                              <div class="prof">
+                                <form  method=post>
+                                  <button class="btn btn-ent btn-outline-light round" type="submit" name="btn_'.$row[1].'" value="'.$row[1].'" formaction="message.php">'.$row[1]." ".$row[2] .'</button>
+                                </form>
+                              </div>
+                            </div></br>
+                          ';
+                    $nom = $row[1];
                 }
+                echo '</div>
+                </body>';
             }
         }
     }

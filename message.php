@@ -7,14 +7,14 @@
     //$mysqli = new mysqli("localhost","root","","chatbox");
     
     /*accès Charlotte*/
-    $mysqli = new mysqli("localhost","root","root","chatbox");
+    $mysqli = new mysqli("localhost","root","root","omnes");
     if($mysqli -> connect_errno)
     {  //Si la connection est fausse
         echo "Failed to connect to MySQL : " . $mysqli -> connect_error;
         exit();
     }
     
-    $sql = "SELECT * FROM profs";
+    $sql = "SELECT * FROM Profs";
 
     if (mysqli_query($mysqli, $sql)) 
     {
@@ -38,7 +38,7 @@
         }
     }
 
-    $sql = "SELECT ID FROM profs WHERE Nom='$nom'";
+    $sql = "SELECT ID FROM Profs WHERE Nom='$nom'";
     if(mysqli_query($mysqli, $sql)){
         if($result = $mysqli ->query($sql)){
             if($result->num_rows>0){
@@ -56,7 +56,7 @@
     //Récupère l'ID dd l'étudiant
     $value = $_SESSION['chat'];
 
-    $sql = "SELECT `Message`, `emetteur`, `Date` FROM messages WHERE ID_eleves='$value' AND ID_profs='$valueP'";
+    $sql = "SELECT `Message`, `Emetteur`, `Date` FROM messages WHERE ID_E='$value' AND ID_P='$valueP'";
         
         if (mysqli_query($mysqli, $sql)) 
         {
@@ -257,7 +257,7 @@
                                     <div class="overflow-auto p-3 mb-3 mb-md-0 mr-md-3 bg-light" style="max-height: 300px;">
                                     
                                     </div>
-                                    <div class="form-group px-3">
+                                    <div class="form-group px-3 saisie">
                                     <form  method=post>
                                     <button class="send btn btn-default-outline" type="submit" value="soumettre" name="btn_soumettre" formaction="envoi.php"><img src="envoi.png" alt="send"> </button>
                                    
