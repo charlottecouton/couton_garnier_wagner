@@ -38,7 +38,7 @@
                     header("refresh:2,url=chat.html");
                 }
             }
-            header("refresh:2,url=chatP.html");
+            header("refresh:2,url=chatP.php");
         }
     }
 ?>
