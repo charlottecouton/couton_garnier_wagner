@@ -1,11 +1,25 @@
 <!DOCTYPE html>
-
 <html>
-
-<body>
-    Bienvenue sur le popup cookies <br/><br/>
-    <button onclick=maFonction()>OUI</button>
-    <button type="submit">NON</button>      
-</body>
-
+    <head>
+        <meta charset="utf-8">
+        <!--Inclure la bibliothèque AlertSweat2 pour popup-->
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        
+    </head>
+    <body>
+        <script>
+            document.setTimeout(Swal.fire({
+                    title: 'Un ptit creux ?',
+                    text: 'Prenez donc un cookie pour le goûter !',
+                    imageUrl: 'https://www.pngmart.com/files/4/Cookies-PNG-Transparent-Image.png',
+                    imageWidth: 400,
+                    imageHeight: 200,
+                    imageAlt: 'Custom image',
+                    showCancelButton: true,
+                    cancelButtonColor: '#d33',
+                    footer: '<a href="">Passons à la suite de la présentation</a>',
+                }),1000);
+            
+        </script>
+    </body>
 </html>
