@@ -119,11 +119,11 @@
     $valueP = $_SESSION['chatP'];
 
     //Connection BBD
-    /*accès Solène et Anais
-    $mysqli = new mysqli("localhost","root","","chatbox");*/
+    /*accès Solène et Anais*/
+    $mysqli = new mysqli("localhost","root","","chatbox");
     
-    /*accès Charlotte*/
-    $mysqli = new mysqli("localhost","root","root","chatbox");
+    /*accès Charlotte
+    $mysqli = new mysqli("localhost","root","root","chatbox");*/
     if($mysqli -> connect_errno)
     {  //Si la connection est fausse
         echo "Failed to connect to MySQL : " . $mysqli -> connect_error;
