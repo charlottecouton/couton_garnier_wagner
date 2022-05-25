@@ -19,9 +19,11 @@
     switch($user){
       case 0 :
         $table = 'Profs';
+        $etudiant = $_SESSION['chat'];
         break;
       case 1 :
         $table = 'Etudiants';
+        $prof = $_SESSION['chat'];
         break;
       case 2 :
         header("refresh:0,url=index.html");
@@ -40,8 +42,15 @@
                 {
                   if(isset($_POST['btn_'.$row[1]]) && $_POST['btn_'.$row[1]]==$row[1])
                   {
-                    $valueP = $row[0];
-                    $nom = $row[1];
+                    if($user == 0){
+                      $prof = $row[0];
+                      $_SESSION['recepteur'] = $row[0];
+                      $nom = $row[1];
+                    }else{
+                      $etudiant = $row[0];
+                      $_SESSION['recepteur'] = $row[0];
+                      $nom = $row[1];
+                    }
                   }
                 }   
             }
@@ -55,7 +64,7 @@
     //Récupère l'ID dd l'étudiant
     $value = $_SESSION['chat'];
 
-    $sql = "SELECT `Message`, `Emetteur`, `Date` FROM messages WHERE ID_E='$value' AND ID_P='$valueP'";
+    $sql = "SELECT `Message`, `Emetteur`, `Date` FROM messages WHERE ID_E='$etudiant' AND ID_P='$prof'";
     //si emetteur est 0, il s'agit d'un éleve
     //sinon il s'agit d'un prof
 

@@ -117,6 +117,5 @@
     }
     else{
         echo $err_msg;
-        echo "session".$_SESSION['connexion'];
     }
 ?>

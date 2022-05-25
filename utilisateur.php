@@ -3,7 +3,7 @@
 
     if(isset($_POST['btn_etudiant']) && $_POST['btn_etudiant']=="etudiant"){
         $_SESSION['connexion']= 0;
-        header("refresh:0,url=connexion.html");
+        header("refresh:0,url=co_etud.html");
     }
 
     if(isset($_POST['btn_prof']) && $_POST['btn_prof']=="prof"){
