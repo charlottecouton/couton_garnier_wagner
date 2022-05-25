@@ -1,5 +1,5 @@
 <?php
-    $mysqli = new mysqli("localhost","root","root","omnes");
+    $mysqli = new mysqli("localhost","root","","omnes");
     if($mysqli -> connect_errno)
     {
         echo "Failed to connect to MySQL : " . $mysqli -> connect_error;
@@ -12,8 +12,8 @@
 
         $info = (String)trim($_GET['user'])."%";
         echo "info ".$info;
-        $req = $mysqli->prepare("SELECT Nom FROM Profs WHERE Nom LIKE ? 
-                UNION SELECT Nom FROM Etudiants WHERE Nom LIKE ? 
+        $req = $mysqli->prepare("SELECT Nom FROM professeurs WHERE Nom LIKE ? 
+                UNION SELECT Nom FROM eleves WHERE Nom LIKE ? 
                 /*UNION SELECT NomSalle FROM salles WHERE NomSalle LIKE ? */LIMIT 10");
 
        // select nom from prof where nom
