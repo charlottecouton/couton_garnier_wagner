@@ -53,6 +53,7 @@
                     
                     $id=$row["ID"];
                     $_SESSION['chat'] = $id;
+                    $_SESSION['connecte'] = 1;
                     header("refresh:0,url=index.html");
                 }
                 //$passwordVerify = password_verify($password, $row["Mdp"]);

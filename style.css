@@ -217,6 +217,7 @@ a:hover{
 }
 
 #suggestion{
-    color: red;
-    font-size: 50px;
+    color:#1A0A39;
+    font-size: 20px;
+    background-color: white;
 }
