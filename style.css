@@ -215,3 +215,8 @@ a:hover{
     position: sticky;
     z-index: 3000;
 }
+
+#suggestion{
+    color: red;
+    font-size: 50px;
+}

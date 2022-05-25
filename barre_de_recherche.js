@@ -1,5 +1,8 @@
 const searchinput = document.getElementById('searchInput');
 
+if(searchinput){
+
+
 searchinput.addEventListener('keyup', function(){
 
    //$('#suggestion').html('');
@@ -24,5 +27,6 @@ searchinput.addEventListener('keyup', function(){
         });
     }
 });
+}
 
     

@@ -15,7 +15,12 @@
   <!--javascript-->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>  <link href="style.css" rel="stylesheet" type="text/css" />
-  </head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src = "barre_de_recherche.js"></script>
+  
+</head>
 
 <!--header avec le logo Omnes education-->
 <header>
@@ -53,10 +58,19 @@
         </li>
         <li class="nav-item recherche">
           <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <!--<input class="form-control me-2 input" type="search" id = "searchInput" placeholder="Search" aria-label="Search">
+            <input class="input" id = "searchInput" type = "text" placeholder = "Nom ou Spécialité ou Etablissement"/>
+            <div id = "suggestion">
+              
+            </div>-->
+            
           </form>
+          <div class = "test">
+            <input class="input" id = "searchInput" type = "text" placeholder = "Nom ou Spécialité ou Etablissement"/>
+            <div id = "suggestion"></div>
+            </div>
           <form>
-            <button class="btn btn-outline-light round" type="submit">Search</button>
+            <!--<button class="btn btn-outline-light round" type="submit">Search</button>-->
           </form>
         </li>
         <li class="nav-item">
@@ -81,7 +95,6 @@
         </p>
       </div>
     </div>
-
   </div>
 
   <div class="container actus">
@@ -131,6 +144,9 @@
       </div>
     </div>
   </div>
+  
+  </div>
+
   <div class="chat">
     <a href="chat.php"><img src="chat.png" alt="chat" width="150"></a>
   </div>
