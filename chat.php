@@ -11,33 +11,25 @@
         exit();
     }
     
-    $nom = isset($_POST['nom'])?$_POST['nom']:'';
-    
-    if(isset($_POST['btn_soumettre']) && $_POST['btn_soumettre']=="soumettre")
-    {
-        $sql = "SELECT * FROM Etudiants WHERE Nom='$nom'";
+    $id = $_SESSION['chat'];//on récupère l'id de la personne connectée
+    $user = $_SESSION['connexion'];//on récupère le type d'utilisateur
 
-        if (mysqli_query($mysqli, $sql)) 
-        {
-            if($result = $mysqli ->query($sql))
-            {
-                if($result -> num_rows >0)
-                {
-                    while($row = $result -> fetch_row() )
-                    {
-                        $id = $row[0];
-                    }   
-                }
-                else 
-                {
-                    echo "Erreur : " . $sql . "<br>" . mysqli_error($mysqli);
-                }
-            }
-        }
+    switch($user){
+      case 0 :
+        $table = 'Profs';
+        $choix = 0;//on affiche la liste de tous les profs
+        break;
+      case 1 :
+        $table = 'Etudiants';
+        $choix = 1;//on affiche la liste avec seulement les étudiants ayant envoyé un message
+        break;
+      case 2 :
+        header("refresh:0,url=index.html");
+        break;
     }
-    $sql = "SELECT * FROM Profs";
-    if(mysqli_query($mysqli, $sql)){
 
+    $sql = "SELECT * FROM $table";
+    if(mysqli_query($mysqli, $sql)){
         if($result = $mysqli ->query($sql)){
             if($result->num_rows>0){
 
@@ -103,7 +95,7 @@
                                     </form>
                                   </li>
                                   <li class="nav-item">
-                                    <a class="nav-link" href="connexionC.html"><button type="button" class="btn round btn-outline-light">Connexion</button></a>
+                                    <a class="nav-link" href="utilisateur.html"><button type="button" class="btn round btn-outline-light">Connexion</button></a>
                                   </li>
                                 </ul>
                               </div>
@@ -112,19 +104,57 @@
 
                         <body class="page">
                           <div class="container liste">';
-
-                while($row = $result->fetch_row()){ 
-                        echo 
-                            '<div class="row profr">
-                              <div class="prof">
-                                <form  method=post>
-                                  <button class="btn btn-ent btn-outline-light round" type="submit" name="btn_'.$row[1].'" value="'.$row[1].'" formaction="message.php">'.$row[1]." ".$row[2] .'</button>
-                                </form>
-                              </div>
-                            </div></br>
-                          ';
-                    $nom = $row[1];
+                if($choix==0){//il s'agit d'un étudiant
+                  while($row = $result->fetch_row()){ 
+                    echo 
+                        '<div class="row profr">
+                          <div class="prof">
+                            <form  method=post>
+                              <button class="btn btn-ent btn-outline-light round" type="submit" name="btn_'.$row[1].'" value="'.$row[1].'" formaction="message.php">'.$row[1]." ".$row[2] .'</button>
+                            </form>
+                          </div>
+                        </div></br>
+                      ';
+                      $nom = $row[1];
+                  }
+                }else{//il s'agit d'un professeur
+                  
+                  $sql = "SELECT DISTINCT ID_E FROM messages WHERE ID_P = $id";
+                  
+                  if(mysqli_query($mysqli, $sql)){
+                    if($result1 = $mysqli ->query($sql)){
+                        if($result1->num_rows>0){
+                          
+                          
+                          
+                          while($row1 = $result1->fetch_row()){
+                            
+                            $sql2 = "SELECT * FROM Etudiants WHERE ID = $row1[0]";
+                            
+                            if(mysqli_query($mysqli, $sql2)){
+                              if($result2 = $mysqli ->query($sql2)){
+                                
+                                  if($result2->num_rows>0){
+                                    while($row2 = $result2->fetch_row()){
+                                      echo 
+                                    '<div class="row profr">
+                                      <div class="prof">
+                                        <form  method=post>
+                                          <button class="btn btn-ent btn-outline-light round" type="submit" name="btn_'.$row2[1].'" value="'.$row2[1].'" formaction="message.php">'.$row2[1]." ".$row2[2] .'</button>
+                                        </form>
+                                      </div>
+                                    </div></br>
+                                  ';
+                                    }
+                                  }
+                              }
+                            }
+                          }
+                        }
+                    }
+                  }
                 }
+                
                 echo '</div>
                 </body>';
             }

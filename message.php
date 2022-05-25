@@ -4,7 +4,7 @@
     
     //Connection BBD
     /*accès Solène et Anais*/
-    //$mysqli = new mysqli("localhost","root","","chatbox");
+    //$mysqli = new mysqli("localhost","root","","omnes");
     
     /*accès Charlotte*/
     $mysqli = new mysqli("localhost","root","root","omnes");
@@ -14,7 +14,21 @@
         exit();
     }
     
-    $sql = "SELECT * FROM Profs";
+    $user = $_SESSION['connexion'];//on récupère le type d'utilisateur
+
+    switch($user){
+      case 0 :
+        $table = 'Profs';
+        break;
+      case 1 :
+        $table = 'Etudiants';
+        break;
+      case 2 :
+        header("refresh:0,url=index.html");
+        break;
+    }
+
+    $sql = "SELECT * FROM $table";
 
     if (mysqli_query($mysqli, $sql)) 
     {
@@ -37,27 +51,14 @@
             }
         }
     }
-
-    $sql = "SELECT ID FROM Profs WHERE Nom='$nom'";
-    if(mysqli_query($mysqli, $sql)){
-        if($result = $mysqli ->query($sql)){
-            if($result->num_rows>0){
-                while($row = $result->fetch_row()){ 
-                    $id=$row[0];
-                    $_SESSION['chatP']=$id;
-                }
-            }
-        }
-    }
-
-    //Recupère le message envoyé par l'utilisateur
-    //$message = isset($_POST['message'])?$_POST['message']:'';
     
     //Récupère l'ID dd l'étudiant
     $value = $_SESSION['chat'];
 
     $sql = "SELECT `Message`, `Emetteur`, `Date` FROM messages WHERE ID_E='$value' AND ID_P='$valueP'";
-        
+    //si emetteur est 0, il s'agit d'un éleve
+    //sinon il s'agit d'un prof
+
         if (mysqli_query($mysqli, $sql)) 
         {
             //AFFICHER TOUS LES MESSAGES DU CHAT DU PROF ET DE L'ELEVE CORRESPONDANT
@@ -129,7 +130,7 @@
                                     </form>
                                   </li>
                                   <li class="nav-item">
-                                    <a class="nav-link" href="connexionC.html"><button type="button" class="btn round btn-outline-light">Connexion</button></a>
+                                    <a class="nav-link" href="utilisateur.html"><button type="button" class="btn round btn-outline-light">Connexion</button></a>
                                   </li>
                                 </ul>
                               </div>
@@ -151,16 +152,25 @@
 
                                       while($row = $result -> fetch_row() )
                                         {
-                                            if($row[1]==0){
+                                            if($row[1]==0 && $user==0){
                                               echo '<div class="date" >'.$row[2].'</div>
                                               <div class="d-flex flex-row p-3">
                                                     <div class="chat ml-2 p-3">'.$row[0].'</div>
                                                   </div>';
-                                            }else{
+                                            }else if($row[1]==1 && $user==0){
                                                 echo '<div class="d-flex flex-row p-3">
                                                 <div class="bg-white mr-2 p-3"><span class="chat-blanc">'.$row[0].'</span></div>
                                             </div>';
-                                            }  
+                                            }else if($row[1]==1 && $user==1){
+                                              echo '<div class="date" >'.$row[2].'</div>
+                                              <div class="d-flex flex-row p-3">
+                                                    <div class="chat ml-2 p-3">'.$row[0].'</div>
+                                                  </div>';
+                                            }else if($row[1]==0 && $user==1){
+                                              echo '<div class="d-flex flex-row p-3">
+                                                <div class="bg-white mr-2 p-3"><span class="chat-blanc">'.$row[0].'</span></div>
+                                            </div>';
+                                            }
                                         }
                                       
                                     echo '</div>
@@ -237,7 +247,7 @@
                                     </form>
                                   </li>
                                   <li class="nav-item">
-                                    <a class="nav-link" href="connexionC.html"><button type="button" class="btn round btn-outline-light">Connexion</button></a>
+                                    <a class="nav-link" href="utilisateur.html"><button type="button" class="btn round btn-outline-light">Connexion</button></a>
                                   </li>
                                 </ul>
                               </div>

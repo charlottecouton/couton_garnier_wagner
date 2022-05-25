@@ -27,11 +27,22 @@
         $err_msg = $err_msg."Veuillez remplir un password ";
     }
 
-   
-
+    $compte = $_SESSION['connexion'];
     if($err_msg==""){
         
-        $table = "Etudiants";
+        switch($compte){
+            case 0 : 
+                $table = "Etudiants";
+                break;
+            case 1 :
+                $table = "Profs";
+                break;
+            case 2 :
+                $table = "Admin";
+                break;
+        }
+
+        
         $sql = "SELECT * FROM $table WHERE Mail = '$mail' AND Mdp = '$password'";
 
         if($result = $mysqli->query($sql)){
@@ -98,7 +109,7 @@
                 
                 </body>';
                 
-                header("refresh:2,url=co_etud.html");
+                header("refresh:2,url=connexion.html");
             }
         }else{
             echo "Erreur : " . $sql . "<br>" . mysqli_error($mysqli);
@@ -106,5 +117,6 @@
     }
     else{
         echo $err_msg;
+        echo "session".$_SESSION['connexion'];
     }
 ?>
