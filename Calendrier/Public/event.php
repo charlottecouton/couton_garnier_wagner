@@ -2,7 +2,7 @@
      session_start();
      require '../views/header.php';
     //Connection à la bdd
-    $mysqli = new mysqli("localhost","root","","tutocalendar");
+    $mysqli = new mysqli("localhost","root","root","omnes");
     if($mysqli -> connect_errno)
     {   //SI CONNECTION ECHOUE
         echo "Failed to connect to MySQL : " . $mysqli -> connect_error;
@@ -44,6 +44,7 @@
                                                             echo "Nom du RDV: " . $row3[1] . "<br/><br/>";
                                                             echo "Heure de début du rendez-vous : ". $row3[2] .  "<br/><br/>";
                                                             echo "Heure de fin du rendez-vous : " . $row3[3] . "<br/><br/>";
+                                                            
                                                         }   
                                                     }
                                                     

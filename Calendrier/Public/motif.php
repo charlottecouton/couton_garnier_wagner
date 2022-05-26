@@ -4,7 +4,7 @@
     
     //var_dump($value);
     //Connection à la bdd
-    $mysqli = new mysqli("localhost","root","","tutocalendar");
+    $mysqli = new mysqli("localhost","root","root","omnes");
     if($mysqli -> connect_errno)
     {   //SI CONNECTION ECHOUE
         echo "Failed to connect to MySQL : " . $mysqli -> connect_error;
@@ -17,5 +17,7 @@
     //Requete pour remplir le motif
     $sql = "UPDATE `events` SET `Nom`= '$motif' WHERE ID=$value";
     mysqli_query($mysqli, $sql);
+
+    header("refresh:0,url=index.html");
 
 ?>

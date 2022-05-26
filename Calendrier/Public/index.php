@@ -10,6 +10,8 @@
     //POUR LES AFFICHAGE DE HAUT ET BAS DE PAGE
     require '../views/header.php';
     require '../views/footer.php';
+
+    
 ?>
 
 <!--BARRE DES TACHES QUI PERMET D ALLER AU MOIS SUIVANT ET PRECEDENT ET AFFICHE LE MOIS ACTUEL DU CALENDRIER-->
@@ -25,7 +27,7 @@
 
 <?php
     //Connection à la bdd
-    $mysqli = new mysqli("localhost","root","","tutocalendar");
+    $mysqli = new mysqli("localhost","root","root","omnes");
     if($mysqli -> connect_errno)
     {   //SI CONNECTION ECHOUE
         echo "Failed to connect to MySQL : " . $mysqli -> connect_error;
@@ -77,9 +79,11 @@
             <div class="calendar__day"><?=$date->format('d');?>
                 <br/>
                 <?php $_SESSION['index']=$date->format('d');
+
+                $id = $_SESSION['idProfCal'];
                 for($l=10;$l<17;$l++)
                 {   
-                    $sql="SELECT * FROM `events` WHERE Start = '2022-".$date->format('m')."-".$date->format('d')." ".$l.":00:00'";
+                    $sql="SELECT * FROM `events` WHERE ID_P=$id AND Start = '2022-".$date->format('m')."-".$date->format('d')." ".$l.":00:00'";
                     //echo "sql : ".$sql."<br/>";
                     mysqli_query($mysqli, $sql);
                     //if(mysqli_query($mysqli, $sql))
@@ -103,7 +107,7 @@
                             echo '<form method="post">
                             <button type="submit" name="btn_'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
                             '" value="'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
-                            '" formaction="/calendrier/public/priserdv.php?month='.$date->format('m').'day='.$date->format('d').'heure='.$l.'">'.$l.'h00-'.($l+1).'h00</button>
+                            '" formaction="/couton_garnier_wagner/calendrier/public/priserdv.php?month='.$date->format('m').'day='.$date->format('d').'heure='.$l.'">'.$l.'h00-'.($l+1).'h00</button>
                             </form>'; 
                         }             
                 }

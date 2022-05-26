@@ -50,7 +50,7 @@
           </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">RENDEZ-VOUS</a>
+            <a class="nav-link" href="/couton_garnier_wagner/Calendrier/Public/index.php">RENDEZ-VOUS</a>
           </li>
           <li class="nav-item recherche">
             <form class="d-flex">
@@ -94,6 +94,8 @@
      if($result = $mysqli ->query($sql)){
          if($result->num_rows>0){
              while($row = $result->fetch_row()){
+
+                 $_SESSION['idProfCal']=$row[0];
                  echo '<img src="'.$row[9].'" class="img-prof" alt="p1"></a>
                  </div>
                  <div class="col-8">
@@ -104,8 +106,10 @@
                  </div>
              </div>
              <div>
-                 <button type="button" class="btn round btn-outline-success">Rendez-vous</button>
-             </div>
+             <form method="post">
+                 <button type="submit" class="btn round btn-outline-success" formaction="/couton_garnier_wagner/Calendrier/Public/index.php">Rendez-vous</button>
+             </form>
+                 </div>
              <br>
              <div class="row">
                  <div class="col-12">
@@ -116,7 +120,7 @@
                  <div class="col-12">
                      <p>Email : '.$row[4].'</p>
                  </div>
-             </div>';
+             </div>';//name="btn_'.$row[0].'" value="'.$row[0].'"
 
                 if($row[6] != 0){
                     $sql2 = "SELECT * FROM `Chercheurs` WHERE ID = $row[6]";
