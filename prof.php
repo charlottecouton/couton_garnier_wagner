@@ -116,9 +116,26 @@
                  <div class="col-12">
                      <p>Email : '.$row[4].'</p>
                  </div>
-             </div>
-         </div>
-     </body>';
+             </div>';
+
+                if($row[6] != 0){
+                    $sql2 = "SELECT * FROM `Chercheurs` WHERE ID = $row[6]";
+
+                    if(mysqli_query($mysqli, $sql2)){
+                        if($result2 = $mysqli ->query($sql2)){
+                            if($result2->num_rows>0){
+                                while($row2 = $result2->fetch_row()){
+                                    echo ' Chercheur en '. $row2[1];
+                                }
+                            }
+                        }
+                    }
+
+
+                }
+
+               echo ' </div>
+                </body>';
              }
          }
      }

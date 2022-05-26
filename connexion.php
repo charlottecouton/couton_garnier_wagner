@@ -28,6 +28,7 @@
     }
 
     $compte = $_SESSION['connexion'];
+    
     if($err_msg==""){
         
         switch($compte){
@@ -66,6 +67,7 @@
 
             }else{
                 $id_exists = false;
+                $_SESSION['connecte'] = null;
                 echo '<!DOCTYPE html>
                 <html>
                     <head>

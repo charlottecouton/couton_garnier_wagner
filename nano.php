@@ -75,6 +75,8 @@
 
   <?php
 
+    session_start();
+
     $mysqli = new mysqli("localhost","root","root","omnes");
     
     if($mysqli -> connect_errno)
@@ -83,7 +85,7 @@
         exit();
     }
 
-    $sql = "SELECT Nom, Prenom FROM `Profs` INNER JOIN `Chercheurs` WHERE Profs.ID_C = Chercheurs.ID AND Chercheurs.Labo = 'nano'";
+    $sql = "SELECT Nom, Prenom FROM `Profs` INNER JOIN `Chercheurs` WHERE Profs.ID_C = Chercheurs.ID AND Chercheurs.Labo = 'NANOSCIENCES ET NANOTECHNOLOGIE POUR L'INGENIERIE'";
     if(mysqli_query($mysqli, $sql)){
         if($result = $mysqli ->query($sql)){
             if($result->num_rows>0){
@@ -94,7 +96,10 @@
                             <div class="card" style="width: 20rem;">
                                 <img src="Accueil/jpo.png" class="card-img-top" alt="jpo">
                                     <div class="card-body">
-                                        '. $row[1]. " " .$row[0];
+                                    <form method = "post">
+                                      <button class="btn btn-outline-default" type="submit" name="btn_'.$row[0].'" value="'.$row[0].'"  formaction="choixprof.php">'. $row[1]. " " .$row[0].'</button>
+                                    </form>
+                                        ';
                       echo '</div></div><br><br>';
                 }
             }

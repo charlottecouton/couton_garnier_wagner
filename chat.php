@@ -13,20 +13,30 @@
     
     $id = $_SESSION['chat'];//on récupère l'id de la personne connectée
     $user = $_SESSION['connexion'];//on récupère le type d'utilisateur
+    $ok = $_SESSION['connecte'];
 
-    switch($user){
-      case 0 :
-        $table = 'Profs';
-        $choix = 0;//on affiche la liste de tous les profs
-        break;
-      case 1 :
-        $table = 'Etudiants';
-        $choix = 1;//on affiche la liste avec seulement les étudiants ayant envoyé un message
-        break;
-      case 2 :
+    switch($ok){
+      case null :
         header("refresh:0,url=index.html");
         break;
+      
+        case 1 :
+          switch($user){
+          case 0 :
+            $table = 'Profs';
+            $choix = 0;//on affiche la liste de tous les profs
+            break;
+          case 1 :
+            $table = 'Etudiants';
+            $choix = 1;//on affiche la liste avec seulement les étudiants ayant envoyé un message
+            break;
+          case 2 :
+            header("refresh:0,url=index.html");
+            break;
+          }
+          break;
     }
+    
 
     $sql = "SELECT * FROM $table";
     if(mysqli_query($mysqli, $sql)){
