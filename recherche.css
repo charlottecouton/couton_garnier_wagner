@@ -1,21 +1,27 @@
 .titre{
     padding-top:5%;
-    font-size: 20px;
+    font-size: 30px;
+    color:#D9D4E3;
+    font-weight: 400;
+}
+
+.img-rec{
+    height: 300px;
+}
+
+.labo{
+    font-size: 50px;
     color:#D9D4E3;
     font-weight: 400;
 }
 
 .rec{
-    height: 300px;
+    display: flex;
+    align-items: center;
 }
 
-.rec:hover{
-    height: 310px;
-}
-
-.dept p{
+.prof{
     text-align: center;
-    font-size: 20px;
-    color:#D9D4E3;
-    font-weight: 400;
+    display: flex;
+    justify-content: space-around;
 }
