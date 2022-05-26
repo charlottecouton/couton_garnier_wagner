@@ -107,7 +107,11 @@ if (mysqli_query($mysqli, $sql))
                 while($row = $result -> fetch_row())
                 {
                   echo '
-                  <li><a class="dropdown-item" href="#">'.$row[0].'</a></li>';
+                  <li>
+                    <form method = "post">
+                        <button class="btn btn-outline-default" type="submit" name="btn_'.$row[0].'" value="'.$row[0].'"  formaction="choixprof.php">'.$row[0].'</button>
+                    </form>
+                  </li>';
                 }   
             }
             else 
@@ -145,7 +149,11 @@ if (mysqli_query($mysqli, $sql))
                 while($row = $result -> fetch_row())
                 {
                   echo '
-                  <li><a class="dropdown-item" href="#">'.$row[0].'</a></li>';
+                  <li>
+                    <form method = "post">
+                        <button class="btn btn-outline-default" type="submit" name="btn_'.$row[0].'" value="'.$row[0].'"  formaction="choixprof.php">'.$row[0].'</button>
+                    </form>
+                  </li>';
                 }   
             }
             else 
@@ -181,8 +189,11 @@ if (mysqli_query($mysqli, $sql))
                             {
                                 while($row = $result -> fetch_row())
                                 {
-                                  echo '
-                                  <li><a class="dropdown-item" href="#">'.$row[0].'</a></li>';
+                                  echo '<li>
+                                  <form method = "post">
+                                      <button class="btn btn-outline-default" type="submit" name="btn_'.$row[0].'" value="'.$row[0].'"  formaction="choixprof.php">'.$row[0].'</button>
+                                  </form>
+                                </li>';
                                 }   
                             }
                             else 
@@ -218,8 +229,11 @@ if (mysqli_query($mysqli, $sql))
                             {
                                 while($row = $result -> fetch_row())
                                 {
-                                  echo '
-                                  <li><a class="dropdown-item" href="#">'.$row[0].'</a></li>';
+                                  echo '<li>
+                                  <form method = "post">
+                                      <button class="btn btn-outline-default" type="submit" name="btn_'.$row[0].'" value="'.$row[0].'"  formaction="choixprof.php">'.$row[0].'</button>
+                                  </form>
+                                </li>';
                                 }   
                             }
                             else 
@@ -256,8 +270,11 @@ if (mysqli_query($mysqli, $sql))
                                     {
                                         while($row = $result -> fetch_row())
                                         {
-                                          echo '
-                                          <li><a class="dropdown-item" href="#">'.$row[0].'</a></li>';
+                                          echo '<li>
+                                          <form method = "post">
+                                              <button class="btn btn-outline-default" type="submit" name="btn_'.$row[0].'" value="'.$row[0].'"  formaction="choixprof.php">'.$row[0].'</button>
+                                          </form>
+                                        </li>';
                                         }   
                                     }
                                     else 
@@ -292,7 +309,12 @@ if (mysqli_query($mysqli, $sql))
                                                         while($row = $result -> fetch_row())
                                                         {
                                                           echo '
-                                                          <li><a class="dropdown-item" href="#">'.$row[0].'</a></li>';
+                                                          <li>
+                                                          <form method = "post">
+                                                            <button class="btn btn-outline-default" type="submit" name="btn_'.$row[0].'" value="'.$row[0].'"  formaction="choixprof.php">'.$row[0].'</button>
+                                                          </form>
+                                                          </li>
+                                                        ';
                                                         }   
                                                     }
                                                     else 
