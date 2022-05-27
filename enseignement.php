@@ -8,7 +8,9 @@ if($mysqli -> connect_errno)
     exit();
 }
 
-echo '<!doctype html>
+?>
+
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -55,7 +57,7 @@ echo '<!doctype html>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                 <li><a class="dropdown-item" href="#">Enseignement</a></li>
                 <li><a class="dropdown-item" href="recherche.html">Recherche</a></li>
-                <li><a class="dropdown-item" href="international.html">International</a></li>
+                <li><a class="dropdown-item" href="international.php">International</a></li>
               </ul>
           </div>
           </li>
@@ -94,7 +96,9 @@ echo '<!doctype html>
                     <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                         Mathématiques
                     </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">';
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+
+<?php
 
 $sql = "SELECT Nom FROM Profs WHERE Spe = 'Mathématiques'";
 
@@ -324,8 +328,8 @@ if (mysqli_query($mysqli, $sql))
                                                     echo '</ul>';
                                                 }
                                             } 
-
-                                    echo '</div>
+?>
+                                    </div>
                                     </div>
                                     </div>
                                     </div> </div>
@@ -374,5 +378,4 @@ if (mysqli_query($mysqli, $sql))
       </div>
     </div>
   </footer>
-</html>'
-?>
+</html>

@@ -43,7 +43,7 @@
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                 <li><a class="dropdown-item" href="enseignement.php">Enseignement</a></li>
                 <li><a class="dropdown-item" href="recherche.html">Recherche</a></li>
-                <li><a class="dropdown-item" href="international.html">International</a></li>
+                <li><a class="dropdown-item" href="international.php">International</a></li>
               </ul>
           </div>
           </li>
