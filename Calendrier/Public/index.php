@@ -65,6 +65,17 @@
         <?php foreach($month->days as $k=>$days):
             //Calcul la date actuelle
             $date = (clone $start)->modify("+".($k + $i *7)." days");
+
+            $dim = ($k + $i *7 +1);
+            $jeu = ($k + $i *7 -3);
+            
+            if($dim%7 == 0){
+                $dimanche = 1;
+            }else{
+                $dimanche = 0;
+            }
+
+            
             //On recupère les evenements jour par jour et on les format
             $eventsForDay = $resultDays[$date->format('Y-m-d')]??[];
         ?>
@@ -80,37 +91,73 @@
                 <br/>
                 <?php $_SESSION['index']=$date->format('d');
 
-                $id = $_SESSION['idProfCal'];
-                for($l=10;$l<17;$l++)
-                {   
-                    $sql="SELECT * FROM `events` WHERE ID_P=$id AND Start = '2022-".$date->format('m')."-".$date->format('d')." ".$l.":00:00'";
-                    //echo "sql : ".$sql."<br/>";
-                    mysqli_query($mysqli, $sql);
-                    //if(mysqli_query($mysqli, $sql))
-                    //{
-                        $result = $mysqli->query($sql);
-                        /* Détermine le nombre de lignes du jeu de résultats */
-                        $row_cnt = $result->num_rows;
-                        if($row_cnt >0)//$result -> num_rows >0
-                        {
-                            while($row = $result -> fetch_row() )
-                            {
-                            echo '<form method="post" class="bouton">
-                                <button  class="btn btn-danger pris" type="submit" name="btn_'.$row[0].
-                                '" value="'.$row[0].'" disabled>Reserve</button>
-                                </form>';//.$row[1]
-                            }  
-  
+                    $id = $_SESSION['idProfCal'];
+                    for($l=10;$l<17;$l++)
+                    {   
+                        
+                        if($l>12 && $jeu%7 == 0){
+                            $jeudi = 1;
+                        }else{
+                            $jeudi =0;
                         }
-                        else 
-                        {
-                            echo '<form method="post" class="bouton">
-                            <button type="submit" class="libre btn btn-outline-success" name="btn_'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
-                            '" value="'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
-                            '" formaction="/couton_garnier_wagner/calendrier/public/priserdv.php?month='.$date->format('m').'day='.$date->format('d').'heure='.$l.'">'.$l.'h00-'.($l+1).'h00</button>
-                            </form>'; 
-                        }             
-                }
+                        
+                        $sql="SELECT * FROM `events` WHERE ID_P=$id AND Start = '2022-".$date->format('m')."-".$date->format('d')." ".$l.":00:00'";
+                        //echo "sql : ".$sql."<br/>";
+                        mysqli_query($mysqli, $sql);
+                        //if(mysqli_query($mysqli, $sql))
+                        //{
+                            $result = $mysqli->query($sql);
+                            /* Détermine le nombre de lignes du jeu de résultats */
+                            $row_cnt = $result->num_rows;
+                            if($row_cnt >0)//$result -> num_rows >0
+                            {
+                                while($row = $result -> fetch_row() )
+                                {
+                                    if($dimanche ==1){
+                                        echo '<form method="post" class="bouton">
+                                        <button  class="btn btn-outline-default pris" type="submit" name="btn_'.$row[0].
+                                        '" value="'.$row[0].'" disabled>Reserve ⛔</button>
+                                        </form>';//.$row[1]
+                                    }else if($dimanche == 0 && $jeudi == 1){
+                                        echo '<form method="post" class="bouton">
+                                        <button  class="btn btn-primary pris" type="submit" name="btn_'.$row[0].
+                                        '" value="'.$row[0].'" disabled>Associations 🎉</button>
+                                        </form>';//.$row[1]
+                                    }else if($dimanche == 0 && $jeudi == 0){
+                                        echo '<form method="post" class="bouton">
+                                        <button  class="btn btn-danger pris" type="submit" name="btn_'.$row[0].
+                                        '" value="'.$row[0].'" disabled>Reserve ⛔</button>
+                                        </form>';//.$row[1]
+                                    }
+                                    
+                                }  
+    
+                            }
+                            else 
+                            {   
+                                if($dimanche ==1){
+                                    echo '<form method="post" class="bouton">
+                                    <button type="submit" class="libre btn btn-outline-default" name="btn_'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
+                                    '" value="'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
+                                    '" disabled>'.$l.'h00-'.($l+1).'h00</button>
+                                    </form>';
+
+                                }else if($dimanche == 0 && $jeudi == 0){
+                                    echo '<form method="post" class="bouton">
+                                    <button type="submit" class="libre btn btn-outline-success" name="btn_'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
+                                    '" value="'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
+                                    '" formaction="/couton_garnier_wagner/calendrier/public/priserdv.php?month='.$date->format('m').'day='.$date->format('d').'heure='.$l.'">'.$l.'h00-'.($l+1).'h00</button>
+                                    </form>';
+                                }else if($dimanche == 0 && $jeudi == 1){
+                                    echo '<form method="post" class="bouton">
+                                    <button type="submit" class="libre btn btn-primary" name="btn_'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
+                                    '" value="'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
+                                    '" disabled>Associations 🎉</button>
+                                    </form>';
+                                }
+                                 
+                            }             
+                    }
                 ?>
             </div>
         </td>
