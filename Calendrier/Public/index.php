@@ -11,7 +11,12 @@
     require '../views/header.php';
     require '../views/footer.php';
 
-    
+    // Set the new timezone
+    date_default_timezone_set('Europe/Paris');
+    // Return current date from the remote server
+    $dateactuelle = date('Y-m-d H');
+    echo "date actuelle : ".$dateactuelle;
+
 ?>
 
 <!--BARRE DES TACHES QUI PERMET D ALLER AU MOIS SUIVANT ET PRECEDENT ET AFFICHE LE MOIS ACTUEL DU CALENDRIER-->
@@ -125,80 +130,91 @@
                         $row_cnt = $result->num_rows;
                         $row_cnt1 = $result1->num_rows;
                         
-                        //POUR DISBALE LES VACNACES DES PORFS
-                        if($vac == '07' || $vac == '08')
+                        if($dateactuelle > $date->format('Y-m-d H'))
                         {
                             echo '<form method="post" class="bouton">
                             <button type="submit" class="libre btn btn-outline-default" name="btn_'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
                             '" value="'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
                             '" disabled >'.$l.'h00-'.($l+1).'h00</button>
-                            </form>'; 
+                            </form>';
                         }
                         else
                         {
-                            if($row_cnt >0)//$result -> num_rows >0
+                            //POUR DISBALE LES VACNACES DES PORFS
+                            if($vac == '07' || $vac == '08')
                             {
-                                while($row = $result -> fetch_row() )
+                                echo '<form method="post" class="bouton">
+                                <button type="submit" class="libre btn btn-outline-default" name="btn_'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
+                                '" value="'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
+                                '" disabled >'.$l.'h00-'.($l+1).'h00</button>
+                                </form>'; 
+                            }
+                            else
+                            {
+                                if($row_cnt >0)//$result -> num_rows >0
                                 {
+                                    while($row = $result -> fetch_row() )
+                                    {
+                                        if($dimanche ==1){
+                                            echo '<form method="post" class="bouton">
+                                            <button  class="btn btn-outline-default pris" type="submit" name="btn_'.$row[0].
+                                            '" value="'.$row[0].'" disabled>Reserve ⛔</button>
+                                            </form>';//.$row[1]
+                                        }else if($dimanche == 0 && $jeudi == 1 && $samedi == 0){
+                                            echo '<form method="post" class="bouton">
+                                            <button  class="btn btn-primary pris" type="submit" name="btn_'.$row[0].
+                                            '" value="'.$row[0].'" disabled>Associations 🎉</button>
+                                            </form>';//.$row[1]
+                                        }else if($dimanche == 0 && $jeudi == 0 && $samedi == 0){
+                                            echo '<form method="post" class="bouton">
+                                            <button  class="btn btn-danger pris" type="submit" name="btn_'.$row[0].
+                                            '" value="'.$row[0].'" disabled>Reserve ⛔</button>
+                                            </form>';//.$row[1]
+                                        }
+                                        
+                                    }  
+        
+                                }
+                                else if ($row_cnt1 == 0)
+                                {   //QD = 0 c'est pas le jour donc qd 1 c'est le jour
                                     if($dimanche ==1){
                                         echo '<form method="post" class="bouton">
-                                        <button  class="btn btn-outline-default pris" type="submit" name="btn_'.$row[0].
-                                        '" value="'.$row[0].'" disabled>Reserve ⛔</button>
-                                        </form>';//.$row[1]
-                                    }else if($dimanche == 0 && $jeudi == 1 && $samedi == 0){
-                                        echo '<form method="post" class="bouton">
-                                        <button  class="btn btn-primary pris" type="submit" name="btn_'.$row[0].
-                                        '" value="'.$row[0].'" disabled>Associations 🎉</button>
-                                        </form>';//.$row[1]
+                                        <button type="submit" class="libre btn btn-outline-default" name="btn_'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
+                                        '" value="'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
+                                        '" disabled>'.$l.'h00-'.($l+1).'h00</button>
+                                        </form>';
                                     }else if($dimanche == 0 && $jeudi == 0 && $samedi == 0){
                                         echo '<form method="post" class="bouton">
-                                        <button  class="btn btn-danger pris" type="submit" name="btn_'.$row[0].
-                                        '" value="'.$row[0].'" disabled>Reserve ⛔</button>
-                                        </form>';//.$row[1]
+                                        <button type="submit" class="libre btn btn-outline-success" name="btn_'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
+                                        '" value="'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
+                                        '" formaction="/couton_garnier_wagner/couton_garnier_wagner/calendrier/public/priserdv.php?month='.$date->format('m').'day='.$date->format('d').'heure='.$l.'">'.$l.'h00-'.($l+1).'h00</button>
+                                        </form>';
+                                        //AFFICHAGE DES ASSO
+                                    }else if($dimanche == 0 && $jeudi == 1 && $samedi == 0){
+                                        echo '<form method="post" class="bouton">
+                                        <button type="submit" class="libre btn btn-primary" name="btn_'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
+                                        '" value="'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
+                                        '" disabled>Associations 🎉</button>
+                                        </form>';
+                                        //AFFICHAGE SAMEDI DISABLE
+                                    }else if($dimanche == 0 && $jeudi == 0 && $samedi == 1){
+                                        echo '<form method="post" class="bouton">
+                                        <button type="submit" class="libre btn btn-outline-default" name="btn_'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
+                                        '" value="'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
+                                        '" disabled >'.$l.'h00-'.($l+1).'h00</button>
+                                        </form>';
                                     }
-                                    
-                                }  
-    
-                            }
-                            else if ($row_cnt1 == 0)
-                            {   //QD = 0 c'est pas le jour donc qd 1 c'est le jour
-                                if($dimanche ==1){
+                                }else
+                                {
+                                    //AFFICHAGE DES COURS
                                     echo '<form method="post" class="bouton">
-                                    <button type="submit" class="libre btn btn-outline-default" name="btn_'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
-                                    '" value="'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
-                                    '" disabled>'.$l.'h00-'.($l+1).'h00</button>
-                                    </form>';
-                                }else if($dimanche == 0 && $jeudi == 0 && $samedi == 0){
-                                    echo '<form method="post" class="bouton">
-                                    <button type="submit" class="libre btn btn-outline-success" name="btn_'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
-                                    '" value="'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
-                                    '" formaction="/couton_garnier_wagner/couton_garnier_wagner/calendrier/public/priserdv.php?month='.$date->format('m').'day='.$date->format('d').'heure='.$l.'">'.$l.'h00-'.($l+1).'h00</button>
-                                    </form>';
-                                    //AFFICHAGE DES ASSO
-                                }else if($dimanche == 0 && $jeudi == 1 && $samedi == 0){
-                                    echo '<form method="post" class="bouton">
-                                    <button type="submit" class="libre btn btn-primary" name="btn_'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
-                                    '" value="'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
-                                    '" disabled>Associations 🎉</button>
-                                    </form>';
-                                    //AFFICHAGE SAMEDI DISABLE
-                                }else if($dimanche == 0 && $jeudi == 0 && $samedi == 1){
-                                    echo '<form method="post" class="bouton">
-                                    <button type="submit" class="libre btn btn-outline-default" name="btn_'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
-                                    '" value="'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
-                                    '" disabled >'.$l.'h00-'.($l+1).'h00</button>
-                                    </form>';
+                                        <button type="submit" class="libre btn btn-warning" name="btn_'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
+                                        '" value="'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
+                                        '" disabled >Cours 📚</button>
+                                        </form>';
                                 }
-                                
-                            }else{
-                                //AFFICHAGE DES COURS
-                                echo '<form method="post" class="bouton">
-                                    <button type="submit" class="libre btn btn-warning" name="btn_'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
-                                    '" value="'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
-                                    '" disabled >Cours 📚</button>
-                                    </form>';
-                            }
-                        }                
+                            } 
+                        }
                     }
                 ?>
             </div>

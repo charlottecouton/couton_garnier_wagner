@@ -25,7 +25,7 @@ if($mysqli -> connect_errno)
             }
         }
     }
-    echo $id;
+    //echo $id;
     $sql1 = "SELECT * FROM `Etudiants` WHERE Nom = '$id'";
 
     mysqli_query($mysqli, $sql1);
