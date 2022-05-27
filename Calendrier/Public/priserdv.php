@@ -21,23 +21,25 @@
 
     $id = $_SESSION['idProfCal'];
     for($month1=0;$month1<2;$month1++)
-    {//echo $month1;
+    {
         if($month1==0){
             for($month2=1;$month2<10;$month2++)
-            {//echo $month1.$month2."-";
+            {
             for($day1=0;$day1<=3;$day1++)
-            {//echo "-d".$day1;
+            {
                 if($day1==0){
                     for($day2=1;$day2<10;$day2++)
-                    {//echo $day1.$day2."<br/>";
+                    {
                         for($j=0;$j<7;$j++)
-                        {//echo"H 1".$j."<br/>";
-                            //echo isset($_POST['btn_2022-'.$month1.$month2.'-'.$day1.$day2.'-'.'1'.$j]);
-                            if(isset($_POST['btn_2022-'.$month1.$month2.'-'.$day1.$day2.'-'.'1'.$j]) ){//&& $_POST['btn_2022-'.$month1.$month2.'-'.$day1.$day2.' '.'1'.$j.':00:00'] == $month1.$month2.'-'.$day1.$day2.' '.'1'.$j.':00:00'
-                                //echo "Rendez-vous de : 2022-".$month1.$month2.'-'.$day1.$day2.'-'.'1'.$j.'h<br/><br/>';
+                        {
+                            if(isset($_POST['btn_2022-'.$month1.$month2.'-'.$day1.$day2.'-'.'1'.$j]) ){
                                 $heurePlusUn = $j+1;
                                 $sql = "INSERT INTO `events` (`Nom`, `Start`, `End`, `ID_P`,`ID_E` ) 
                                         VALUES ('barde a patate', '2022-$month1$month2-$day1$day2 1$j:00:00', '2022-$month1$month2-$day1$day2 1$heurePlusUn:00:00', $id,1)"; 
+                            
+                                
+                            //$sql3 = "SELECT Mail FROM `etudiants` INNER JOIN `events` ON etudiants.ID = events.ID_E";
+                            
                             //Envoie la requete à la bdd
                             mysqli_query($mysqli, $sql);
                             
@@ -56,15 +58,12 @@
                                     else 
                                     {
                                         echo "Erreur : " . $sql2 . "<br>" . mysqli_error($mysqli);
-                                        
                                     }
                                 }
                                 echo "Session : ".$_SESSION['priserdv'];
-                               
                             }
                             }
                         }
-                         
                     } 
                 }else{
                     for($day2=0;$day2<10;$day2++)
@@ -177,20 +176,15 @@
                                             }
                                             else 
                                             {
-                                                
                                                 echo "Erreur : " . $sql2 . "<br>" . mysqli_error($mysqli);
-                                                
                                             }
                                         }
                                         echo "Session : ".$_SESSION['priserdv'];
-                                    
                                     }
                                 }
                             }
-                         
                         }
                     }
-                    
                 } 
             }
         }

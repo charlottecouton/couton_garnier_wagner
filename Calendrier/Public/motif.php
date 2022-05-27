@@ -18,6 +18,7 @@
     //Requete pour remplir le motif
     $sql = "UPDATE `events` SET `Nom`= '$motif' WHERE ID=$value";
     mysqli_query($mysqli, $sql);
+    
 
     header("refresh:0,url=index.html");
 
