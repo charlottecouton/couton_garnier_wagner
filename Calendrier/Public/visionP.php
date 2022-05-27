@@ -9,9 +9,7 @@
     
     //POUR LES AFFICHAGE DE HAUT ET BAS DE PAGE
     require '../views/header.php';
-    require '../views/footer.php';
-
-    
+    require '../views/footer.php'; 
 ?>
 
 <!--BARRE DES TACHES QUI PERMET D ALLER AU MOIS SUIVANT ET PRECEDENT ET AFFICHE LE MOIS ACTUEL DU CALENDRIER-->
@@ -91,12 +89,10 @@
             <div class="calendar__day"><?=$date->format('d');?>
                 <br/>
                 <?php 
-                    $_SESSION['index']=$date->format('d');
                     //Pour disable les vacances
                     $vac = $date->format('m');
                 
                     //Pour id prof
-                    $id = $_SESSION['idProfCal'];
                     //pour able/disable jour calendrier
                     for($l=10;$l<17;$l++)
                     {   
@@ -112,8 +108,9 @@
                         }else{
                             $samedi =0;
                         }
-                        $sql="SELECT * FROM `events` WHERE ID_P=$id AND Start = '2022-".$date->format('m')."-".$date->format('d')." ".$l.":00:00'";
-                        $sql1="SELECT * FROM `cours` WHERE ID_P=$id AND Start = '2022-".$date->format('m')."-".$date->format('d')." ".$l.":00:00'";
+                        $id = 1;
+                        $sql="SELECT ID, ID_E, Start, Nom FROM `events` WHERE ID_P = $id AND Start = '2022-".$date->format('m')."-".$date->format('d')." ".$l.":00:00'";
+                        $sql1="SELECT * FROM `cours` WHERE ID_P = $id AND Start = '2022-".$date->format('m')."-".$date->format('d')." ".$l.":00:00'";
 
                         mysqli_query($mysqli, $sql);
                         mysqli_query($mysqli, $sql1);
@@ -142,19 +139,35 @@
                                 {
                                     if($dimanche ==1){
                                         echo '<form method="post" class="bouton">
-                                        <button  class="btn btn-outline-default pris" type="submit" name="btn_'.$row[0].
-                                        '" value="'.$row[0].'" disabled>Reserve ⛔</button>
+                                        <button  class="btn btn-outline-default pris" type="submit" name="btn_'.$row[1].
+                                        '" value="'.$row[1].'" disabled>Reserve ⛔</button>
                                         </form>';//.$row[1]
                                     }else if($dimanche == 0 && $jeudi == 1 && $samedi == 0){
                                         echo '<form method="post" class="bouton">
-                                        <button  class="btn btn-primary pris" type="submit" name="btn_'.$row[0].
-                                        '" value="'.$row[0].'" disabled>Associations 🎉</button>
+                                        <button  class="btn btn-primary pris" type="submit" name="btn_'.$row[1].
+                                        '" value="'.$row[1].'" disabled>Associations 🎉</button>
                                         </form>';//.$row[1]
                                     }else if($dimanche == 0 && $jeudi == 0 && $samedi == 0){
-                                        echo '<form method="post" class="bouton">
-                                        <button  class="btn btn-danger pris" type="submit" name="btn_'.$row[0].
-                                        '" value="'.$row[0].'" disabled>Reserve ⛔</button>
-                                        </form>';//.$row[1]
+                                        $_SESSION['idRDV']=$row[0];
+
+                                        $sql2 = "SELECT Nom FROM `Etudiants` WHERE ID = ".$row[1];
+                                        mysqli_query($mysqli, $sql2);
+                                        $result2 = $mysqli->query($sql2);
+                                        $row_cnt2 = $result2->num_rows;
+
+                                        if($row_cnt2 >0){
+                                            while($row2 = $result2 -> fetch_row() )
+                                            {
+                                                //echo 'name="btn_'.$row2[0].
+                                                //'" value="'.$row2[0].'"';
+                                                echo '<form method="post" class="bouton">
+                                                <button  class="btn btn-danger pris" type="submit" name="btn_'.$row2[0].
+                                                '" value="'.$row2[0].'" formaction="/couton_garnier_wagner/couton_garnier_wagner/Calendrier/public/infoRdvEleve.php">'.$row2[0].'</button>
+                                                </form>';//.$row[1]
+                                            }
+                                            
+                                        }
+
                                     }
                                     
                                 }  
@@ -172,7 +185,7 @@
                                     echo '<form method="post" class="bouton">
                                     <button type="submit" class="libre btn btn-outline-success" name="btn_'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
                                     '" value="'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
-                                    '" formaction="/couton_garnier_wagner/couton_garnier_wagner/calendrier/public/priserdv.php?month='.$date->format('m').'day='.$date->format('d').'heure='.$l.'">'.$l.'h00-'.($l+1).'h00</button>
+                                    '" disabled>'.$l.'h00-'.($l+1).'h00</button>
                                     </form>';
                                     //AFFICHAGE DES ASSO
                                 }else if($dimanche == 0 && $jeudi == 1 && $samedi == 0){

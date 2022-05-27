@@ -53,6 +53,7 @@ class Month{
        return $this->months[$this->month-1] .' '.$this->year;
     }//indice moins 1 pour retourner à 0 dans le tableau 
     
+    //Ecris les semaines en toute lettre
     public function toStringW() : string { //le retour sera une chaine de caractère
         return $this->days[$this->semaine-1].' ';
      }

@@ -3,7 +3,8 @@
     require '../views/header.php';
 
     //Connection à la bdd
-    $mysqli = new mysqli("localhost","root","root","omnes");
+    //$mysqli = new mysqli("localhost","root","root","omnes");
+    $mysqli = new mysqli("localhost","root","","omnes");
     if($mysqli -> connect_errno)
     {   //SI CONNECTION ECHOUE
         echo "Failed to connect to MySQL : " . $mysqli -> connect_error;
@@ -35,8 +36,8 @@
                             if(isset($_POST['btn_2022-'.$month1.$month2.'-'.$day1.$day2.'-'.'1'.$j]) ){//&& $_POST['btn_2022-'.$month1.$month2.'-'.$day1.$day2.' '.'1'.$j.':00:00'] == $month1.$month2.'-'.$day1.$day2.' '.'1'.$j.':00:00'
                                 //echo "Rendez-vous de : 2022-".$month1.$month2.'-'.$day1.$day2.'-'.'1'.$j.'h<br/><br/>';
                                 $heurePlusUn = $j+1;
-                                $sql = "INSERT INTO `events` (`Nom`, `Start`, `End`, `ID_P`) 
-                                        VALUES ('barde a patate', '2022-$month1$month2-$day1$day2 1$j:00:00', '2022-$month1$month2-$day1$day2 1$heurePlusUn:00:00', $id)"; 
+                                $sql = "INSERT INTO `events` (`Nom`, `Start`, `End`, `ID_P`,`ID_E` ) 
+                                        VALUES ('barde a patate', '2022-$month1$month2-$day1$day2 1$j:00:00', '2022-$month1$month2-$day1$day2 1$heurePlusUn:00:00', $id,1)"; 
                             //Envoie la requete à la bdd
                             mysqli_query($mysqli, $sql);
                             
@@ -73,8 +74,8 @@
                         //echo 'btn_2022-'.$month1.$month2.'-'.$day1.$day2.' '.'1'.$j.':00:00';
                         if(isset($_POST['btn_2022-'.$month1.$month2.'-'.$day1.$day2.'-'.'1'.$j]) ){//&& $_POST['btn_2022-'.$month1.$month2.'-'.$day1.$day2.' '.'1'.$j.':00:00'] == $month1.$month2.'-'.$day1.$day2.' '.'1'.$j.':00:00'
                             $heurePlusUn = $j+1;
-                            $sql = "INSERT INTO `events` (`Nom`, `Start`, `End`, `ID_P`) 
-                            VALUES ('barde a patate', '2022-$month1$month2-$day1$day2 1$j:00:00', '2022-$month1$month2-$day1$day2 1$heurePlusUn:00:00', $id)"; 
+                            $sql = "INSERT INTO `events` (`Nom`, `Start`, `End`, `ID_P`,`ID_E`) 
+                            VALUES ('barde a patate', '2022-$month1$month2-$day1$day2 1$j:00:00', '2022-$month1$month2-$day1$day2 1$heurePlusUn:00:00', $id,1)"; 
                             //echo "Rendez-vous de : 2022-".$month1.$month2.'-'.$day1.$day2.'-'.'1'.$j.'h<br/><br/>';
                        //Envoie la requete à la bdd
                         mysqli_query($mysqli, $sql);
@@ -120,8 +121,8 @@
                                 //echo 'btn_2022-'.$month1.$month2.'-'.$day1.$day2.' '.'1'.$j.':00:00';
                                 if(isset($_POST['btn_2022-'.$month1.$month2.'-'.$day1.$day2.'-'.'1'.$j]) ){//&& $_POST['btn_2022-'.$month1.$month2.'-'.$day1.$day2.' '.'1'.$j.':00:00'] == $month1.$month2.'-'.$day1.$day2.' '.'1'.$j.':00:00'
                                     $heurePlusUn = $j+1;
-                                    $sql = "INSERT INTO `events` (`Nom`, `Start`, `End`, `ID_P`) 
-                                    VALUES ('barde a patate', '2022-$month1$month2-$day1$day2 1$j:00:00', '2022-$month1$month2-$day1$day2 1$heurePlusUn:00:00', $id)"; 
+                                    $sql = "INSERT INTO `events` (`Nom`, `Start`, `End`, `ID_P`,`ID_E`) 
+                                    VALUES ('barde a patate', '2022-$month1$month2-$day1$day2 1$j:00:00', '2022-$month1$month2-$day1$day2 1$heurePlusUn:00:00', $id,1)"; 
                                     //echo "Rendez-vous de : 2022-".$month1.$month2.'-'.$day1.$day2.'-'.'1'.$j.'h<br/><br/>';
                                 //Envoie la requete à la bdd
                                 mysqli_query($mysqli, $sql);
@@ -156,8 +157,8 @@
                             {   //echo 'btn_2022-'.$month1.$month2.'-'.$day1.$day2.' '.'1'.$j.':00:00';
                                 if(isset($_POST['btn_2022-'.$month1.$month2.'-'.$day1.$day2.'-'.'1'.$j]) ){//&& $_POST['btn_2022-'.$month1.$month2.'-'.$day1.$day2.' '.'1'.$j.':00:00'] == $month1.$month2.'-'.$day1.$day2.' '.'1'.$j.':00:00'
                                     $heurePlusUn = $j+1;
-                                    $sql = "INSERT INTO `events` (`Nom`, `Start`, `End`, `ID_P`) 
-                                            VALUES ('barde a patate', '2022-$month1$month2-$day1$day2 1$j:00:00', '2022-$month1$month2-$day1$day2 1$heurePlusUn:00:00', $id)"; 
+                                    $sql = "INSERT INTO `events` (`Nom`, `Start`, `End`, `ID_P`,`ID_E`) 
+                                            VALUES ('barde a patate', '2022-$month1$month2-$day1$day2 1$j:00:00', '2022-$month1$month2-$day1$day2 1$heurePlusUn:00:00', $id,1)"; 
                                     //echo "Rendez-vous de : 2022-".$month1.$month2.'-'.$day1.$day2.'-'.'1'.$j.'h<br/><br/>';
                                 //Envoie la requete à la bdd
                                 mysqli_query($mysqli, $sql);
