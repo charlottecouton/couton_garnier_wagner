@@ -66,10 +66,10 @@
   </header>
   
 <?php
-    
+    session_start();
     /*accès Charlotte*/
-    //$mysqli = new mysqli("localhost","root","root","omnes");
-    $mysqli = new mysqli("localhost","root","","omnes");
+    $mysqli = new mysqli("localhost","root","root","omnes");
+    //$mysqli = new mysqli("localhost","root","","omnes");
     if($mysqli -> connect_errno)
     {   //Si la connexion echoue
         echo "Failed to connect to MySQL : " . $mysqli -> connect_error;
@@ -115,7 +115,37 @@
     </div>
     <div class="container-fluid uni">
 
-      <div class="row europe">
+      
+    <div class="container coordonnees">
+        <h1>Contactez-nous</h1>
+        <p>
+            Tel : +33 06 82 11 88 29 <br>
+            Salle : P-346 <br>
+            Mail : <a href="mailto:omnes.education@gmail.com" class="designmail">omnes.international@gmail.com</a>
+        </p>
+
+        <h1>Prenez rendez-vous</h1>
+
+        <?php
+
+            $sql = "SELECT * FROM Profs WHERE Nom = 'International'";
+            if($result = $mysqli->query($sql)){
+            
+                if($result -> num_rows >0){
+                    
+                    while($row = $result->fetch_row()) {
+                        $_SESSION['idProfCal'] = $row[0];
+                    }
+                }
+            }
+        ?>
+        <form method="post">
+        <button type="submit" class="btn btn-co round btn-outline-success" name="btn-ins" formaction="/couton_garnier_wagner/Calendrier/Public/index.php" value="ins">Rendez-vous</button>
+        </post>
+        <br><br>
+
+    </div>
+    <div class="row europe">
         <div class="col-8">
           <br><h1>🇬🇧 Royaume uni</h1>
           

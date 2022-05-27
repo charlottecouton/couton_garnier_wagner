@@ -15,7 +15,7 @@
     date_default_timezone_set('Europe/Paris');
     // Return current date from the remote server
     $dateactuelle = date('Y-m-d H');
-    echo "date actuelle : ".$dateactuelle;
+    //echo "date actuelle : ".$dateactuelle;
 
 ?>
 
@@ -32,8 +32,8 @@
 
 <?php
     //Connection à la bdd
-    //$mysqli = new mysqli("localhost","root","root","omnes");
-    $mysqli = new mysqli("localhost","root","","omnes");
+    $mysqli = new mysqli("localhost","root","root","omnes");
+    //$mysqli = new mysqli("localhost","root","","omnes");
     if($mysqli -> connect_errno)
     {   //SI CONNECTION ECHOUE
         echo "Failed to connect to MySQL : " . $mysqli -> connect_error;
@@ -172,7 +172,7 @@
                                         </form>';
                                     }else if($dimanche == 0 && $jeudi == 0 && $samedi == 0){
                                         echo '<form method="post" class="bouton">
-                                        <button type="submit" class="libre btn btn-outline-success" name="btn_'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
+                                        <button type="submit" class="libre btn btn-outline-default" name="btn_'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
                                         '" value="'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
                                         '" disabled>'.$l.'h00-'.($l+1).'h00</button>
                                         </form>';
@@ -201,8 +201,7 @@
                                         </form>';
                                 }
                         }
-                        else
-                        {
+                        else{
                             //POUR DISBALE LES VACNACES DES PORFS
                             if($vac == '07' || $vac == '08')
                             {
@@ -250,7 +249,7 @@
                                         echo '<form method="post" class="bouton">
                                         <button type="submit" class="libre btn btn-outline-success" name="btn_'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
                                         '" value="'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
-                                        '" formaction="/couton_garnier_wagner/couton_garnier_wagner/calendrier/public/priserdv.php?month='.$date->format('m').'day='.$date->format('d').'heure='.$l.'">'.$l.'h00-'.($l+1).'h00</button>
+                                        '" formaction="/couton_garnier_wagner/calendrier/public/priserdv.php?month='.$date->format('m').'day='.$date->format('d').'heure='.$l.'">'.$l.'h00-'.($l+1).'h00</button>
                                         </form>';
                                         //AFFICHAGE DES ASSO
                                     }else if($dimanche == 0 && $jeudi == 1 && $samedi == 0){

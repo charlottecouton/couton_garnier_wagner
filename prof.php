@@ -75,8 +75,8 @@
 
  session_start();
 
- //$mysqli = new mysqli("localhost","root","root","omnes");
- $mysqli = new mysqli("localhost","root","","omnes");
+ $mysqli = new mysqli("localhost","root","root","omnes");
+ //$mysqli = new mysqli("localhost","root","","omnes");
     
  if($mysqli -> connect_errno)
  {   //Si la connexion echoue
@@ -105,7 +105,7 @@
              </div>
              <div>
              <form method="post">
-                 <button type="submit" class="btn round btn-outline-success" formaction="/couton_garnier_wagner/couton_garnier_wagner/Calendrier/Public/index.php">Rendez-vous</button>
+                 <button type="submit" class="btn round btn-outline-success" formaction="/couton_garnier_wagner/Calendrier/Public/index.php">Rendez-vous</button>
              </form>
                  </div>
              <br>
@@ -136,8 +136,7 @@
 
                 }
 
-               echo ' </div>
-                </body>';
+               echo ' </div>';
              }
          }
      }
@@ -148,6 +147,11 @@
   <!--              
 -->
 <html>
+<div class="chat">
+    <a href="chat.php"><img src="chat.png" alt="chat" width="150"></a>
+</div>
+</body>
+
 <footer id="footer">
     <div class="container-fluid">
       <div class="row">

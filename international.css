@@ -67,4 +67,10 @@
 
 audio::-webkit-media-controls-panel {
     background-color:#5d5176;
-  }
+}
+
+.coordonnees{
+    text-align: center;
+    color:#D9D4E3;
+    font-weight: 100;
+}
