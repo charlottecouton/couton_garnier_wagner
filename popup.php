@@ -88,7 +88,7 @@
             showCancelButton: true,
             cancelButtonColor: '#d33',
             footer: '<a href="">Passons à la suite de la présentation</a>',
-        }),1000);
+        }),1000);*/
 
         document.getElementById("bnt_accueil").addEventListener("click",
                 Swal.fire({
@@ -102,7 +102,7 @@
                     cancelButtonColor: '#d33',
                     //footer: '<a href="">Passons à la suite de la présentation</a>',
                 })
-            );*/
+            );
     
   </script>
 

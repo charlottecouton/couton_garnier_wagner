@@ -35,6 +35,11 @@ a:hover{
     font-size: 15px;
     font-weight: 150;
 }
+.btn-ent:hover{
+    color: white; 
+    font-size: 15px;
+    font-weight: 150;
+}
 
 .dpd:hover{
     color: white; 
