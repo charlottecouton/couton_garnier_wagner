@@ -15,7 +15,7 @@
 ?>
 
 <!--BARRE DES TACHES QUI PERMET D ALLER AU MOIS SUIVANT ET PRECEDENT ET AFFICHE LE MOIS ACTUEL DU CALENDRIER-->
-<div class="d-flex flex-row align_items-center justify-content-between">
+<div class="title-month">
     <!--Affiche le mois et l'annee-->
     <h3><?= $month->toString();?></h3>
     <div>
@@ -95,17 +95,17 @@
                         {
                             while($row = $result -> fetch_row() )
                             {
-                            echo '<form method="post">
-                                <button type="submit" name="btn_'.$row[0].
-                                '" value="'.$row[0].'" disabled>'.$row[1].'</button>
-                                </form>';
+                            echo '<form method="post" class="bouton">
+                                <button  class="btn btn-danger pris" type="submit" name="btn_'.$row[0].
+                                '" value="'.$row[0].'" disabled>Reserve</button>
+                                </form>';//.$row[1]
                             }  
   
                         }
                         else 
                         {
-                            echo '<form method="post">
-                            <button type="submit" name="btn_'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
+                            echo '<form method="post" class="bouton">
+                            <button type="submit" class="libre btn btn-outline-success" name="btn_'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
                             '" value="'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
                             '" formaction="/couton_garnier_wagner/calendrier/public/priserdv.php?month='.$date->format('m').'day='.$date->format('d').'heure='.$l.'">'.$l.'h00-'.($l+1).'h00</button>
                             </form>'; 

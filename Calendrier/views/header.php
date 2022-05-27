@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="/couton_garnier_wagner/Calendrier/Public/css/calendar.css">
     </head>
     
+    
     <body>
         <nav class="navbar navbar-dark bg-primary mb-3">
             <a href="/couton_garnier_wagner/Calendrier/Public/index.php" class="navbar-brand">Calendrier Prise de Rendez-vous</a>
