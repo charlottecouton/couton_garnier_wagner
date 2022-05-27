@@ -67,6 +67,17 @@
       </div>
     </nav>
   </header>
+  
+<?php
+    
+    /*accès Charlotte*/
+    $mysqli = new mysqli("localhost","root","root","omnes");
+    if($mysqli -> connect_errno)
+    {   //Si la connexion echoue
+        echo "Failed to connect to MySQL : " . $mysqli -> connect_error;
+        exit();
+    }    
+?>
 
 <body class="page">
     
@@ -106,8 +117,55 @@
       <div class="row europe">
         <div class="col-8">
           <h1>🇬🇧 Royaume uni</h1>
+
+          <?php
+            $sql = "SELECT * FROM Inter WHERE Pays = 'Royaume Uni'";
+
+            if($result = $mysqli->query($sql)){
+            
+                if($result -> num_rows >0){
+                    
+                    while($row = $result->fetch_assoc()) {
+                        echo 'Universite :'.$row[1].'<br>';
+                        echo 'Site web : '.$row[4].'<br><br>';//affichage du lien
+                    }
+                }
+            }else{
+                echo 'ok';
+            }
+          ?>
           <h1>🇮🇪 Irlande</h1>
+          <?php
+            $sql = "SELECT * FROM Inter WHERE Pays = 'Irlande'";
+
+            if($result = $mysqli->query($sql)){
+            
+                if($result -> num_rows >0){
+                    
+                    while($row = $result->fetch_assoc()) {
+                        
+                        echo 'Universite : '.$row[1].'<br>';
+                        echo 'Site web : '.$row[4].'<br><br>';//affichage du lien
+                    }
+                }
+            }
+          ?>
           <h1>🇸🇪 Suède</h1>
+          <?php
+            $sql = "SELECT * FROM Inter WHERE Pays = 'Suede'";
+
+            if($result = $mysqli->query($sql)){
+            
+                if($result -> num_rows >0){
+                    
+                    while($row = $result->fetch_assoc()) {
+                        
+                        echo 'Universite - '.$row[1].'<br>';
+                        echo 'Site web - '.$row[4].'<br><br>';//affichage du lien
+                    }
+                }
+            }
+          ?>
         </div>
         <div class="col-4">
           <img src="Uni/europe.png" alt="europe" height="500">
@@ -122,8 +180,53 @@
         </div>
         <div class="col-8 am">
         <h1>Etats-Unis 🇺🇸</h1>
+        <?php
+            $sql = "SELECT * FROM Inter WHERE Pays = 'Etats Unis'";
+
+            if($result = $mysqli->query($sql)){
+            
+                if($result -> num_rows >0){
+                    
+                    while($row = $result->fetch_assoc()) {
+                        
+                        echo 'Universite - '.$row[1].'<br>';
+                        echo 'Site web - '.$row[4].'<br><br>';//affichage du lien
+                    }
+                }
+            }
+          ?>
         <h1>Canada 🇨🇦</h1>
+        <?php
+            $sql = "SELECT * FROM Inter WHERE Pays = 'Canada'";
+
+            if($result = $mysqli->query($sql)){
+            
+                if($result -> num_rows >0){
+                    
+                    while($row = $result->fetch_assoc()) {
+                        
+                        echo 'Universite - '.$row[1].'<br>';
+                        echo 'Site web - '.$row[4].'<br><br>';//affichage du lien
+                    }
+                }
+            }
+          ?>
         <h1>Mexique 🇲🇽</h1></div>
+        <?php
+            $sql = "SELECT * FROM Inter WHERE Pays = 'Mexique'";
+
+            if($result = $mysqli->query($sql)){
+            
+                if($result -> num_rows >0){
+                    
+                    while($row = $result->fetch_assoc()) {
+                        
+                        echo 'Universite - '.$row[1].'<br>';
+                        echo 'Site web - '.$row[4].'<br><br>';//affichage du lien
+                    }
+                }
+            }
+          ?>
       </div>
 
         <br>
@@ -131,7 +234,37 @@
       <div class="row asie">
         <div class="col-8">
         <h1>🇰🇷 Corée du sud</h1>
+        <?php
+            $sql = "SELECT * FROM Inter WHERE Pays = 'Coree du Sud'";
+
+            if($result = $mysqli->query($sql)){
+            
+                if($result -> num_rows >0){
+                    
+                    while($row = $result->fetch_assoc()) {
+                        
+                        echo 'Universite - '.$row[1].'<br>';
+                        echo 'Site web - '.$row[4].'<br><br>';//affichage du lien
+                    }
+                }
+            }
+          ?>
         <h1>🇹🇭 Thaïlande</h1>
+        <?php
+            $sql = "SELECT * FROM Inter WHERE Pays = 'Thailande'";
+
+            if($result = $mysqli->query($sql)){
+            
+                if($result -> num_rows >0){
+                    
+                    while($row = $result->fetch_assoc()) {
+                        
+                        echo 'Universite - '.$row[1].'<br>';
+                        echo 'Site web - '.$row[4].'<br><br>';//affichage du lien
+                    }
+                }
+            }
+          ?>
       </div>
       <div class="col-4">
         <img src="Uni/asie.png" alt="am" height="400">
@@ -146,6 +279,21 @@
         </div>
         <div class="col-8 af">
         <h1>Afrique du sud 🇿🇦</h1>
+        <?php
+            $sql = "SELECT * FROM Inter WHERE Pays = 'Afrique du sud'";
+
+            if($result = $mysqli->query($sql)){
+            
+                if($result -> num_rows >0){
+                    
+                    while($row = $result->fetch_assoc()) {
+                        
+                        echo 'Universite - '.$row[1].'<br>';
+                        echo 'Site web - '.$row[4].'<br><br>';//affichage du lien
+                    }
+                }
+            }
+          ?>
       </div>
       </div>
         

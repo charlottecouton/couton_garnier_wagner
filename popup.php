@@ -33,7 +33,7 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0 navigation">
         <li class="nav-item">
           <form>
-            <button type="submit" id="bnt_accueil" class="btn btn-ent" aria-current="page" formaction="popup.php">ACCUEIL</button>
+            <a class="nav-link" id="bnt_accueil" href="index.html">ACCUEIL</a>
           </form>
         </li>
         <li class="nav-item">
@@ -94,8 +94,8 @@
                 Swal.fire({
                     title: 'Un ptit creux ?',
                     text: 'Prenez donc un cookie pour le goûter !',
-                    imageUrl: 'https://www.pngmart.com/files/4/Cookies-PNG-Transparent-Image.png',
-                    imageWidth: 400,
+                    imageUrl: 'Accueil/cookies.png', //'https://www.pngmart.com/files/4/Cookies-PNG-Transparent-Image.png',
+                    imageWidth: 300,
                     imageHeight: 200,
                     imageAlt: 'Custom image',
                     showCancelButton: true,
