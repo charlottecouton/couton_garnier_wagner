@@ -117,7 +117,9 @@
       <div class="row europe">
         <div class="col-8">
           <h1>🇬🇧 Royaume uni</h1>
-
+          <audio controls>
+                    <source src="Audio/Hroyaume.mp3" type="audio/mpeg">
+          </audio>
           <?php
             $sql = "SELECT * FROM Inter WHERE Pays = 'Royaume Uni'";
 
@@ -135,6 +137,9 @@
             }
           ?>
           <h1>🇮🇪 Irlande</h1>
+          <audio controls>
+                     <source src="Audio/Hirlande.mp3" type="audio/mpeg">
+          </audio>
           <?php
             $sql = "SELECT * FROM Inter WHERE Pays = 'Irlande'";
 
@@ -151,6 +156,9 @@
             }
           ?>
           <h1>🇸🇪 Suède</h1>
+          <audio controls>
+            <source src="Audio/Hsuede.mp3" type="audio/mpeg">
+          </audio>
           <?php
             $sql = "SELECT * FROM Inter WHERE Pays = 'Suede'";
 
@@ -180,6 +188,9 @@
         </div>
         <div class="col-8 am">
         <h1>Etats-Unis 🇺🇸</h1>
+        <audio controls>
+            <source src="Audio/Hetatunis.mp3" type="audio/mpeg">
+        </audio>
         <?php
             $sql = "SELECT * FROM Inter WHERE Pays = 'Etats Unis'";
 
@@ -196,6 +207,9 @@
             }
           ?>
         <h1>Canada 🇨🇦</h1>
+        <audio controls>
+            <source src="Audio/HCanada.mp3" type="audio/mpeg">
+        </audio>
         <?php
             $sql = "SELECT * FROM Inter WHERE Pays = 'Canada'";
 
@@ -212,6 +226,9 @@
             }
           ?>
         <h1>Mexique 🇲🇽</h1>
+        <audio controls>
+            <source src="Audio/Hmexique.mp3" type="audio/mpeg">
+        </audio>
         <?php
             $sql = "SELECT * FROM Inter WHERE Pays = 'Mexique'";
 
@@ -234,6 +251,9 @@
       <div class="row asie">
         <div class="col-8">
         <h1>🇰🇷 Corée du sud</h1>
+        <audio controls>
+            <source src="Audio/Hcoree.mp3" type="audio/mpeg">
+         </audio>
         <?php
             $sql = "SELECT * FROM Inter WHERE Pays = 'Coree du Sud'";
 
@@ -250,6 +270,9 @@
             }
           ?>
         <h1>🇹🇭 Thaïlande</h1>
+        <audio controls>
+            <source src="Audio/Hthailande.mp3" type="audio/mpeg">
+        </audio>
         <?php
             $sql = "SELECT * FROM Inter WHERE Pays = 'Thailande'";
 
@@ -279,6 +302,9 @@
         </div>
         <div class="col-8 af">
         <h1>Afrique du sud 🇿🇦</h1>
+        <audio controls>
+            <source src="Audio/Hafriquesud.mp3" type="audio/mpeg">
+        </audio>
         <?php
             $sql = "SELECT * FROM Inter WHERE Pays = 'Afrique du sud'";
 
