@@ -116,10 +116,8 @@
 
       <div class="row europe">
         <div class="col-8">
-          <h1>🇬🇧 Royaume uni</h1>
-          <audio controls>
-                    <source src="Audio/Hroyaume.mp3" type="audio/mpeg">
-          </audio>
+          <br><h1>🇬🇧 Royaume uni</h1>
+          
           <?php
             $sql = "SELECT * FROM Inter WHERE Pays = 'Royaume Uni'";
 
@@ -136,10 +134,14 @@
                 echo 'ok';
             }
           ?>
-          <h1>🇮🇪 Irlande</h1>
+
           <audio controls>
-                     <source src="Audio/Hirlande.mp3" type="audio/mpeg">
+                    <source src="Audio/Hroyaume.mp3" type="audio/mpeg">
           </audio>
+
+          
+          <br><br><h1>🇮🇪 Irlande</h1>
+          
           <?php
             $sql = "SELECT * FROM Inter WHERE Pays = 'Irlande'";
 
@@ -155,10 +157,12 @@
                 }
             }
           ?>
-          <h1>🇸🇪 Suède</h1>
           <audio controls>
-            <source src="Audio/Hsuede.mp3" type="audio/mpeg">
+                     <source src="Audio/Hirlande.mp3" type="audio/mpeg" >
           </audio>
+
+          <br><br><h1>🇸🇪 Suède</h1>
+          
           <?php
             $sql = "SELECT * FROM Inter WHERE Pays = 'Suede'";
 
@@ -174,23 +178,25 @@
                 }
             }
           ?>
+          <audio controls>
+            <source src="Audio/Hsuede.mp3" type="audio/mpeg">
+          </audio>
+
         </div>
         <div class="col-4">
           <img src="Uni/europe.png" alt="europe" height="500">
         </div>
       </div>
       
-        <br>
 
       <div class="row amerique">
         <div class="col-4">
           <img src="Uni/am.png" alt="am" height="500">
         </div>
         <div class="col-8 am">
-        <h1>Etats-Unis 🇺🇸</h1>
-        <audio controls>
-            <source src="Audio/Hetatunis.mp3" type="audio/mpeg">
-        </audio>
+        
+        <br><br><h1>Etats-Unis 🇺🇸</h1>
+        
         <?php
             $sql = "SELECT * FROM Inter WHERE Pays = 'Etats Unis'";
 
@@ -206,10 +212,12 @@
                 }
             }
           ?>
-        <h1>Canada 🇨🇦</h1>
-        <audio controls>
-            <source src="Audio/HCanada.mp3" type="audio/mpeg">
-        </audio>
+          <audio controls>
+            <source src="Audio/Hetatunis.mp3" type="audio/mpeg">
+          </audio>
+        
+        <br><br><h1>Canada 🇨🇦</h1>
+        
         <?php
             $sql = "SELECT * FROM Inter WHERE Pays = 'Canada'";
 
@@ -225,10 +233,12 @@
                 }
             }
           ?>
-        <h1>Mexique 🇲🇽</h1>
         <audio controls>
-            <source src="Audio/Hmexique.mp3" type="audio/mpeg">
+            <source src="Audio/HCanada.mp3" type="audio/mpeg">
         </audio>
+
+        <br><br><h1>Mexique 🇲🇽</h1>
+        
         <?php
             $sql = "SELECT * FROM Inter WHERE Pays = 'Mexique'";
 
@@ -244,67 +254,72 @@
                 }
             }
           ?>
+          <audio controls>
+            <source src="Audio/Hmexique.mp3" type="audio/mpeg">
+          </audio>
       </div>
 
-        <br>
+      
 
       <div class="row asie">
-        <div class="col-8">
-        <h1>🇰🇷 Corée du sud</h1>
-        <audio controls>
-            <source src="Audio/Hcoree.mp3" type="audio/mpeg">
-         </audio>
-        <?php
-            $sql = "SELECT * FROM Inter WHERE Pays = 'Coree du Sud'";
-
-            if($result = $mysqli->query($sql)){
+            <div class="col-8">
+            <br><br><h1>🇰🇷 Corée du sud</h1>
             
-                if($result -> num_rows >0){
-                    
-                    while($row = $result->fetch_row()) {
+            <?php
+                $sql = "SELECT * FROM Inter WHERE Pays = 'Coree du Sud'";
+
+                if($result = $mysqli->query($sql)){
+                
+                    if($result -> num_rows >0){
                         
-                        echo 'Universite - '.$row[1].'<br>';
-                        echo 'Site web - '.$row[3].'<br><br>';//affichage du lien
+                        while($row = $result->fetch_row()) {
+                            
+                            echo 'Universite - '.$row[1].'<br>';
+                            echo 'Site web - '.$row[3].'<br><br>';//affichage du lien
+                        }
                     }
                 }
-            }
-          ?>
-        <h1>🇹🇭 Thaïlande</h1>
-        <audio controls>
-            <source src="Audio/Hthailande.mp3" type="audio/mpeg">
-        </audio>
-        <?php
-            $sql = "SELECT * FROM Inter WHERE Pays = 'Thailande'";
-
-            if($result = $mysqli->query($sql)){
+            ?>
+            <audio controls>
+                <source src="Audio/Hcoree.mp3" type="audio/mpeg">
+            </audio>
             
-                if($result -> num_rows >0){
-                    
-                    while($row = $result->fetch_row()) {
+            <br><br><h1>🇹🇭 Thaïlande</h1>
+            
+            <?php
+                $sql = "SELECT * FROM Inter WHERE Pays = 'Thailande'";
+
+                if($result = $mysqli->query($sql)){
+                
+                    if($result -> num_rows >0){
                         
-                        echo 'Universite - '.$row[1].'<br>';
-                        echo 'Site web - '.$row[3].'<br><br>';//affichage du lien
+                        while($row = $result->fetch_row()) {
+                            
+                            echo 'Universite - '.$row[1].'<br>';
+                            echo 'Site web - '.$row[3].'<br><br>';//affichage du lien
+                        }
                     }
                 }
-            }
-          ?>
-      </div>
-      <div class="col-4">
-        <img src="Uni/asie.png" alt="am" height="400">
-      </div>
+            ?>
+            <audio controls>
+                <source src="Audio/Hthailande.mp3" type="audio/mpeg">
+            </audio>
+
+        </div>
+        <div class="col-4">
+            <img src="Uni/asie.png" alt="am" height="400">
+        </div>
       </div>
 
-        <br>
+        
       
       <div class="row afrique">
         <div class="col-4">
           <img src="Uni/afrique.png" alt="am" height="400">
         </div>
         <div class="col-8 af">
-        <h1>Afrique du sud 🇿🇦</h1>
-        <audio controls>
-            <source src="Audio/Hafriquesud.mp3" type="audio/mpeg">
-        </audio>
+        <br><br><h1>Afrique du sud 🇿🇦</h1>
+        
         <?php
             $sql = "SELECT * FROM Inter WHERE Pays = 'Afrique du sud'";
 
@@ -320,6 +335,9 @@
                 }
             }
           ?>
+        <audio controls>
+            <source src="Audio/Hafriquesud.mp3" type="audio/mpeg">
+        </audio>
       </div>
       </div>
         
