@@ -128,14 +128,11 @@
                                   </div>
                                   </li>
                                   <li class="nav-item">
-                                    <a class="nav-link" href="#">RENDEZ-VOUS</a>
+                                    <a class="nav-link" href="enseignement.php">RENDEZ-VOUS</a>
                                   </li>
                                   <li class="nav-item recherche">
                                     <form class="d-flex">
                                       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                                    </form>
-                                    <form>
-                                      <button class="btn btn-outline-light round" type="submit">Search</button>
                                     </form>
                                   </li>
                                   <li class="nav-item">

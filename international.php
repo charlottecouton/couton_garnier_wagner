@@ -50,14 +50,11 @@
           </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">RENDEZ-VOUS</a>
+            <a class="nav-link" href="enseignement.php">RENDEZ-VOUS</a>
           </li>
           <li class="nav-item recherche">
             <form class="d-flex">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            </form>
-            <form>
-              <button class="btn btn-outline-light round" type="submit">Search</button>
             </form>
           </li>
           <li class="nav-item">
@@ -103,6 +100,9 @@
                       <div class="carousel-item">
                         <img src="Uni/dgu.png" class="d-block w-100 img-car" alt="bngr">
                       </div>
+                      <div class="carousel-item">
+                        <img src="Uni/mex.png" class="d-block w-100 img-car" alt="mex">
+                      </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -125,9 +125,9 @@
             
                 if($result -> num_rows >0){
                     
-                    while($row = $result->fetch_assoc()) {
+                    while($row = $result->fetch_row()) {
                         echo 'Universite :'.$row[1].'<br>';
-                        echo 'Site web : '.$row[4].'<br><br>';//affichage du lien
+                        echo 'Site web : '.$row[3].'<br><br>';//affichage du lien
                     }
                 }
             }else{
@@ -142,10 +142,10 @@
             
                 if($result -> num_rows >0){
                     
-                    while($row = $result->fetch_assoc()) {
+                    while($row = $result->fetch_row()) {
                         
                         echo 'Universite : '.$row[1].'<br>';
-                        echo 'Site web : '.$row[4].'<br><br>';//affichage du lien
+                        echo 'Site web : '.$row[3].'<br><br>';//affichage du lien
                     }
                 }
             }
@@ -158,10 +158,10 @@
             
                 if($result -> num_rows >0){
                     
-                    while($row = $result->fetch_assoc()) {
+                    while($row = $result->fetch_row()) {
                         
                         echo 'Universite - '.$row[1].'<br>';
-                        echo 'Site web - '.$row[4].'<br><br>';//affichage du lien
+                        echo 'Site web - '.$row[3].'<br><br>';//affichage du lien
                     }
                 }
             }
@@ -187,10 +187,10 @@
             
                 if($result -> num_rows >0){
                     
-                    while($row = $result->fetch_assoc()) {
+                    while($row = $result->fetch_row()) {
                         
                         echo 'Universite - '.$row[1].'<br>';
-                        echo 'Site web - '.$row[4].'<br><br>';//affichage du lien
+                        echo 'Site web - '.$row[3].'<br><br>';//affichage du lien
                     }
                 }
             }
@@ -203,15 +203,15 @@
             
                 if($result -> num_rows >0){
                     
-                    while($row = $result->fetch_assoc()) {
+                    while($row = $result->fetch_row()) {
                         
                         echo 'Universite - '.$row[1].'<br>';
-                        echo 'Site web - '.$row[4].'<br><br>';//affichage du lien
+                        echo 'Site web - '.$row[3].'<br><br>';//affichage du lien
                     }
                 }
             }
           ?>
-        <h1>Mexique 🇲🇽</h1></div>
+        <h1>Mexique 🇲🇽</h1>
         <?php
             $sql = "SELECT * FROM Inter WHERE Pays = 'Mexique'";
 
@@ -219,10 +219,10 @@
             
                 if($result -> num_rows >0){
                     
-                    while($row = $result->fetch_assoc()) {
+                    while($row = $result->fetch_row()) {
                         
                         echo 'Universite - '.$row[1].'<br>';
-                        echo 'Site web - '.$row[4].'<br><br>';//affichage du lien
+                        echo 'Site web - '.$row[3].'<br><br>';//affichage du lien
                     }
                 }
             }
@@ -241,10 +241,10 @@
             
                 if($result -> num_rows >0){
                     
-                    while($row = $result->fetch_assoc()) {
+                    while($row = $result->fetch_row()) {
                         
                         echo 'Universite - '.$row[1].'<br>';
-                        echo 'Site web - '.$row[4].'<br><br>';//affichage du lien
+                        echo 'Site web - '.$row[3].'<br><br>';//affichage du lien
                     }
                 }
             }
@@ -257,10 +257,10 @@
             
                 if($result -> num_rows >0){
                     
-                    while($row = $result->fetch_assoc()) {
+                    while($row = $result->fetch_row()) {
                         
                         echo 'Universite - '.$row[1].'<br>';
-                        echo 'Site web - '.$row[4].'<br><br>';//affichage du lien
+                        echo 'Site web - '.$row[3].'<br><br>';//affichage du lien
                     }
                 }
             }
@@ -286,10 +286,10 @@
             
                 if($result -> num_rows >0){
                     
-                    while($row = $result->fetch_assoc()) {
+                    while($row = $result->fetch_row()) {
                         
                         echo 'Universite - '.$row[1].'<br>';
-                        echo 'Site web - '.$row[4].'<br><br>';//affichage du lien
+                        echo 'Site web - '.$row[3].'<br><br>';//affichage du lien
                     }
                 }
             }

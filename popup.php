@@ -53,13 +53,12 @@
         </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">RENDEZ-VOUS</a>
+          <a class="nav-link" href="enseignement.php">RENDEZ-VOUS</a>
         </li>
         <li class="nav-item recherche">
           
           <div class = "test">
             <input class="form-control me-2 input" type="search" id = "searchInput" placeholder="Search" aria-label="Search">
-            <!--<input class="input" id = "searchInput" type = "text" placeholder = "Nom ou Spécialité ou Etablissement"/>-->
             <div id = "suggestion"></div>
           </div>
         </li>
