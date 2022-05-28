@@ -26,6 +26,22 @@ if($mysqli -> connect_errno)
         }
     }
 
+    $sql4 = "SELECT ID, ID_E FROM `events` ";
+
+    mysqli_query($mysqli, $sql4);
+    $result4 = $mysqli->query($sql4);
+    $row_cnt4 = $result4->num_rows;
+
+    if($row_cnt4 >0){
+        while($row4 = $result4 -> fetch_row() )
+        {   //echo isset($_POST['btn_'.$row[0]] && $_POST['btn_'.$row[0]] == $row[0]);
+            if(isset($_POST['btn_'.$row4[0]]) && $_POST['btn_'.$row4[0]] == $row4[0]){
+                
+                $id=$row4[1];
+            }
+        }
+    }
+    
     echo '<div class="container">';
     
     $sql1 = "SELECT * FROM `Etudiants` WHERE Nom = '$nom'";
@@ -42,6 +58,25 @@ if($mysqli -> connect_errno)
             echo 'Mail : '.$row1[9].'<br/>';
         }
     }
+
+    $sql5 = "SELECT * FROM `Etudiants` WHERE ID = '$id'";
+
+    if(mysqli_query($mysqli, $sql5)){
+            $result5 = $mysqli->query($sql5);
+        $row_cnt5 = $result5->num_rows;
+
+        if($row_cnt5 >0){
+            while($row5 = $result5-> fetch_row() )
+            {
+                echo 'Nom : '.$row5[1] .'<br/>';
+                echo 'Prenom : '.$row5[2].'<br/>';
+                echo 'Mail : '.$row5[9].'<br/>';
+            }
+        }
+    }
+    
+
+
 
     $idrdv = $_SESSION['idRDV'];
     $sql3 = "SELECT ID FROM `events`";

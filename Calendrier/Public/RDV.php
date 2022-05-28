@@ -124,8 +124,8 @@ $sql = "SELECT * FROM `events` WHERE $att = $id";
                                 echo '
                                 <div class="venir">
                                 <form method="post">
-                                  <button type="submit" name="btn_'.$row[0].'" class="rdv btn btn-outline-success" formaction="'.$page.'">'.$row[1].' '.$row2[1].'</button>
-                                  <button type="submit" class="rdv btn btn-outline-danger">Annuler</button>
+                                  <button type="submit" name="btn_'.$row[0].'" value="'.$row[0].'" class="rdv btn btn-outline-success" formaction="'.$page.'">'.$row[1].' '.$row2[1].'</button>
+                                  <button type="submit" name="btn_'.$row[0].'" value="'.$row[0].'" class="rdv btn btn-outline-danger" formaction="suppRDV.php">Annuler</button>
                                 </form>
                                 </div>
                                 <br>';
