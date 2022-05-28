@@ -40,13 +40,42 @@
                         for($j=0;$j<7;$j++)
                         {
                             if(isset($_POST['btn_2022-'.$month1.$month2.'-'.$day1.$day2.'-'.'1'.$j]) ){
+
                                 $heurePlusUn = $j+1;
                                 $sql = "INSERT INTO `events` (`Nom`, `Start`, `End`, `ID_P`,`ID_E` ) 
                                         VALUES ('barde a patate', '2022-$month1$month2-$day1$day2 1$j:00:00', '2022-$month1$month2-$day1$day2 1$heurePlusUn:00:00', $id,$idc)"; 
                             
                                 
                             //$sql3 = "SELECT Mail FROM `etudiants` INNER JOIN `events` ON etudiants.ID = events.ID_E";
-                            
+                            //SELECTIONNE LE MAIL DE L ETUDIANT
+                            $sqlmail = "SELECT Mail FROM `etudiants` INNER JOIN `events` WHERE etudiants.ID = events.ID_E";
+                            if (mysqli_query($mysqli, $sqlmail)) 
+                            {
+                                if($resultmail = $mysqli ->query($sqlmail))
+                                {
+                                    if($resultmail -> num_rows >0)
+                                    {
+                                        while($rowmail = $resultmail -> fetch_row() )
+                                        {
+                                            $to=$rowmail[0];
+                                        }  
+                                    }
+                                    else 
+                                    {
+                                        echo "Erreur : " . $sql2 . "<br>" . mysqli_error($mysqli);
+                                    }
+                                }
+                            }
+                                
+                            //$to = "inscription@provider.com";
+                            $subject = "Confirmation de RDV";
+                            $message = "Votre rdv du : 2022-".$month1.$month2."-".$day1.$day2." 1".$j.":00:00'";
+                            $from = "omnessoclaire@edu.ece.fr";
+                            $headers = "From:" . $from;
+                            //ENVOI LE MAIL
+                            mail($to,$subject,$message,$headers);
+                            echo "Mail Sent.";
+                            die();
                             //Envoie la requete à la bdd
                             mysqli_query($mysqli, $sql);
                             

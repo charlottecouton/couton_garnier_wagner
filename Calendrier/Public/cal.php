@@ -30,9 +30,9 @@
 <?php
     ////CONNEXION À LA BDD////
     //accès Charlotte
-    $mysqli = new mysqli("localhost","root","root","omnes");
+    //$mysqli = new mysqli("localhost","root","root","omnes");
     //accès Anaïs et Solène
-    //$mysqli = new mysqli("localhost","root","","omnes");
+    $mysqli = new mysqli("localhost","root","","omnes");
 
     if($mysqli -> connect_errno)
     {   //SI CONNECTION ECHOUE
@@ -100,7 +100,7 @@
                     $_SESSION['index']=$date->format('d');
                     //Pour disable les vacances
                     $vac = $date->format('m');
-                
+                    $partiel = $date->format('m-d');
                     //Pour id prof
                     $id = $_SESSION['idProfCal'];
                     //pour able/disable jour calendrier
@@ -210,6 +210,13 @@
                                 <button type="submit" class="libre btn btn-outline-light" name="btn_'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
                                 '" value="'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
                                 '" disabled >'.$l.'h00-'.($l+1).'h00</button>
+                                </form>'; 
+                            }
+                            else if ($partiel == '06-07' || $partiel == '06-08' || $partiel == '06-09' || $partiel == '06-10'){
+                                echo '<form method="post" class="bouton">
+                                <button type="submit" class="libre btn btn-outline-light" name="btn_'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
+                                '" value="'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
+                                '" disabled >Partiel 🎒</button>
                                 </form>'; 
                             }
                             else
