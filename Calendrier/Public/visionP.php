@@ -8,7 +8,7 @@
     $end = (clone $start)->modify('+'.(6+7*($weeks-1)).' days');
     
     //POUR LES AFFICHAGE DE HAUT ET BAS DE PAGE
-    require '../views/header.php';
+    require '../views/header2.php';
     require '../views/footer.php'; 
 ?>
 

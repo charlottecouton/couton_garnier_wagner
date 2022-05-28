@@ -1,6 +1,6 @@
 <?php
      session_start();
-     require '../views/header.php';
+     require '../views/header2.php';
     //Connection à la bdd
     $mysqli = new mysqli("localhost","root","root","omnes");
     //$mysqli = new mysqli("localhost","root","","omnes");
