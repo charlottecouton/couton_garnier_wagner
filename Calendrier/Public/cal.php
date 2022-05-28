@@ -1,5 +1,6 @@
 <?php 
     session_start();
+    require '../views/header2.php';
     require '../src/Date/Month.php';//Pour inclure la classe
     $month = new App\Date\Month($_GET['month']?? null,$_GET['year']?? null); 
     $start = $month->getStartingDay();
@@ -7,25 +8,21 @@
     $start = $start->format('N') ==='1'? $start : $month->getStartingDay()->modify('last monday');
     $end = (clone $start)->modify('+'.(6+7*($weeks-1)).' days');
     
-    //POUR LES AFFICHAGE DE HAUT ET BAS DE PAGE
-    require '../views/header.php';
-    require '../views/footer.php';
-
     // Set the new timezone
     date_default_timezone_set('Europe/Paris');
     // Return current date from the remote server
     $dateactuelle = date('Y-m-d H');
     //echo "date actuelle : ".$dateactuelle;
-
 ?>
+<body class="page">
 
 <!--BARRE DES TACHES QUI PERMET D ALLER AU MOIS SUIVANT ET PRECEDENT ET AFFICHE LE MOIS ACTUEL DU CALENDRIER-->
 <div class="title-month">
     <!--Affiche le mois et l'annee-->
     <h3><?= $month->toString();?></h3>
     <div>
-        <a href="index.php?month=<?=$month->previousMonth()->month;?>&year=<?=$month->previousMonth()->year;?>" class="btn btn-outline-danger">&lt;</a>
-        <a href="index.php?month=<?=$month->nextMonth()->month;?>&year=<?=$month->nextMonth()->year;?>" class="btn btn-outline-danger">&gt;</a>
+        <a href="cal.php?month=<?=$month->previousMonth()->month;?>&year=<?=$month->previousMonth()->year;?>" class="btn btn-outline-danger">&lt;</a>
+        <a href="cal.php?month=<?=$month->nextMonth()->month;?>&year=<?=$month->nextMonth()->year;?>" class="btn btn-outline-danger">&gt;</a>
     </div>
 </div>
 <!--FIN DE CETTE BARRE DES TACHES***********************************************************************-->
@@ -33,9 +30,9 @@
 <?php
     ////CONNEXION À LA BDD////
     //accès Charlotte
-    $mysqli = new mysqli("localhost","root","root","omnes");
+    //$mysqli = new mysqli("localhost","root","root","omnes");
     //accès Anaïs et Solène
-    //$mysqli = new mysqli("localhost","root","","omnes");
+    $mysqli = new mysqli("localhost","root","","omnes");
 
     if($mysqli -> connect_errno)
     {   //SI CONNECTION ECHOUE
@@ -295,4 +292,6 @@
     <?php endfor;?>
 
 </table>
+
+<?php require '../views/footer.php'; ?>
 

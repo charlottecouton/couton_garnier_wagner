@@ -17,13 +17,13 @@
 .calendar__weekday{
     font-size:20px;
     font-weight: 300;
-    color: #1A0A39;
+    color: #ffffff;
     text-align: center;
 
 }
 .calendar__day{
     font-size:15px;
-    color: #1A0A39;
+    color: #ffffff;
 
     display: flex;
     flex-direction: column;
@@ -38,7 +38,7 @@
 }
 
 .title-month h3{
-    color: #1A0A39;
+    color: #ffffff;
     font-weight: 300;
 }
 
