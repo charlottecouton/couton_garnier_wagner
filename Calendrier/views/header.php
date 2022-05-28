@@ -81,6 +81,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="utilisateur1.php"><button type="button" class="btn round btn-outline-light">Connexion</button></a>
+                    <a class="nav-link" href="deconnexion.php"><button type="button" class="btn round btn-outline-light">Deconnexion</button></a>
                 </li>
             </ul>
             <div id=" affichageTest"></div>

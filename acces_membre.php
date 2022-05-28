@@ -4,7 +4,7 @@
     //echo $_SESSION['connecte'];
   //  $parcourir = isset($_POST['lien_parcourir']);
 
-    if(empty($_SESSION['connecte']) || $_SESSION['connecte']==0){
+    if(empty($_SESSION['connecte'])){
     //if($_SESSION['chat']==1){
         //echo "looser connect toi";
         //header("refresh:3,url=index.html");
@@ -12,7 +12,7 @@
     }
     else{
         //echo "TRUE ";
-        echo $_SESSION['chat'];//Pour voir qui est connecté
+        //echo $_SESSION['chat'];//Pour voir qui est connecté
 
         if(isset( $_GET['test']))
         {

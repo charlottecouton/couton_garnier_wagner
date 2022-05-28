@@ -2,7 +2,8 @@
     session_start();
 
     //$mysqli = new mysqli("localhost","root","","omnes");
-    $mysqli = new mysqli("localhost","root","root","omnes");
+    //$mysqli = new mysqli("localhost","root","root","omnes");
+    $mysqli = new mysqli("localhost","root","","omnes-1");
 
     if($mysqli -> connect_errno)
     {
@@ -59,7 +60,13 @@
                     $id=$row["ID"];
                     $_SESSION['chat'] = $id;
                     $_SESSION['connecte'] = 1;
-                    header("refresh:0,url=index.php");
+                    if($_SESSION['connexion']== 2){
+                        header('Location: http://localhost/couton_garnier_wagner/administrateur.php');
+                    }
+                    else{
+                        header("refresh:0,url=index.php");
+                    }
+                    
                 }
                 //$passwordVerify = password_verify($password, $row["Mdp"]);
                            
