@@ -30,9 +30,9 @@
 <?php
     ////CONNEXION À LA BDD////
     //accès Charlotte
-    //$mysqli = new mysqli("localhost","root","root","omnes");
+    $mysqli = new mysqli("localhost","root","root","omnes");
     //accès Anaïs et Solène
-    $mysqli = new mysqli("localhost","root","","omnes");
+    //$mysqli = new mysqli("localhost","root","","omnes");
 
     if($mysqli -> connect_errno)
     {   //SI CONNECTION ECHOUE

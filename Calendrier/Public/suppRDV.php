@@ -27,6 +27,13 @@ if($mysqli -> connect_errno)
         }
     }
 
-    $sql2 = "DELETE * FROM `events` WHERE "
+    $sql2 = "DELETE * FROM `events` WHERE ID = $id";
+    if(mysqli_query($mysqli, $sql)){
+        $result = $mysqli->query($sql);
+    }else {
+        echo "Erreur : " . $sql2 . "<br>" . mysqli_error($mysqli);
+    }
+    
+
     
 ?>

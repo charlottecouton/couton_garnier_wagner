@@ -3,8 +3,8 @@
 <html>
 
 <head>
-    <!--<link rel="stylesheet" href="/couton_garnier_wagner/Calendrier/Public/css/calendar.css">-->
-    <link rel="stylesheet" href="couton_garnier_wagner/couton_garnier_wagner/Calendrier/Public/css/calendar.css">
+    <link rel="stylesheet" href="/couton_garnier_wagner/Calendrier/Public/css/calendar.css">
+    <!--<link rel="stylesheet" href="couton_garnier_wagner/couton_garnier_wagner/Calendrier/Public/css/calendar.css">-->
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <title>Omnes Scolaire</title>
@@ -30,7 +30,8 @@
         <!--Container fluid pour que la section prenne la totalité de la page-->
         <div class="container-fluid">
             <!--logo omnes-->
-            <a class="navbar-brand" href="/couton_garnier_wagner/couton_garnier_wagner/index.php"><img src="Accueil/logo.png" alt="logo" width="250" height="75"></a>
+            <a class="navbar-brand" href="/couton_garnier_wagner/index.php"><img src="Accueil/logo.png" alt="logo" width="250" height="75"></a>
+           <!-- <a class="navbar-brand" href="/couton_garnier_wagner/couton_garnier_wagner/index.php"><img src="Accueil/logo.png" alt="logo" width="250" height="75"></a>-->
             <!--barre de navigation-->
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 navigation">
                 <li class="nav-item">
