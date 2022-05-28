@@ -1,11 +1,9 @@
 <?php
     session_start();
-    /*accès Solène et Anais*/
-    //$mysqli = new mysqli("localhost","root","","chatbox");
     
     /*accès Charlotte*/
-    //$mysqli = new mysqli("localhost","root","root","omnes");
-    $mysqli = new mysqli("localhost","root","","omnes");
+    $mysqli = new mysqli("localhost","root","root","omnes");
+    //$mysqli = new mysqli("localhost","root","","omnes");
     if($mysqli -> connect_errno)
     {   //Si la connexion echoue
         echo "Failed to connect to MySQL : " . $mysqli -> connect_error;
@@ -99,7 +97,7 @@
                                   </li>
                                   <li class="nav-item recherche">
                                     <form class="d-flex">
-                                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                                      <input class="form-control-chat me-2" type="search" placeholder="Search" aria-label="Search">
                                     </form>
                                   </li>
                                   <li class="nav-item">

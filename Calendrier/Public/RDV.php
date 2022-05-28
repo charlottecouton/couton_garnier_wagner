@@ -1,4 +1,6 @@
 <?php
+    session_start();
+    
     require '../src/Date/Month.php';//Pour inclure la classe
     $month = new App\Date\Month($_GET['month']?? null,$_GET['year']?? null); 
     $start = $month->getStartingDay();
@@ -30,7 +32,7 @@
 
 <?php
 
-    session_start();
+    
 
     $id = $_SESSION['chat'];//pour récup l'id de la personne connectee
     $compte = $_SESSION['connexion'];//pour récup le type de la personne connectée (etudiant ou prof)

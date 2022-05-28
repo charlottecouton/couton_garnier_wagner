@@ -98,7 +98,7 @@
   
   </div>
   
-  <div class="chat">
+  <div class="chatlogo">
     <a href="chat.php"><img src="chat.png" alt="chat" width="150"></a>
   </div>
 

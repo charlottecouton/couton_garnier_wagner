@@ -4,7 +4,7 @@
 ?>
 
 <body class="page">
-    <div class="container">
+    <div class="container containconnex">
         <div class="row">
             <div class="col-3"></div>
             <div class="col-6">

@@ -1,8 +1,8 @@
 <?php
     //CONNECTION A LA BASE DE DONNEE
     //NOM DE LA BASE : omnes
+    $mysqli = new mysqli("localhost","root","root","omnes");
     //$mysqli = new mysqli("localhost","root","","omnes");
-    $mysqli = new mysqli("localhost","root","","omnes");
     if($mysqli -> connect_errno)
     {   //SI CONNECTION ECHOUE
         echo "Failed to connect to MySQL : " . $mysqli -> connect_error;

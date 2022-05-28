@@ -3,8 +3,8 @@
     require '../couton_garnier_wagner/Calendrier/views/header.php';
     //require '../Calendrier/views/header.php';
     /*accès Charlotte*/
-    //$mysqli = new mysqli("localhost","root","root","omnes");
-    $mysqli = new mysqli("localhost","root","","omnes");
+    $mysqli = new mysqli("localhost","root","root","omnes");
+    //$mysqli = new mysqli("localhost","root","","omnes");
     if($mysqli -> connect_errno)
     {   //Si la connexion echoue
         echo "Failed to connect to MySQL : " . $mysqli -> connect_error;
@@ -14,7 +14,7 @@
 
 <body class="page">
     
-    <div class="container titre">
+    <div class="container titreinter">
         <h1>Nos universités partenaires... <br> partout dans le monde</h1>
         <p>Vivez l'expérience internationale en participant à nos programmes dans des campus situés sur les 5 continents</p>
     </div>
@@ -149,14 +149,14 @@
           </audio>
 
         </div>
-        <div class="col-4">
+        <div class="col-4 trans">
           <img src="Uni/europe.png" alt="europe" height="500">
         </div>
       </div>
       
 
       <div class="row amerique">
-        <div class="col-4">
+        <div class="col-4 trans">
           <img src="Uni/am.png" alt="am" height="500">
         </div>
         <div class="col-8 am">
@@ -272,7 +272,7 @@
             </audio>
 
         </div>
-        <div class="col-4">
+        <div class="col-4 trans">
             <img src="Uni/asie.png" alt="am" height="400">
         </div>
       </div>
@@ -280,7 +280,7 @@
         
       
       <div class="row afrique">
-        <div class="col-4">
+        <div class="col-4 trans">
           <img src="Uni/afrique.png" alt="am" height="400">
         </div>
         <div class="col-8 af">
@@ -309,7 +309,7 @@
         
 
     </div>
-    <div class="chat">
+    <div class="chatlogo">
       <a href="chat.php"><img src="chat.png" alt="chat" width="150"></a>
     </div>
 

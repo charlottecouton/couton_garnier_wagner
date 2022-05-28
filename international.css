@@ -13,13 +13,13 @@
     height:400px;
 }
 
-.titre h1{
+.titreinter h1{
     padding-top:5%;
     color:#D9D4E3;
     font-size: 60px;
 }
 
-.titre p{
+.titreinter p{
     color:#D9D4E3;
     font-size: 25px;
     font-weight: 200;
@@ -61,7 +61,7 @@
     text-align: right;
 }
 
-.col-4{
+.trans{
     opacity: 0.7;
 }
 

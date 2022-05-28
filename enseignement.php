@@ -4,8 +4,8 @@ require '../couton_garnier_wagner/Calendrier/views/header.php';
 //require '../Calendrier/views/header.php';
 
 /*accès Charlotte*/
-//$mysqli = new mysqli("localhost","root","root","omnes");
-$mysqli = new mysqli("localhost", "root", "", "omnes");
+$mysqli = new mysqli("localhost","root","root","omnes");
+//$mysqli = new mysqli("localhost", "root", "", "omnes");
 if ($mysqli->connect_errno) {  //Si la connection est fausse
   echo "Failed to connect to MySQL : " . $mysqli->connect_error;
   exit();
@@ -14,12 +14,12 @@ if ($mysqli->connect_errno) {  //Si la connection est fausse
 
 <body class="page">
   <div class="container">
-    <div class="row titre">
+    <div class="row titreens">
       <h1>Choisissez un domaine</h1>
     </div>
-    <div class="row dept">
+    <div class="row depte">
       <div class="col-2">
-        <div class="card" style="width: 15rem;">
+        <div class="card mat" style="width: 15rem;">
 
           <img src="Enseignement/maths.png" class="img-dept" alt="jpo">
           <div class="card-body">
@@ -58,7 +58,7 @@ if ($mysqli->connect_errno) {  //Si la connection est fausse
 </div>
 </div>
 <div class="col-2">
-            <div class="card" style="width: 15rem;">
+            <div class="card mat" style="width: 15rem;">
                 <img src="Enseignement/info.png" class="img-dept" alt="jpo">
                 <div class="card-body">
                     <!--menu déroulant-->
@@ -93,7 +93,7 @@ if ($mysqli->connect_errno) {  //Si la connection est fausse
     </div>
     </div>
     <div class="col-2">
-    <div class="card" style="width: 15rem;">
+    <div class="card mat" style="width: 15rem;">
         <img src="Enseignement/ssoc.png" class="img-dept" alt="jpo">
         <div class="card-body">
             <!--menu déroulant-->
@@ -128,7 +128,7 @@ if ($mysqli->connect_errno) {  //Si la connection est fausse
     </div>
     </div>
     <div class="col-2">
-    <div class="card" style="width: 15rem;">
+    <div class="card mat" style="width: 15rem;">
         <img src="Enseignement/elec.png" class="img-dept" alt="jpo">
         <div class="card-body">
             <!--menu déroulant-->
@@ -160,9 +160,9 @@ if ($mysqli->connect_errno) {  //Si la connection est fausse
         </div>
         </div> </div>
         <br><br>
-        <div class="row dept">
+        <div class="row depte">
         <div class="col-2">
-            <div class="card" style="width: 15rem;">
+            <div class="card mat" style="width: 15rem;">
                 <img src="Enseignement/phys.png" class="img-dept" alt="jpo">
                 <div class="card-body">
                     <!--menu déroulant-->
@@ -195,7 +195,7 @@ if ($mysqli->connect_errno) {  //Si la connection est fausse
                             </div>
                             </div> 
                             <div class="col-2">
-                            <div class="card" style="width: 15rem;">
+                            <div class="card mat" style="width: 15rem;">
                                 <img src="Enseignement/langue.png" class="img-dept" alt="jpo">
                                 <div class="card-body">
                                     <!--menu déroulant-->
@@ -230,7 +230,7 @@ if ($mysqli->connect_errno) {  //Si la connection est fausse
         </div>
       </div>
     </div>
-    <div class="chat">
+    <div class="chatlogo">
       <a href="chat.php"><img src="chat.png" alt="chat" width="150"></a>
     </div>
 

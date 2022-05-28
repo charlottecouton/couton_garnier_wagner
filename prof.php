@@ -1,6 +1,8 @@
 <?php 
+  session_start();
   require '../couton_garnier_wagner/Calendrier/views/header.php';
   //require '../Calendrier/views/header.php';
+  
 ?>
   <body class="page">
     <div class="container fiche">
@@ -10,7 +12,7 @@
 
 <?php
 
- session_start();
+ 
 
  $mysqli = new mysqli("localhost","root","root","omnes");
  //$mysqli = new mysqli("localhost","root","","omnes");
@@ -22,9 +24,8 @@
  }
 
  $id = $_SESSION['choixprof'];
- //$id = 1;
 
- $sql = "SELECT * FROM `Profs` WHERE ID = $id";
+ $sql = "SELECT * FROM `profs` WHERE ID = $id";
  if(mysqli_query($mysqli, $sql)){
      if($result = $mysqli ->query($sql)){
          if($result->num_rows>0){
@@ -48,12 +49,13 @@
              <br>
              <div class="row">
                  <div class="col-12">
-                     <p>Téléphone : '.$row[7].'</p>
+                     <p>Téléphone : +33 0'.$row[7].'</p>
                  </div>
              </div>
              <div class="row">
                  <div class="col-12">
-                     <p>Email : '.$row[4].'</p>
+                 
+                     <p>Email : <a href="mailto:omnes.education@gmail.com" class = "mailprof">'.$row[4].'</a></p>
                  </div>
              </div>';//name="btn_'.$row[0].'" value="'.$row[0].'"
 
@@ -68,6 +70,8 @@
                                 }
                             }
                         }
+                    }else{
+                      echo "Erreur : " . $sql . "<br>" . mysqli_error($mysqli);
                     }
 
 
@@ -84,7 +88,7 @@
   <!--              
 -->
 <html>
-<div class="chat">
+<div class="chatlogo">
     <a href="chat.php"><img src="chat.png" alt="chat" width="150"></a>
 </div>
 

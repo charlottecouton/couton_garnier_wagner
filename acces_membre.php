@@ -26,7 +26,7 @@
 
             }
             elseif($_GET['test'] == "recherche"){
-                header('Location: http://localhost/couton_garnier_wagner/recherche.html');
+                header('Location: http://localhost/couton_garnier_wagner/recherche.php');
 
             }
             elseif($_GET['test'] == "international"){

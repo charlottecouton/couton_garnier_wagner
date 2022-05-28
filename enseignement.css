@@ -1,7 +1,8 @@
-.dept{
+.depte{
     padding-top: 5%;
     display: flex;
     justify-content: space-evenly;
+    width: 100%;
 }
 
 .img-dept{
@@ -9,12 +10,12 @@
     border-radius: 10%;
 }
 
-.card{
+.mat{
     height: 270px;
     padding: 10%;
     opacity: 0.9;
-    position: relative;
-    z-index: 1;
+    background-color: #D9D4E3;
+    border-radius: 10px;
 }
 
 
@@ -22,14 +23,9 @@
     color:#1A0A39;
 }
 
-.titre{
+.titreens{
     padding-top:5%;
     font-size: 20px;
     color:#D9D4E3;
     font-weight: 400;
-}
-
-.dropdown-item{
-    position: relative;
-    z-index: 3;
 }

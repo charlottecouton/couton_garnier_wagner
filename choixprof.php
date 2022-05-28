@@ -10,7 +10,7 @@
         exit();
     }
 
-    $sql = "SELECT Nom FROM Profs ";
+    $sql = "SELECT Nom FROM profs ";
 
     if(mysqli_query($mysqli, $sql)){
         if($result = $mysqli ->query($sql)){
@@ -20,7 +20,7 @@
 
                     if(isset($_POST['btn_'.$row[0]]) && $_POST['btn_'.$row[0]]==$row[0]){
                         
-                        $sql2 = "SELECT ID FROM Profs WHERE Nom = '$row[0]'";
+                        $sql2 = "SELECT ID FROM profs WHERE Nom = '$row[0]'";
                         
                         if(mysqli_query($mysqli, $sql2)){
                             

@@ -23,7 +23,7 @@
   <div class="container actus">
     <div class="row">
       <div class="col-4">
-        <div class="card" style="width: 20rem;">
+        <div class="card event" style="width: 20rem;">
           <img src="Accueil/jpo.png" class="card-img-top" alt="jpo">
           <div class="card-body">
             <h1>Journée portes ouvertes sur notre campus 👨‍🎓</h1>
@@ -37,7 +37,7 @@
         </div>
       </div>
       <div class="col-4">
-        <div class="card" style="width: 20rem;">
+        <div class="card event" style="width: 20rem;">
           <img src="Accueil/sem.png" class="card-img-top" alt="jpo">
           <div class="card-body">
             <h1>Séminaire de recherche 🔍</h1>
@@ -51,7 +51,7 @@
         </div>
       </div>
       <div class="col-4">
-        <div class="card" style="width: 20rem;">
+        <div class="card event" style="width: 20rem;">
           <img src="Accueil/inter.png" class="card-img-top" alt="jpo">
           <div class="card-body">
             <h1>Conférence international 🌎</h1>
@@ -70,7 +70,7 @@
   
   </div>
   
-  <div class="chat">
+  <div class="chatlogo">
     <!--<a href="chat.php"><img src="chat.png" alt="chat" width="150"></a>-->
     <a href="acces_membre.php?test=chat"><img src="chat.png" alt="chat" width="150"></a>
   </div>
