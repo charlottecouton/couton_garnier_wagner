@@ -56,7 +56,13 @@
                     $id=$row["ID"];
                     $_SESSION['chat'] = $id;
                     $_SESSION['connecte'] = 1;
-                    header("refresh:0,url=index.php");
+                    if($_SESSION['connexion']== 2){
+                        header('Location: http://localhost/couton_garnier_wagner/administrateur.php');
+                    }
+                    else{
+                        header("refresh:0,url=index.php");
+                    }
+                    
                 }
                 //$passwordVerify = password_verify($password, $row["Mdp"]);
                            
