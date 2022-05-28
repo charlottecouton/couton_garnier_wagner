@@ -48,11 +48,13 @@
         $att = 'ID_E';
         $aut = 4;
         $table = 'Profs';
+        $page = 'http://localhost/couton_garnier_wagner/Calendrier/Public/infoRdvProf.php';
         
     }else if($compte==1){
         $att = 'ID_P';
         $aut = 5;
         $table = 'Etudiants';
+        $page = 'http://localhost/couton_garnier_wagner/Calendrier/Public/infoRdvEleve.php';
     }
 
     /*echo "comp".$compte;
@@ -119,16 +121,14 @@ $sql = "SELECT * FROM `events` WHERE $att = $id";
                             while($row2 = $result2->fetch_row()){
                               if($dateactuelle < $row[2]){
                                 
-                                
                                 echo '
                                 <div class="venir">
                                 <form method="post">
-                                <button type="submit" class="rdv btn btn-outline-success" >'.$row[1].' '.$row2[1].'</button>
-                                <button type="submit" class="rdv btn btn-outline-danger">Annuler</button>
+                                  <button type="submit" name="btn_'.$row[0].'" class="rdv btn btn-outline-success" formaction="'.$page.'">'.$row[1].' '.$row2[1].'</button>
+                                  <button type="submit" class="rdv btn btn-outline-danger">Annuler</button>
                                 </form>
                                 </div>
-                                <br>';//name="btn_".formaction="infordvEleve.php"
-
+                                <br>';
                               }
                             }
                         }
