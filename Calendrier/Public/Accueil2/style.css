@@ -1,0 +1,148 @@
+.page{
+    background-color: #1A0A39;
+}
+
+/*entete de la page*/
+.entete{
+    padding:30px;
+    display:flex;
+    align-items: center;
+}
+
+.navigation{
+    width: 800px;
+
+    /*alignement des éléments dans la division*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+a { 
+    color: white; 
+    font-size: 15px;
+    font-weight: 250;
+}
+
+a:hover{
+    color: white;
+}
+
+.btn{
+    color: white; 
+    font-size: 15px;
+    font-weight: 150;
+}
+
+.btn.round {
+	border-radius: 30px;
+    border-width: 1.5px;
+}
+
+.recherche{
+    width:280px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-control{
+    border-radius: 30px;
+    opacity: 0.8;
+}
+
+/*corps de la page*/
+
+/*message de bienvenue*/
+.message{
+    
+    /*disposition*/
+    padding-top:80px;
+    padding-bottom:80px;
+    
+    /*texte*/
+    color: white;
+    font-size: 20px;
+    font-weight: 100;
+}
+
+#bienvenue{
+    /*style*/
+    font-size: 70px;
+    font-family:Marker Felt;
+    font-weight: 300;
+    color:#D9D4E3;
+
+    /*position*/
+    padding: 0;
+    margin: 0;
+}
+
+/*Evenements de la semaine*/
+.actus{
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.card{
+    background-color: #D9D4E3;
+    border-radius: 10px;
+}
+
+.card-text{
+    padding-left: 15px;
+    padding-right: 10px;
+    text-align: justify;
+}
+.card-body{
+    padding: 0;
+    margin-right: 6px;
+}
+
+.card-body h1{
+    font-size: 30px;
+    padding-left: 15px;
+    padding-top: 15px;
+}
+.card-img-top{
+    height: 200px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.list-group{
+    width: 17.9rem;
+    padding-bottom: 6px;
+}
+
+.list-group-item{
+    background-color: transparent;
+}
+
+/*footer*/
+#footer{
+    
+    /*disposition*/
+    padding-top: 100px;
+    height: 200px;
+
+    /*style*/
+    color: white;
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.rej{
+    display: flex;
+    align-items: center;
+   
+}
+
+.rej{
+    display: flex;
+    align-items: center;
+}
