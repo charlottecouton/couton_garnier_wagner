@@ -1,0 +1,31 @@
+formation{
+    color:blueviolet;
+    display: block;
+    width: 250px;
+    font-size: 16pt ;
+    font-family: arial ;
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+diplome{
+    display: block;
+    font-size: 14pt;
+    padding-left: 10px;
+}
+
+date{
+    display: block;
+    font-size: 14pt;
+    color: red ;
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+experience{
+    display: block;
+    font-size: 15pt ;
+    font-style: italic;
+    font-family: arial ;
+    padding-left: 10px;
+}
