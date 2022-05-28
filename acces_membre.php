@@ -17,7 +17,7 @@
         if(isset( $_GET['test']))
         {
             if($_GET['test'] == "parcourir"){
-                header('Location: http://localhost/couton_garnier_wagner/parcourir.html');
+                header('Location: http://localhost/couton_garnier_wagner/parcourir.php');
                 //header("refresh:3,url=parcourir.html");
 
             }
