@@ -48,8 +48,10 @@
     /*style*/
     background-color:rgb(197, 107, 107);
     border-radius: 10px;
+    color:white;
 
     /*disposition*/
     width: 40%;
     text-align: center;
 }
+

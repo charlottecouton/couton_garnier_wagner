@@ -1,6 +1,5 @@
 <?php
 session_start();
-require '../views/header2.php';
 
 //Connection à la bdd
 $mysqli = new mysqli("localhost","root","root","omnes");
@@ -27,15 +26,12 @@ if($mysqli -> connect_errno)
         }
     }
 
-    $sql2 = "DELETE * FROM `events` WHERE ID = $id";
-    if(mysqli_query($mysqli, $sql)){
-        $result = $mysqli->query($sql);
+    $sql2 = "DELETE FROM `events` WHERE ID = $id";
+    if(mysqli_query($mysqli, $sql2)){
+        $result2 = $mysqli->query($sql2);
     }else {
         echo "Erreur : " . $sql2 . "<br>" . mysqli_error($mysqli);
     }
-
-require '../views/footer2.php';
-
-
+    header("refresh:0,url=http://localhost/couton_garnier_wagner/index.php");
     
 ?>

@@ -1,6 +1,8 @@
 <?php
     session_start();
 
+    require '../couton_garnier_wagner/Calendrier/views/header.php';
+
     //$mysqli = new mysqli("localhost","root","","omnes");
     $mysqli = new mysqli("localhost","root","root","omnes");
     //$mysqli = new mysqli("localhost","root","","omnes-1");
@@ -19,6 +21,8 @@
     $btn_admin = isset($_POST['btn_admin']);*/
     
     $err_msg ="";
+
+   
 
     if($mail==""){
         $err_msg = "Veuillez remplir un email";
@@ -51,10 +55,6 @@
             
             if($result -> num_rows >0){
                 
-                echo '<body class="page">
-                
-                </body>';
-                
                 while($row = $result->fetch_assoc()) {
                     
                     $id=$row["ID"];
@@ -79,8 +79,12 @@
             }else{
                 $id_exists = false;
                 $_SESSION['connecte'] = 0;
-                echo '<body class="page">
-                
+                echo '<body class="page ">
+                    <div class="container err-msg">
+                    <img src="dngr.png"></img>
+                    <br>
+                    <h1>Le mot de passe ou le mail est erroné</h1>
+                    </div>
                 </body>';
                 
                 header("refresh:2,url=connexion1.php");

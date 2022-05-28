@@ -66,11 +66,13 @@
                                     }
                                 }
                             }
+
+                            echo "mail : ".$to;
                                 
                             //$to = "inscription@provider.com";
                             $subject = "Confirmation de RDV";
                             $message = "Votre rdv du : 2022-".$month1.$month2."-".$day1.$day2." 1".$j.":00:00'";
-                            $from = "omnessoclaire@edu.ece.fr";
+                            $from = "solene.garnier@edu.ece.fr";
                             $headers = "From:" . $from;
                             //ENVOI LE MAIL
                             mail($to,$subject,$message,$headers);
@@ -110,7 +112,38 @@
                                 $sql = "INSERT INTO `events` (`Nom`, `Start`, `End`, `ID_P`,`ID_E`) 
                                 VALUES ('barde a patate', '2022-$month1$month2-$day1$day2 1$j:00:00', '2022-$month1$month2-$day1$day2 1$heurePlusUn:00:00', $id,$idc)"; 
                                 //echo "Rendez-vous de : 2022-".$month1.$month2.'-'.$day1.$day2.'-'.'1'.$j.'h<br/><br/>';
-                            
+                                
+                                //SELECTIONNE LE MAIL DE L ETUDIANT
+                            $sqlmail = "SELECT Mail FROM `etudiants` INNER JOIN `events` WHERE etudiants.ID = events.ID_E";
+                            if (mysqli_query($mysqli, $sqlmail)) 
+                            {
+                                if($resultmail = $mysqli ->query($sqlmail))
+                                {
+                                    if($resultmail -> num_rows >0)
+                                    {
+                                        while($rowmail = $resultmail -> fetch_row() )
+                                        {
+                                            $to=$rowmail[0];
+                                        }  
+                                    }
+                                    else 
+                                    {
+                                        echo "Erreur : " . $sql2 . "<br>" . mysqli_error($mysqli);
+                                    }
+                                }
+                            }
+
+                            echo "mail : ".$to;
+
+                            $subject = "Confirmation de RDV";
+                            $message = "Votre rdv du : 2022-".$month1.$month2."-".$day1.$day2." 1".$j.":00:00'";
+                            $from = "solene.garnier@edu.ece.fr";
+                            $headers = "From:" . $from;
+                            //ENVOI LE MAIL
+                            mail($to,$subject,$message,$headers);
+                            echo "Mail Sent.";
+                            die();
+
                                 //Envoie la requete à la bdd
                                 mysqli_query($mysqli, $sql);
                                 $sql2 = "SELECT ID FROM `events` WHERE Start = '2022-$month1$month2-$day1$day2 1$j:00:00'";
@@ -156,6 +189,37 @@
                                     $sql = "INSERT INTO `events` (`Nom`, `Start`, `End`, `ID_P`,`ID_E`) 
                                     VALUES ('barde a patate', '2022-$month1$month2-$day1$day2 1$j:00:00', '2022-$month1$month2-$day1$day2 1$heurePlusUn:00:00', $id,1)"; 
                                 
+                                //SELECTIONNE LE MAIL DE L ETUDIANT
+                            $sqlmail = "SELECT Mail FROM `etudiants` INNER JOIN `events` WHERE etudiants.ID = events.ID_E";
+                            if (mysqli_query($mysqli, $sqlmail)) 
+                            {
+                                if($resultmail = $mysqli ->query($sqlmail))
+                                {
+                                    if($resultmail -> num_rows >0)
+                                    {
+                                        while($rowmail = $resultmail -> fetch_row() )
+                                        {
+                                            $to=$rowmail[0];
+                                        }  
+                                    }
+                                    else 
+                                    {
+                                        echo "Erreur : " . $sql2 . "<br>" . mysqli_error($mysqli);
+                                    }
+                                }
+                            }
+
+                            $subject = "Confirmation de RDV";
+                            $message = "Votre rdv du : 2022-".$month1.$month2."-".$day1.$day2." 1".$j.":00:00'";
+                            $from = "solene.garnier@edu.ece.fr";
+                            $headers = "From:" . $from;
+                            //ENVOI LE MAIL
+                            mail($to,$subject,$message,$headers);
+                            echo "Mail Sent.";
+                            die();
+
+                            echo "mail : ".$to;
+
                                 //Envoie la requete à la bdd
                                 mysqli_query($mysqli, $sql);
                                 $sql2 = "SELECT ID FROM `events` WHERE Start = '2022-$month1$month2-$day1$day2 1$j:00:00'";
@@ -192,6 +256,37 @@
                                     $sql = "INSERT INTO `events` (`Nom`, `Start`, `End`, `ID_P`,`ID_E`) 
                                             VALUES ('barde a patate', '2022-$month1$month2-$day1$day2 1$j:00:00', '2022-$month1$month2-$day1$day2 1$heurePlusUn:00:00', $id,1)"; 
                                     
+                                    //SELECTIONNE LE MAIL DE L ETUDIANT
+                            $sqlmail = "SELECT Mail FROM `etudiants` INNER JOIN `events` WHERE etudiants.ID = events.ID_E";
+                            if (mysqli_query($mysqli, $sqlmail)) 
+                            {
+                                if($resultmail = $mysqli ->query($sqlmail))
+                                {
+                                    if($resultmail -> num_rows >0)
+                                    {
+                                        while($rowmail = $resultmail -> fetch_row() )
+                                        {
+                                            $to=$rowmail[0];
+                                        }  
+                                    }
+                                    else 
+                                    {
+                                        echo "Erreur : " . $sql2 . "<br>" . mysqli_error($mysqli);
+                                    }
+                                }
+                            }
+
+                            $subject = "Confirmation de RDV";
+                            $message = "Votre rdv du : 2022-".$month1.$month2."-".$day1.$day2." 1".$j.":00:00'";
+                            $from = "solene.garnier@edu.ece.fr";
+                            $headers = "From:" . $from;
+                            //ENVOI LE MAIL
+                            mail($to,$subject,$message,$headers);
+                            echo "Mail Sent.";
+                            die();
+
+                            echo "mail : ".$to;
+
                                 //Envoie la requete à la bdd
                                 mysqli_query($mysqli, $sql);
                                 

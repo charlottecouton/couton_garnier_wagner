@@ -1,5 +1,7 @@
 <?php
 
+require '../couton_garnier_wagner/Calendrier/views/header.php';
+    
     $mysqli = new mysqli("localhost","root","root","omnes");
     //$mysqli = new mysqli("localhost","root","","omnes");
     //$mysqli = new mysqli("localhost","root","","omnes-1");
@@ -54,7 +56,13 @@
                 header("refresh:0,url=index.php");
             }
     }else{
-        echo '<h1>'.$err_msg.'</h1>';
+        echo '<body class="page">
+                    <div class="container err-msg">
+                    <img src="dngr.png"></img>
+                    <br>
+                    <p>'.$err_msg.'</p>
+                    </div>
+            </body>';
         header("refresh:2,url=inscription1.php");
     }
 ?>
