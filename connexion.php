@@ -1,8 +1,8 @@
 <?php
     session_start();
 
-    $mysqli = new mysqli("localhost","root","","omnes");
-    //$mysqli = new mysqli("localhost","root","root","omnes");
+    //$mysqli = new mysqli("localhost","root","","omnes");
+    $mysqli = new mysqli("localhost","root","root","omnes");
 
     if($mysqli -> connect_errno)
     {
@@ -67,7 +67,7 @@
 
             }else{
                 $id_exists = false;
-                $_SESSION['connecte'] = null;
+                $_SESSION['connecte'] = 0;
                 echo '<!DOCTYPE html>
                 <html>
                     <head>

@@ -42,20 +42,26 @@
           <div class="dropdown pdropdown">
             
             <!--ouvrir la page parcourir-->
-            <a class="nav-link" aria-current="page" href="parcourir.html">PARCOURIR</a>
+            <!--<a class="nav-link" aria-current="page" href="parcourir.html">PARCOURIR</a>-->
+            <a class="nav-link" aria-current="page" href="acces_membre.php?test=parcourir">PARCOURIR</a>
             
             <!--menu déroulant-->
-            <button class="btn dropdown-toggle dpd btn-ent" href="parcourir.html" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-            </button>
+            <!--<button class="btn dropdown-toggle dpd btn-ent" href="parcourir.html" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            </button>-->
+            <button class="btn dropdown-toggle dpd btn-ent" href="acces_membre.php?test=parcourir" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"></button>
+
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li><a class="dropdown-item" href="enseignement.php">Enseignement</a></li>
+              <!--<li><a class="dropdown-item" href="enseignement.php">Enseignement</a></li>
               <li><a class="dropdown-item" href="recherche.html">Recherche</a></li>
-              <li><a class="dropdown-item" href="international.php">International</a></li>
+              <li><a class="dropdown-item" href="international.php">International</a></li>-->
+              <li><a class="dropdown-item" href="acces_membre.php?test=enseignement">Enseignement</a></li>
+              <li><a class="dropdown-item" href="acces_membre.php?test=recherche">Recherche</a></li>
+              <li><a class="dropdown-item" href="acces_membre.php?test=international">International</a></li>
             </ul>
         </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="enseignement.php">RENDEZ-VOUS</a>
+          <a class="nav-link" href="acces_membre.php?test=rdv">RENDEZ-VOUS</a>
         </li>
         <li class="nav-item recherche">
           
@@ -69,6 +75,9 @@
           <a class="nav-link" href="utilisateur.html"><button type="button" class="btn round btn-outline-light">Connexion</button></a>
         </li>
       </ul>
+
+      <div id=" affichageTest"></div>
+
     </div>
   </nav>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
@@ -145,7 +154,8 @@
   </div>
   
   <div class="chat">
-    <a href="chat.php"><img src="chat.png" alt="chat" width="150"></a>
+    <!--<a href="chat.php"><img src="chat.png" alt="chat" width="150"></a>-->
+    <a href="acces_membre.php?test=chat"><img src="chat.png" alt="chat" width="150"></a>
   </div>
 </body>
 
