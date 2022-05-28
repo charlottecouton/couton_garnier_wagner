@@ -3,9 +3,9 @@
     require '../couton_garnier_wagner/Calendrier/views/header.php';
     //require '../Calendrier/views/header.php';
     /*accès Charlotte*/
-    //$mysqli = new mysqli("localhost","root","root","omnes");
+    $mysqli = new mysqli("localhost","root","root","omnes");
     //$mysqli = new mysqli("localhost","root","","omnes");
-    $mysqli = new mysqli("localhost","root","","omnes-1");
+    //$mysqli = new mysqli("localhost","root","","omnes-1");
     if($mysqli -> connect_errno)
     {   //Si la connexion echoue
         echo "Failed to connect to MySQL : " . $mysqli -> connect_error;

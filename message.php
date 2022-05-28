@@ -4,13 +4,13 @@
     
     //Connection BBD
     /*accès Anais*/
-    $mysqli = new mysqli("localhost","root","","omnes-1");
+    //$mysqli = new mysqli("localhost","root","","omnes-1");
 
     /*accès Solène*/
     //$mysqli = new mysqli("localhost","root","","omnes");
     
     /*accès Charlotte*/
-   // $mysqli = new mysqli("localhost","root","root","omnes");
+    $mysqli = new mysqli("localhost","root","root","omnes");
     if($mysqli -> connect_errno)
     {  //Si la connection est fausse
         echo "Failed to connect to MySQL : " . $mysqli -> connect_error;

@@ -4,18 +4,7 @@
 ?>
 <body class="page">
 
-  <script>/*
-    document.setTimeout(Swal.fire({
-            title: 'Un ptit creux ?',
-            text: 'Prenez donc un cookie pour le goûter !',
-            imageUrl: 'https://www.pngmart.com/files/4/Cookies-PNG-Transparent-Image.png',
-            imageWidth: 400,
-            imageHeight: 200,
-            imageAlt: 'Custom image',
-            showCancelButton: true,
-            cancelButtonColor: '#d33',
-            footer: '<a href="">Passons à la suite de la présentation</a>',
-        }),1000);*/
+  <script>
 
         document.getElementById("bnt_accueil").addEventListener("click",
                 Swal.fire({

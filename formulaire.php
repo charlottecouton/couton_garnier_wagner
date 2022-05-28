@@ -1,9 +1,9 @@
 <?php
     //CONNECTION A LA BASE DE DONNEE
     //NOM DE LA BASE : omnes
-    //$mysqli = new mysqli("localhost","root","root","omnes");
+    $mysqli = new mysqli("localhost","root","root","omnes");
     //$mysqli = new mysqli("localhost","root","","omnes");
-    $mysqli = new mysqli("localhost","root","","omnes-1");
+    //$mysqli = new mysqli("localhost","root","","omnes-1");
 
     if($mysqli -> connect_errno)
     {   //SI CONNECTION ECHOUE
