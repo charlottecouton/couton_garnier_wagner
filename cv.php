@@ -26,13 +26,11 @@
                 {
                     //AFFICHAGE SOUS FORME XML
                     echo "<cv>";
-                    echo "Formation : ";
                     echo "<formation>$row[2]</formation>";
-                    echo "diplome et date d'obtention : ";
                     echo "<diplome>$row[3]</diplome>";
                     echo "<date>$row[4]</date>";
-                    echo "experience : ";
                     echo"<experience>$row[1]</experience>";
+                    echo "<publiscience>$row[5]</publiscience>";
                     echo "</cv>";
                 }   
             }
