@@ -14,11 +14,14 @@
         exit();
     }
     //Fomulaire pour remplir bdd envoyé a motif.php
-    echo '<form method="post">
-        Motif du rendez-vous : <input type="text" name="motif">
-        <button type="submit" name="btn_soumettre" value="soumettre" formaction="motif.php">Envoyer</button>
-        <button type="reset">Effacer</button>
-        </form>';
+    echo '<div class="container">
+    <form method="post">
+        <h1 class="titre-envoi"> Motif du rendez-vous : </h1> <br> <br> <input type="text" name="motif">
+        <button type="submit" name="btn_soumettre" class="btn btn-outline-light round" value="soumettre" formaction="motif.php">Envoyer</button>
+        <button class="btn btn-outline-light round" type="reset">Effacer</button>
+        </form>
+        
+        </div>';
 
     //$motif = isset($_POST['motif'])?$_POST['motif']:'';
 
@@ -190,5 +193,4 @@
             }
         }
     }                       
-    require '../views/footer.php';
 ?>

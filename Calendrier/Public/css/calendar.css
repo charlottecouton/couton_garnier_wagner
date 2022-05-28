@@ -65,10 +65,19 @@
 
 .rdv-page{
     display: flex;
+    color: #ffffff;
 }
 
 .venir{
     width: 100%;
     display: flex;
     justify-content: space-between;
+}
+
+.texteinfo{
+    color: white;
+}
+
+.titre-envoi{
+    color: white;
 }

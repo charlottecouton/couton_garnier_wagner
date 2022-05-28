@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../views/header.php';
+require '../views/header2.php';
 
 //Connection à la bdd
 $mysqli = new mysqli("localhost","root","root","omnes");
@@ -33,7 +33,9 @@ if($mysqli -> connect_errno)
     }else {
         echo "Erreur : " . $sql2 . "<br>" . mysqli_error($mysqli);
     }
-    
+
+require '../views/footer2.php';
+
 
     
 ?>

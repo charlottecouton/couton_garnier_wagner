@@ -123,3 +123,7 @@ if($mysqli -> connect_errno)
 </form>
 
 </div>
+
+<?php
+require '../views/footer2.php';
+?>

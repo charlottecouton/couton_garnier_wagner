@@ -64,6 +64,6 @@
                 echo "Erreur : " . $sql . "<br>" . mysqli_error($mysqli);
             }
         }
-        require '../views/footer.php';
+        require '../views/footer2.php';
 ?>
 

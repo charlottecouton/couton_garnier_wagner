@@ -112,7 +112,7 @@
                 
                 </body>';
                 
-                header("refresh:2,url=connexion.html");
+                header("refresh:2,url=connexion1.php");
             }
         }else{
             echo "Erreur : " . $sql . "<br>" . mysqli_error($mysqli);

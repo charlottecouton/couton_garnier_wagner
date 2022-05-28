@@ -1,6 +1,6 @@
 <?php
     session_start();
-    
+
     require '../src/Date/Month.php';//Pour inclure la classe
     $month = new App\Date\Month($_GET['month']?? null,$_GET['year']?? null); 
     $start = $month->getStartingDay();
@@ -16,7 +16,7 @@
 
     //POUR LES AFFICHAGE DE HAUT ET BAS DE PAGE
     require '../views/header2.php';
-    require '../views/footer.php';
+   
 ?>
 
 <!doctype html>
@@ -78,7 +78,7 @@
                             while($row2 = $result2->fetch_row()){
                               if($dateactuelle > $row[2]){
                                 echo '<form method="post">
-                                <button type="submit" class="rdv btn btn-outline-default" disabled >'.$row[1].' '.$row2[1].'</button>
+                                <button type="submit" class="rdv btn btn-outline-light" disabled >'.$row[1].' '.$row2[1].'</button>
                                 </form>
                                 <br>';
 
@@ -146,5 +146,9 @@ $sql = "SELECT * FROM `events` WHERE $att = $id";
     }else {
       echo "Erreur : " . $sql . "<br>" . mysqli_error($mysqli);
         }
+
+
+
+//require '../views/footer2.php';
 
 ?>

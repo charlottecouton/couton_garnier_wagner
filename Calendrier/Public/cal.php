@@ -167,13 +167,13 @@
                                 {   //QD = 0 c'est pas le jour donc qd 1 c'est le jour
                                     if($dimanche ==1){
                                         echo '<form method="post" class="bouton">
-                                        <button type="submit" class="libre btn btn-outline-default" name="btn_'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
+                                        <button type="submit" class="libre btn btn-outline-light" name="btn_'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
                                         '" value="'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
                                         '" disabled>'.$l.'h00-'.($l+1).'h00</button>
                                         </form>';
                                     }else if($dimanche == 0 && $jeudi == 0 && $samedi == 0){
                                         echo '<form method="post" class="bouton">
-                                        <button type="submit" class="libre btn btn-outline-default" name="btn_'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
+                                        <button type="submit" class="libre btn btn-outline-light" name="btn_'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
                                         '" value="'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
                                         '" disabled>'.$l.'h00-'.($l+1).'h00</button>
                                         </form>';
@@ -187,7 +187,7 @@
                                         //AFFICHAGE SAMEDI DISABLE
                                     }else if($dimanche == 0 && $jeudi == 0 && $samedi == 1){
                                         echo '<form method="post" class="bouton">
-                                        <button type="submit" class="libre btn btn-outline-default" name="btn_'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
+                                        <button type="submit" class="libre btn btn-outline-light" name="btn_'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
                                         '" value="'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
                                         '" disabled>'.$l.'h00-'.($l+1).'h00</button>
                                         </form>';
@@ -207,7 +207,7 @@
                             if($vac == '07' || $vac == '08')
                             {
                                 echo '<form method="post" class="bouton">
-                                <button type="submit" class="libre btn btn-outline-default" name="btn_'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
+                                <button type="submit" class="libre btn btn-outline-light" name="btn_'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
                                 '" value="'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
                                 '" disabled >'.$l.'h00-'.($l+1).'h00</button>
                                 </form>'; 
@@ -242,7 +242,7 @@
                                 {   //QD = 0 c'est pas le jour donc qd 1 c'est le jour
                                     if($dimanche ==1){
                                         echo '<form method="post" class="bouton">
-                                        <button type="submit" class="libre btn btn-outline-default" name="btn_'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
+                                        <button type="submit" class="libre btn btn-outline-light" name="btn_'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
                                         '" value="'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
                                         '" disabled>'.$l.'h00-'.($l+1).'h00</button>
                                         </form>';
@@ -266,7 +266,7 @@
                                         //AFFICHAGE SAMEDI DISABLE
                                     }else if($dimanche == 0 && $jeudi == 0 && $samedi == 1){
                                         echo '<form method="post" class="bouton">
-                                        <button type="submit" class="libre btn btn-outline-default" name="btn_'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
+                                        <button type="submit" class="libre btn btn-outline-light" name="btn_'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
                                         '" value="'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
                                         '" disabled >'.$l.'h00-'.($l+1).'h00</button>
                                         </form>';
@@ -293,5 +293,5 @@
 
 </table>
 
-<?php require '../views/footer.php'; ?>
+<?php require '../views/footer2.php'; ?>
 

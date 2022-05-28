@@ -50,7 +50,9 @@
                       <input type="password" class="form-control" id="exampleInputPassword1" name="mdp">
                     </div>
                     <button type="submit" class="btn btn-co round btn-outline-light" value="ins" name="btn-ins" formaction="inscription.php">Inscription</button>
-                  </form>
+                    <button type="reset" class="btn btn-co round btn-outline-light" value="ins" name="btn-ins">Effacer</button>
+
+                </form>
             </div>
             <div class="col-3"></div>
         </div>

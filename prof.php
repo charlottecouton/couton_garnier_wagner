@@ -43,8 +43,9 @@
              </div>
              <div>
              <form method="post">
-                 <button type="submit" class="btn round btn-outline-success" formaction="/couton_garnier_wagner/Calendrier/Public/index.php">Rendez-vous</button>
-             </form>
+                 <button type="submit" class="btn round btn-outline-success" formaction="/couton_garnier_wagner/Calendrier/Public/cal.php">Rendez-vous</button>
+                 <button type="submit" class="btn round btn-outline-primary" formaction="cv.php">CV</button>
+              </form>
                  </div>
              <br>
              <div class="row">

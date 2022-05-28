@@ -75,7 +75,7 @@
             }
         ?>
         <form method="post">
-        <button type="submit" class="btn btn-co round btn-outline-success" name="btn-ins" formaction="/couton_garnier_wagner/Calendrier/Public/index.php" value="ins">Rendez-vous</button>
+        <button type="submit" class="btn  round btn-outline-success" name="btn-ins" formaction="/couton_garnier_wagner/Calendrier/Public/cal.php" value="ins">Rendez-vous</button>
         </post>
         <br><br>
 

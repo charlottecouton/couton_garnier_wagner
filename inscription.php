@@ -1,5 +1,5 @@
 <?php
-    
+
     $mysqli = new mysqli("localhost","root","root","omnes");
     //$mysqli = new mysqli("localhost","root","","omnes");
     
@@ -47,12 +47,13 @@
             $sql = "INSERT INTO Etudiants (Nom, Prenom, Adresse1, Adresse2, Ville, CP, Pays, Tel, Mail, Mdp)VALUES('$nom', '$prenom', '$ad1', '$ad2', '$ville', '$cp', '$pays', '$tel', '$mail', '$passwordHash')";
             
             if(mysqli_query($mysqli, $sql)){
-              header("refresh:10,url=index.html");
+                header("refresh:0,url=index.php");
             }else{
                 echo "Erreur : " . $sql . "<br>" . mysqli_error($mysqli);
-                header("refresh:10,url=index.html");
+                header("refresh:0,url=index.php");
             }
     }else{
-        echo $err_msg;
+        echo '<h1>'.$err_msg.'</h1>';
+        header("refresh:2,url=inscription1.php");
     }
 ?>

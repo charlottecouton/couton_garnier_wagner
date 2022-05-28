@@ -223,3 +223,7 @@
 
 </table>
 
+
+<?php
+require '../views/footer2.php';
+?>

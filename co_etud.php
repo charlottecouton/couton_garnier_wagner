@@ -24,8 +24,8 @@
                     
                     <br><br>
                     <p>Vous n'avez pas encore de compte ? Inscrivez-vous!</p>
-                    <button type="submit" class="btn btn-co round btn-outline-light" name="btn-ins" formaction = "inscription.html" value="ins">Inscription</button>
-                    <button type="submit" class="btn btn-co round btn-outline-light" name="btn-bck" formaction = "utilisateur.html" value="back">Retour</button>
+                    <button type="submit" class="btn btn-co round btn-outline-light" name="btn-ins" formaction = "inscription1.php" value="ins">Inscription</button>
+                    <button type="submit" class="btn btn-co round btn-outline-light" name="btn-bck" formaction = "utilisateur1.php" value="back">Retour</button>
 
                   </form>
             </div>

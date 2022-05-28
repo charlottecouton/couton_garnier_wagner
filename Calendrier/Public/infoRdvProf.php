@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../views/header.php';
+require '../views/header2.php';
 
 //Connection à la bdd
 $mysqli = new mysqli("localhost","root","root","omnes");
@@ -69,7 +69,7 @@ if($mysqli -> connect_errno)
         if($row_cnt5 >0){
             while($row5 = $result5-> fetch_row() )
             {
-                echo 'Nom : '.$row5[1] .'<br/>';
+                echo ' <div class="texteinfo"> Nom : '.$row5[1] .'<br/>';
                 echo 'Prenom : '.$row5[2].'<br/>';
                 echo 'Mail : '.$row5[4].'<br/>';
             }
@@ -108,7 +108,7 @@ if($mysqli -> connect_errno)
                 {
                     echo 'Message : '.$row2[1].'<br>';
                     echo 'Heure de debut : '.$row2[2].'<br>';
-                    echo 'Heure de fin : '.$row2[3].'<br><br>';
+                    echo 'Heure de fin : '.$row2[3].'<br><br> </div>';
                 }
             }
     }else {
@@ -124,3 +124,8 @@ if($mysqli -> connect_errno)
 </form>
 
 </div>
+
+
+<?php
+require '../views/footer2.php';
+?>
