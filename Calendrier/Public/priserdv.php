@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require '../views/header.php';
+    require '../views/header2.php';
 
     ////CONNEXION À LA BDD////
     //accès Charlotte

@@ -13,7 +13,7 @@
     //echo "date actuelle : ".$dateactuelle;
 
     //POUR LES AFFICHAGE DE HAUT ET BAS DE PAGE
-    require '../views/header.php';
+    require '../views/header2.php';
     require '../views/footer.php';
 ?>
 
