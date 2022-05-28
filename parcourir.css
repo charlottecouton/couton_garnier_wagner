@@ -2,6 +2,7 @@
     /*disposition*/
     margin-top:50px;
     padding: 0%;
+    color: #D9D4E3;
 }
 
 
@@ -14,7 +15,7 @@
     float: right;
 }
 
-.titre{
+.titrepar{
     font-size: 50px;
     color: #D9D4E3;
     font-weight: 300;

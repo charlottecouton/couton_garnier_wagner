@@ -31,7 +31,7 @@
         $etudiant = $_SESSION['recepteur'];
         break;
       case 2 :
-        header("refresh:0,url=index.html");
+        header("refresh:0,url=index.php");
         break;
     }
     
@@ -42,7 +42,7 @@
         $sql = "INSERT INTO `messages`(`Message`, `Date`,`ID_E`,`ID_P`,`Emetteur`  ) VALUES ('$message',NOW(),'$etudiant','$prof', $emetteur)";
         
         if (mysqli_query($mysqli, $sql)) {
-            header("refresh:0,url=index.html");
+            header("refresh:0,url=index.php");
         }else 
         {
             echo "Erreur : " . $sql . "<br>" . mysqli_error($mysqli);

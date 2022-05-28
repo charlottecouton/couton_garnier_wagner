@@ -13,13 +13,13 @@
     height:400px;
 }
 
-.titre h1{
+.titreinter h1{
     padding-top:5%;
     color:#D9D4E3;
     font-size: 60px;
 }
 
-.titre p{
+.titreinter p{
     color:#D9D4E3;
     font-size: 25px;
     font-weight: 200;
@@ -28,4 +28,49 @@
 .uni{
     margin-top:6%;
     color:#D9D4E3;
+}
+
+.europe{
+    display: flex;
+    align-items: center;
+}
+
+.amerique{
+    display: flex;
+    align-items: center;
+    padding-top: 100px;
+}
+
+.am{
+    text-align: right;
+}
+
+.asie{
+    display: flex;
+    align-items: center;
+    padding-top: 100px;
+}
+
+.afrique{
+    display: flex;
+    align-items: center;
+    padding-top: 100px;
+}
+
+.af{
+    text-align: right;
+}
+
+.trans{
+    opacity: 0.7;
+}
+
+audio::-webkit-media-controls-panel {
+    background-color:#5d5176;
+}
+
+.coordonnees{
+    text-align: center;
+    color:#D9D4E3;
+    font-weight: 100;
 }

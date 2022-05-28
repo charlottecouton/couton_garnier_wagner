@@ -35,6 +35,11 @@ a:hover{
     font-size: 15px;
     font-weight: 150;
 }
+.btn-ent:hover{
+    color: white; 
+    font-size: 15px;
+    font-weight: 150;
+}
 
 .dpd:hover{
     color: white; 
@@ -103,7 +108,7 @@ a:hover{
     justify-content: space-between;
 }
 
-.card{
+.event{
     background-color: #D9D4E3;
     border-radius: 10px;
 }
@@ -209,7 +214,7 @@ a:hover{
     font-weight: 100;
 }
 
-.chat {
+.chatlogo {
     bottom: 0;
     padding-left:90%;
     position: sticky;

@@ -4,8 +4,9 @@
     echo "<?xml version='1.0' encoding='UTF-8'?>";
     //ROOT XML
     echo "<curicculum>";
-    //CONNECTION BDD : CHATBOX
-    $mysqli = new mysqli("localhost","root","","chatbox");
+    //CONNECTION BDD 
+    //$mysqli = new mysqli("localhost","root","","omnes");
+    $mysqli = new mysqli("localhost","root","root","omnes");
     if($mysqli -> connect_errno)
     {   //SI CONNECTION ECHOUE
         echo "Failed to connect to MySQL : " . $mysqli -> connect_error;
