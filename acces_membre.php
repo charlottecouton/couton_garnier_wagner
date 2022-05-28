@@ -8,7 +8,7 @@
     //if($_SESSION['chat']==1){
         //echo "looser connect toi";
         //header("refresh:3,url=index.html");
-        header('Location: http://localhost/couton_garnier_wagner/index.html');
+        header('Location: http://localhost/couton_garnier_wagner/index.php');
     }
     else{
         //echo "TRUE ";

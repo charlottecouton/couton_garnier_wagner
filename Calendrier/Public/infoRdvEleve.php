@@ -25,6 +25,8 @@ if($mysqli -> connect_errno)
             }
         }
     }
+
+    echo '<div class="container">';
     //echo $id;
     $sql1 = "SELECT * FROM `Etudiants` WHERE Nom = '$id'";
 
@@ -43,17 +45,26 @@ if($mysqli -> connect_errno)
 
     $idrdv = $_SESSION['idRDV'];
 
-    $sql2 = "SELECT * FROM `events` WHERE ID_E = $idrdv";
-    mysqli_query($mysqli, $sql2);
-    $result2 = $mysqli->query($sql2);
-    $row_cnt2 = $result2->num_rows;
+    $sql2 = "SELECT * FROM `events` WHERE ID = $idrdv";
+    if(mysqli_query($mysqli, $sql2)){
+        $result2 = $mysqli->query($sql2);
+            $row_cnt2 = $result2->num_rows;
 
-    if($row_cnt2 >0){
-        while($row2 = $result2 -> fetch_row() )
-        {
-            echo 'Message : '.$row2[1];
-            echo 'Heure de debut : '.$row2[2];
-            echo 'Heure de fin : '.$row2[3];
-        }
+            if($row_cnt2 >0){
+                while($row2 = $result2 -> fetch_row() )
+                {
+                    echo 'Message : '.$row2[1].'<br>';
+                    echo 'Heure de debut : '.$row2[2].'<br>';
+                    echo 'Heure de fin : '.$row2[3].'<br><br>';
+                }
+            }
+    }else {
+        echo "Erreur : " . $sql2 . "<br>" . mysqli_error($mysqli);
     }
 ?>
+
+<form method="post">
+    <button type="submit" class="rdv btn btn-outline-danger" formaction="http://localhost/couton_garnier_wagner/index.php">Retour</button>
+</form>
+
+</div>

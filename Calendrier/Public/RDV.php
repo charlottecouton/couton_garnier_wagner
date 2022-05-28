@@ -21,7 +21,11 @@
 <html lang="en">
 
 <body class="page">
-  <h1>Vos rendez-vous</h1>
+  <div class="container">
+    <div class="row rdv-page">
+    <div class="col-6">
+  <h1>Historique de vos rendez-vous</h1>
+    <br><br>
   
 
 <?php
@@ -71,12 +75,9 @@
                               if($dateactuelle > $row[2]){
                                 echo '<form method="post">
                                 <button type="submit" class="rdv btn btn-outline-default" disabled >'.$row[1].' '.$row2[1].'</button>
-                                </form>';
+                                </form>
+                                <br>';
 
-                              }else{
-                                echo '<form method="post">
-                                <button type="submit" class="rdv btn btn-outline-success">'.$row[1].' '.$row2[1].'</button>
-                                </form>';
                               }
                             }
                         }
@@ -92,4 +93,56 @@
     }else {
       echo "Erreur : " . $sql . "<br>" . mysqli_error($mysqli);
         }
+?>
+
+      </div>
+        <div class="col-6">
+          <h1>Les rendez vous à venir</h1>
+          <br><br>
+
+<?php
+
+$sql = "SELECT * FROM `events` WHERE $att = $id";
+    
+    
+    if(mysqli_query($mysqli, $sql)){
+        if($result = $mysqli ->query($sql)){
+            if($result->num_rows>0){
+                
+                while($row = $result->fetch_row()){
+                  
+                  $sql2 = "SELECT * FROM $table WHERE ID = $row[$aut]";
+                  if(mysqli_query($mysqli, $sql2)){
+                    if($result2 = $mysqli ->query($sql2)){
+                        if($result2->num_rows>0){
+                            
+                            while($row2 = $result2->fetch_row()){
+                              if($dateactuelle < $row[2]){
+                                
+                                
+                                echo '
+                                <div class="venir">
+                                <form method="post">
+                                <button type="submit" class="rdv btn btn-outline-success" >'.$row[1].' '.$row2[1].'</button>
+                                <button type="submit" class="rdv btn btn-outline-danger">Annuler</button>
+                                </form>
+                                </div>
+                                <br>';//name="btn_".formaction="infordvEleve.php"
+
+                              }
+                            }
+                        }
+                    }
+                  }else {
+                    echo "Erreur : " . $sql2 . "<br>" . mysqli_error($mysqli);
+                      }
+
+                
+                }
+            }
+        }
+    }else {
+      echo "Erreur : " . $sql . "<br>" . mysqli_error($mysqli);
+        }
+
 ?>

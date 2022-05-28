@@ -31,15 +31,19 @@
 <!--FIN DE CETTE BARRE DES TACHES***********************************************************************-->
 
 <?php
-    //Connection à la bdd
+    ////CONNEXION À LA BDD////
+    //accès Charlotte
     $mysqli = new mysqli("localhost","root","root","omnes");
+    //accès Anaïs et Solène
     //$mysqli = new mysqli("localhost","root","","omnes");
+
     if($mysqli -> connect_errno)
     {   //SI CONNECTION ECHOUE
         echo "Failed to connect to MySQL : " . $mysqli -> connect_error;
         exit();
     }
-    //Requete sql //$sql = "SELECT * FROM events";
+
+    //Requete sql qui selectionne les dates comprises entre le 1er avril et le 30 juillet
     $sql = "SELECT * FROM events WHERE Start BETWEEN '2022-04-01 08:00:00' AND '2022-07-30 20:59:59'ORDER BY Start ASC";
     if (mysqli_query($mysqli, $sql)) 
         {   
@@ -188,7 +192,7 @@
                                         echo '<form method="post" class="bouton">
                                         <button type="submit" class="libre btn btn-outline-default" name="btn_'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
                                         '" value="'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
-                                        '" disabled >'.$l.'h00-'.($l+1).'h00</button>
+                                        '" disabled>'.$l.'h00-'.($l+1).'h00</button>
                                         </form>';
                                     }
                                 }else
@@ -251,6 +255,9 @@
                                         '" value="'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
                                         '" formaction="/couton_garnier_wagner/calendrier/public/priserdv.php?month='.$date->format('m').'day='.$date->format('d').'heure='.$l.'">'.$l.'h00-'.($l+1).'h00</button>
                                         </form>';
+                                        //Chemin pour Solène
+                                        ///couton_garnier_wagner/couton_garnier_wagner/calendrier/public/priserdv.php?month='.$date->format('m').'day='.$date->format('d').'heure='.$l.'
+                                        
                                         //AFFICHAGE DES ASSO
                                     }else if($dimanche == 0 && $jeudi == 1 && $samedi == 0){
                                         echo '<form method="post" class="bouton">
@@ -258,6 +265,7 @@
                                         '" value="'.$date->format('Y').'-'.$date->format('m').'-'.$date->format('d').'-'.$l.
                                         '" disabled>Associations 🎉</button>
                                         </form>';
+                                        
                                         //AFFICHAGE SAMEDI DISABLE
                                     }else if($dimanche == 0 && $jeudi == 0 && $samedi == 1){
                                         echo '<form method="post" class="bouton">

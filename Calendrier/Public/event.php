@@ -19,8 +19,6 @@
                 {
                     while($row = $statement -> fetch_row() )
                     { 
-                        //echo $_POST['btn_'.$row[0]];
-                        //echo isset($_POST['btn_'.$row[0]]);
                         if(isset($_POST['btn_'.$row[0]]))
                         { 
                             $sql2 = "SELECT ID FROM events WHERE ID ='$row[0]'";

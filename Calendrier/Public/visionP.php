@@ -162,7 +162,7 @@
                                                 //'" value="'.$row2[0].'"';
                                                 echo '<form method="post" class="bouton">
                                                 <button  class="btn btn-danger pris" type="submit" name="btn_'.$row2[0].
-                                                '" value="'.$row2[0].'" formaction="/couton_garnier_wagner/couton_garnier_wagner/Calendrier/public/infoRdvEleve.php">'.$row2[0].'</button>
+                                                '" value="'.$row2[0].'" formaction="/couton_garnier_wagner/Calendrier/public/infoRdvEleve.php">'.$row2[0].'</button>
                                                 </form>';//.$row[1]
                                             }
                                             

@@ -29,13 +29,13 @@
     <div class="container-fluid">
       
       <!--logo omnes-->
-      <a class="navbar-brand" href="index.html"><img src="Accueil/logo.png" alt="logo" width="250" height="75"></a>
+      <a class="navbar-brand" href="index.php"><img src="Accueil/logo.png" alt="logo" width="250" height="75"></a>
       
       <!--barre de navigation-->
       <ul class="navbar-nav me-auto mb-2 mb-lg-0 navigation">
         <li class="nav-item">
           <form>
-            <a class="nav-link" id="bnt_accueil" href="index.html">ACCUEIL</a>
+            <a class="nav-link" id="bnt_accueil" href="index.php">ACCUEIL</a>
           </form>
         </li>
         <li class="nav-item">

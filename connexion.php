@@ -55,7 +55,7 @@
                     $id=$row["ID"];
                     $_SESSION['chat'] = $id;
                     $_SESSION['connecte'] = 1;
-                    header("refresh:0,url=index.html");
+                    header("refresh:0,url=index.php");
                 }
                 //$passwordVerify = password_verify($password, $row["Mdp"]);
                            
@@ -95,7 +95,7 @@
                       <div class="container-fluid">
                         
                         <!--logo omnes-->
-                        <a class="navbar-brand" href="index.html"><img src="Accueil/logo.png" alt="logo" width="250" height="75"></a>
+                        <a class="navbar-brand" href="index.php"><img src="Accueil/logo.png" alt="logo" width="250" height="75"></a>
                       </div>
                     </nav>
                 </header>
