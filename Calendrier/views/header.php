@@ -24,7 +24,7 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
-<body>
+<body class="page">
     <!--header avec le logo Omnes education-->
     <nav class="navbar navbar-expand-lg entete">
         <!--Container fluid pour que la section prenne la totalité de la page-->
