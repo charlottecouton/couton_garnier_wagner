@@ -21,12 +21,7 @@
                 while($row = $result->fetch_row()){
                     
 
-<<<<<<< HEAD
                     if((isset($_POST['btn_'.$row[0]])  &&  ($_POST['btn_'.$row[0]]==$row[0]))||(isset( $_GET['choix'])&&$_GET['choix'] == $row[0])){
-=======
-                    if((isset($_POST['btn_'.$row[0]])  &&  ($_POST['btn_'.$row[0]]==$row[0]))||
-                    (isset( $_GET['choix'])&&$_GET['choix'] == $row[0])){
->>>>>>> 060ea43763f9cefca634c3ad264a0fef02a5c19c
                         
                         $sql2 = "SELECT ID FROM profs WHERE Nom = '$row[0]'";
                         

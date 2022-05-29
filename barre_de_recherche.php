@@ -13,12 +13,9 @@
 
         $info = (String)trim($_GET['user'])."%";
         $req = $mysqli->prepare("SELECT Nom FROM Profs WHERE Nom LIKE ? OR Spe LIKE ? LIMIT 10");
-<<<<<<< HEAD
 
        // select nom from prof where nom
 //REGARDER POUR FAIRE TOUTE LES RECHERCHES !!!!!!!!!!!!!!!!!!!
-=======
->>>>>>> 060ea43763f9cefca634c3ad264a0fef02a5c19c
 
         $req->bind_param("ss",$info,$info);
 
@@ -33,12 +30,7 @@
             foreach($result as $row){
                 ?>
                 <div id="suggestion">
-<<<<<<< HEAD
                     <a class="dropdown-item" href="choixprof.php?choix=<?= $row['Nom']?>"><?= $row['Nom']?></a>  
-=======
-                   <!-- <?= $row['Nom']?>-->
-                    <a class="dropdown-item" href="choixprof.php?choix=<?= $row['Nom']?>"><?= $row['Nom']?></a>         
->>>>>>> 060ea43763f9cefca634c3ad264a0fef02a5c19c
                 </div>
                 <?php 
             }
@@ -49,11 +41,7 @@
                     <a class="dropdown-item">Pas de resultat à votre recherche</a>
                               
                 </div>
-<<<<<<< HEAD
             <?php 
-=======
-                <?php 
->>>>>>> 060ea43763f9cefca634c3ad264a0fef02a5c19c
         }
 
     }

@@ -12,8 +12,6 @@
 
 <?php
 
- 
-
  $mysqli = new mysqli("localhost","root","root","omnes");
  //$mysqli = new mysqli("localhost","root","","omnes");
  //$mysqli = new mysqli("localhost","root","","omnes-1");
@@ -47,6 +45,7 @@
                  <button type="submit" class="btn round btn-outline-success" formaction="/couton_garnier_wagner/Calendrier/Public/cal.php">Rendez-vous</button>
                  <button type="submit" class="btn round btn-outline-primary" formaction="cv.php">CV</button>
               </form>
+              <a class="nav-link" href="'.$row[10].'"><button type="button" class="btn round btn-outline-light">Visioconférence</button></a>
                  </div>
              <br>
              <div class="row">
@@ -76,7 +75,6 @@
                       echo "Erreur : " . $sql . "<br>" . mysqli_error($mysqli);
                     }
 
-
                 }
 
                echo ' </div>';
@@ -85,7 +83,6 @@
      }
  }
 ?>
-
 
   <!--              
 -->
@@ -98,3 +95,4 @@
   require '../couton_garnier_wagner/Calendrier/views/footer.php';
   //require '../Calendrier/views/footer.php';
 ?>
+

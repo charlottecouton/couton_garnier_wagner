@@ -67,10 +67,6 @@
             }
         }
     }
-<<<<<<< HEAD
-
-=======
->>>>>>> 060ea43763f9cefca634c3ad264a0fef02a5c19c
     if($_SESSION['connexion']==0){
       $prof =$_SESSION['recepteur'];
     }
@@ -78,10 +74,6 @@
       $etudiant =$_SESSION['recepteur'];
     }
     $nom = $_SESSION['nom'];
-<<<<<<< HEAD
-=======
-
->>>>>>> 060ea43763f9cefca634c3ad264a0fef02a5c19c
     
     //Récupère l'ID dd l'étudiant
     $value = $_SESSION['chat'];
@@ -101,11 +93,7 @@
                 {     
                   require '../couton_garnier_wagner/Calendrier/views/header.php';
                         echo '
-<<<<<<< HEAD
                             <div class="container d-flex justify-content-center ">
-=======
-                            <div class="container d-flex justify-content-center">
->>>>>>> 060ea43763f9cefca634c3ad264a0fef02a5c19c
                                 <div class="card bg-light mt-5 chatbox" autofocus> 
                                     <div class="d-flex flex-row justify-content-between p-3 adiv">
                                         <i class="fas fa-chevron-left"></i>
@@ -141,15 +129,9 @@
                                     echo '</div>
 
                                     <div class="form-group px-3">
-<<<<<<< HEAD
                                     
                                     <form method=post> 
                                     <button class="send btn btn-default-outline" id= "btn_envoi" type="submit" value="soumettre" name="btn_soumettre" formaction = "envoi.php"><img src="envoi.png" alt="send"> </button>
-=======
-                                    <form method=post> 
-                                    <button class="send btn btn-default-outline" id= "btn_envoi" type="submit" value="soumettre" name="btn_soumettre" formaction = "envoi.php"><img src="envoi.png" alt="send"> </button>
-                                   
->>>>>>> 060ea43763f9cefca634c3ad264a0fef02a5c19c
                                     <textarea name="message" id="content" class="form-control" rows="5" placeholder="Type your message" style="max-height: 100px"></textarea>
                                     <script> document.getElementById("message").scrollTop = document.getElementById("message").scrollHeight; console.log("scrollTop : ".document.getElementById("content").scrollTop);</script>
                                     </form>
@@ -168,11 +150,7 @@
                                             <span class="pb-3">'.$nom.'</span>
                                         <i class="fas fa-times"></i>
                                     </div>
-<<<<<<< HEAD
                                     <div class="overflow-auto p-3 mb-3 mb-md-0 mr-md-3 bg-light" id="message" style="height: 350px; width: 400px"">
-=======
-                                    <div class="overflow-auto p-3 mb-3 mb-md-0 mr-md-3 bg-light" id="message" style="height: 350px; width: 400px">
->>>>>>> 060ea43763f9cefca634c3ad264a0fef02a5c19c
                                     
                                     </div>
                                     <div class="form-group px-3 saisie">

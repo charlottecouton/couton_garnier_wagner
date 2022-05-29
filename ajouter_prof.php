@@ -26,7 +26,7 @@
     $id_c = isset($_POST['id_c'])?$_POST['id_c']:'';
     $labo = isset($_POST['labo'])?$_POST['labo']:'';
     $nom_photo = isset($_POST['photo'])?$_POST['photo']:'';
-
+    $teams = "https://teams.microsoft.com/l/meetup-join/19%3ameeting_ZDBkMjNiYzAtZDdmZC00NjRmLWFmZjMtYTVhYzQ1NTNlNGRk%40thread.v2/0?context=%7b%22Tid%22%3a%22a2697119-66c5-4126-9991-b0a8d15d367f%22%2c%22Oid%22%3a%229dc45205-7b25-4d41-8306-b15f24672cf1%22%7d";
     $photo = "Profs/".$nom_photo.".png";
     
     $err_msg ="";
@@ -57,7 +57,7 @@
 
         $passwordHash = password_hash($password, PASSWORD_DEFAULT);
         
-            $sql = "INSERT INTO profs (Nom, Prenom, Spe, Bureau, ID_C, Tel, Mail,Photo, Mdp)VALUES('$nom', '$prenom', '$spe', '$bureau','$id_c', '$tel', '$mail','$photo', '$passwordHash')";
+            $sql = "INSERT INTO profs (Nom, Prenom, Spe, Bureau, ID_C, Tel, Mail, Photo, Mdp, Teams)VALUES('$nom', '$prenom', '$spe', '$bureau','$id_c', '$tel', '$mail','$photo', '$passwordHash', $teams)";
             
             if(mysqli_query($mysqli, $sql)){
                 

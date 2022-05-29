@@ -56,7 +56,7 @@
         }
 
         
-        $sql = "SELECT * FROM $table WHERE Mail = '$mail' AND Mdp = '$password'";
+        $sql = "SELECT * FROM $table WHERE Mail = '$mail'";
 
         if($result = $mysqli->query($sql)){
             
@@ -64,27 +64,37 @@
                 
                 while($row = $result->fetch_assoc()) {
                     
-                    $id=$row["ID"];
-                    
-                    $_SESSION['chat'] = $id;
-                    $_SESSION['connecte'] = 1;
-                    
-                    if($compte== 2){
-                        
-                        header("refresh:0,url=administrateur.php");
-                    }
-                    else{
-                        header("refresh:0,url=index.php");
-                    }
-                    
-                }
-                //$passwordVerify = password_verify($password, $row["Mdp"]);
+                    $passwordVerify = password_verify($password, $row["Mdp"]);
                            
-                            /*if($passwordVerify){
+                    if($passwordVerify){
 
-                                    $id_exists = true;
-                                    echo"true";
-                }*/
+                        $id=$row["ID"];
+                    
+                        $_SESSION['chat'] = $id;
+                        $_SESSION['connecte'] = 1;
+                    
+                        if($compte== 2){
+                            
+                            header("refresh:0,url=administrateur.php");
+                        }
+                        else{
+                            header("refresh:0,url=index.php");
+                        }
+                    }else{
+                        $id_exists = false;
+                        $_SESSION['connecte'] = 0;
+                        echo '<body class="page">
+                            <div class="container err-msg">
+                            <img src="dngr.png"></img>
+                            <br>
+                            <h1>Le mot de passe ou le mail est erroné</h1>
+                            </div>
+                        </body>';
+                        
+                        header("refresh:2,url=connexion1.php");
+                    }
+                }
+                
 
             }else{
                 $id_exists = false;
