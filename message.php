@@ -4,13 +4,13 @@
     
     //Connection BBD
     /*accès Anais*/
-    //$mysqli = new mysqli("localhost","root","","omnes-1");
+    $mysqli = new mysqli("localhost","root","","omnes-1");
 
     /*accès Solène*/
     //$mysqli = new mysqli("localhost","root","","omnes");
     
     /*accès Charlotte*/
-    $mysqli = new mysqli("localhost","root","root","omnes");
+   // $mysqli = new mysqli("localhost","root","root","omnes");
     if($mysqli -> connect_errno)
     {  //Si la connection est fausse
         echo "Failed to connect to MySQL : " . $mysqli -> connect_error;
@@ -49,10 +49,12 @@
                       $prof = $row[0];
                       $_SESSION['recepteur'] = $row[0];
                       $nom = $row[1];
+                      $_SESSION['nom'] = $row[1];
                     }else{
                       $etudiant = $row[0];
                       $_SESSION['recepteur'] = $row[0];
                       $nom = $row[1];
+                      $_SESSION['nom'] = $row[1];
                     }
                   }
                 }   
@@ -63,6 +65,14 @@
             }
         }
     }
+    if($_SESSION['connexion']==0){
+      $prof =$_SESSION['recepteur'];
+    }
+    else{
+      $etudiant =$_SESSION['recepteur'];
+    }
+    $nom = $_SESSION['nom'];
+
     
     //Récupère l'ID dd l'étudiant
     $value = $_SESSION['chat'];
@@ -82,21 +92,23 @@
                 {     
                   require '../couton_garnier_wagner/Calendrier/views/header.php';
                         echo '
-                            <div class="container d-flex justify-content-center ">
-                                <div class="card bg-light mt-5 chatbox"> 
+                                    <!--<button type="submit" name="btn_segado" value="segado" formaction="chatP.php">Segado</button>
+                                    <button type="submit" name="btn_hina" value="hina" formaction="chatP.php">Hina</button>-->
+                            <div class="container d-flex justify-content-center">
+                                <div class="card bg-light mt-5" autofocus> 
                                     <div class="d-flex flex-row justify-content-between p-3 adiv">
                                         <i class="fas fa-chevron-left"></i>
                                             <span class="pb-3">'.$nom.'</span>
                                         <i class="fas fa-times"></i>
                                     </div>
-                                    <div class="overflow-auto p-3 mb-3 mb-md-0 mr-md-3 bg-light" style="max-height: 300px;">
+                                    <div class="overflow-auto p-3 mb-3 mb-md-0 mr-md-3 bg-light" id="message" style="height: 250px; width: 400px">
                                       ';
 
                                       while($row = $result -> fetch_row() )
                                         {
                                             if($row[1]==0 && $user==0){
                                               echo '<div class="date" >'.$row[2].'</div>
-                                              <div class="d-flex flex-row p-3">
+                                                  <div class="d-flex flex-row p-3">
                                                     <div class="chat ml-2 p-3">'.$row[0].'</div>
                                                   </div>';
                                             }else if($row[1]==1 && $user==0){
@@ -116,35 +128,40 @@
                                         }
                                       
                                     echo '</div>
+
                                     <div class="form-group px-3">
-                                    <form  method=post>
-                                    <button class="send btn btn-default-outline" type="submit" value="soumettre" name="btn_soumettre" formaction="envoi.php"><img src="envoi.png" alt="send"> </button>
+                                    <form method=post> 
+                                    <button class="send btn btn-default-outline" id= "btn_envoi" type="submit" value="soumettre" name="btn_soumettre" formaction = "envoi.php"><img src="envoi.png" alt="send"> </button>
                                    
-                                    <textarea name="message" class="form-control" rows="5" placeholder="Type your message"></textarea>
+                                    <textarea name="message" id="content" class="form-control" rows="5" placeholder="Type your message" style="max-height: 100px"></textarea>
+                                    <script> document.getElementById("message").scrollTop = document.getElementById("message").scrollHeight; console.log("scrollTop : ".document.getElementById("content").scrollTop);</script>
                                     </form>
                                     </div>
                             </div>
+                            
                         </body>
                       </html>';
                 }else{
                   require '../couton_garnier_wagner/Calendrier/views/header.php';
                   echo '
-                                    
-                            <div class="container d-flex justify-content-center ">
-                                <div class="card bg-light mt-5 chatbox"> 
+                                    <!--<button type="submit" name="btn_segado" value="segado" formaction="chatP.php">Segado</button>
+                                    <button type="submit" name="btn_hina" value="hina" formaction="chatP.php">Hina</button>-->
+                            <div class="container d-flex justify-content-center">
+                                <div class="card bg-light mt-5"> 
                                     <div class="d-flex flex-row justify-content-between p-3 adiv">
                                         <i class="fas fa-chevron-left"></i>
                                             <span class="pb-3">'.$nom.'</span>
                                         <i class="fas fa-times"></i>
                                     </div>
-                                    <div class="overflow-auto p-3 mb-3 mb-md-0 mr-md-3 bg-light" style="max-height: 300px;">
+                                    <div class="overflow-auto p-3 mb-3 mb-md-0 mr-md-3 bg-light" id="message" style="height: 350px; width: 400px">
                                     
                                     </div>
                                     <div class="form-group px-3 saisie">
                                     <form  method=post>
-                                    <button class="send btn btn-default-outline" type="submit" value="soumettre" name="btn_soumettre" formaction="envoi.php"><img src="envoi.png" alt="send"> </button>
+                                    <button class="send btn btn-default-outline" id= "btn_envoi" type="submit" value="soumettre" name="btn_soumettre" formaction = "envoi.php"><img src="envoi.png" alt="send"> </button>
                                    
-                                    <textarea name="message" class="form-control" rows="5" placeholder="Type your message"></textarea>
+                                    <textarea name="message" id="content" class="form-control" rows="5" placeholder="Type your message" style="max-height: 100px"></textarea>
+                                    <script> document.getElementById("message").scrollTop = document.getElementById("message").scrollHeight; console.log("scrollTop : ".document.getElementById("content").scrollTop);</script>
                                     </form>
                                     </div>
                             </div>
