@@ -23,10 +23,12 @@
       case 0 :
         $table = 'Profs';
         $etudiant = $_SESSION['chat'];
+        
         break;
       case 1 :
         $table = 'Etudiants';
         $prof = $_SESSION['chat'];
+        
         break;
       case 2 :
         header("refresh:0,url=index.html");
@@ -49,10 +51,12 @@
                       $prof = $row[0];
                       $_SESSION['recepteur'] = $row[0];
                       $nom = $row[1];
+                      $_SESSION['nom'] = $row[1];
                     }else{
                       $etudiant = $row[0];
                       $_SESSION['recepteur'] = $row[0];
                       $nom = $row[1];
+                      $_SESSION['nom'] = $row[1];
                     }
                   }
                 }   
@@ -63,6 +67,14 @@
             }
         }
     }
+
+    if($_SESSION['connexion']==0){
+      $prof =$_SESSION['recepteur'];
+    }
+    else{
+      $etudiant =$_SESSION['recepteur'];
+    }
+    $nom = $_SESSION['nom'];
     
     //Récupère l'ID dd l'étudiant
     $value = $_SESSION['chat'];
@@ -83,13 +95,13 @@
                   require '../couton_garnier_wagner/Calendrier/views/header.php';
                         echo '
                             <div class="container d-flex justify-content-center ">
-                                <div class="card bg-light mt-5 chatbox"> 
+                                <div class="card bg-light mt-5 chatbox" autofocus> 
                                     <div class="d-flex flex-row justify-content-between p-3 adiv">
                                         <i class="fas fa-chevron-left"></i>
                                             <span class="pb-3">'.$nom.'</span>
                                         <i class="fas fa-times"></i>
                                     </div>
-                                    <div class="overflow-auto p-3 mb-3 mb-md-0 mr-md-3 bg-light" style="max-height: 300px;">
+                                    <div class="overflow-auto p-3 mb-3 mb-md-0 mr-md-3 bg-light" id="message" style="height: 250px; width: 400px">
                                       ';
 
                                       while($row = $result -> fetch_row() )
@@ -117,10 +129,11 @@
                                       
                                     echo '</div>
                                     <div class="form-group px-3">
-                                    <form  method=post>
-                                    <button class="send btn btn-default-outline" type="submit" value="soumettre" name="btn_soumettre" formaction="envoi.php"><img src="envoi.png" alt="send"> </button>
-                                   
-                                    <textarea name="message" class="form-control" rows="5" placeholder="Type your message"></textarea>
+                                    
+                                    <form method=post> 
+                                    <button class="send btn btn-default-outline" id= "btn_envoi" type="submit" value="soumettre" name="btn_soumettre" formaction = "envoi.php"><img src="envoi.png" alt="send"> </button>
+                                    <textarea name="message" id="content" class="form-control" rows="5" placeholder="Type your message" style="max-height: 100px"></textarea>
+                                    <script> document.getElementById("message").scrollTop = document.getElementById("message").scrollHeight; console.log("scrollTop : ".document.getElementById("content").scrollTop);</script>
                                     </form>
                                     </div>
                             </div>
@@ -137,17 +150,20 @@
                                             <span class="pb-3">'.$nom.'</span>
                                         <i class="fas fa-times"></i>
                                     </div>
-                                    <div class="overflow-auto p-3 mb-3 mb-md-0 mr-md-3 bg-light" style="max-height: 300px;">
+                                    <div class="overflow-auto p-3 mb-3 mb-md-0 mr-md-3 bg-light" id="message" style="height: 350px; width: 400px"">
                                     
                                     </div>
                                     <div class="form-group px-3 saisie">
                                     <form  method=post>
-                                    <button class="send btn btn-default-outline" type="submit" value="soumettre" name="btn_soumettre" formaction="envoi.php"><img src="envoi.png" alt="send"> </button>
+                                    <button class="send btn btn-default-outline" id= "btn_envoi" type="submit" value="soumettre" name="btn_soumettre" formaction = "envoi.php"><img src="envoi.png" alt="send"> </button>
                                    
-                                    <textarea name="message" class="form-control" rows="5" placeholder="Type your message"></textarea>
+                                    <textarea name="message" id="content" class="form-control" rows="5" placeholder="Type your message" style="max-height: 100px"></textarea>
+                                    <script> document.getElementById("message").scrollTop = document.getElementById("message").scrollHeight; console.log("scrollTop : ".document.getElementById("content").scrollTop);</script>
                                     </form>
                                     </div>
                             </div>
+
+                            <button class="btn btn-outline-danger" type=submit>Retour</button>
                         </body>
                       </html>';
                 }

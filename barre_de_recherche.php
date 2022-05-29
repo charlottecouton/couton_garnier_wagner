@@ -14,9 +14,7 @@
     if(isset($_GET['user'])){ // si ya variable ajax est vide
 
         $info = (String)trim($_GET['user'])."%";
-        $req = $mysqli->prepare("SELECT Nom FROM Profs WHERE Nom LIKE ? 
-                UNION SELECT Nom FROM Etudiants WHERE Nom LIKE ? 
-                /*UNION SELECT NomSalle FROM salles WHERE NomSalle LIKE ? */LIMIT 10");
+        $req = $mysqli->prepare("SELECT Nom FROM Profs WHERE Nom LIKE ? OR Spe LIKE ? LIMIT 10");
 
        // select nom from prof where nom
 //REGARDER POUR FAIRE TOUTE LES RECHERCHES !!!!!!!!!!!!!!!!!!!
@@ -34,13 +32,18 @@
             foreach($result as $row){
                 ?>
                 <div id="suggestion">
-                    <?= $row['Nom'] ?>
+                    <a class="dropdown-item" href="choixprof.php?choix=<?= $row['Nom']?>"><?= $row['Nom']?></a>  
                 </div>
                 <?php 
             }
         }
         else{
-            echo "<br>Pas de resultat à votre recherche<br>";
+            ?>
+                <div id="suggestion">
+                    <a class="dropdown-item">Pas de resultat à votre recherche</a>
+                              
+                </div>
+            <?php 
         }
 
     }

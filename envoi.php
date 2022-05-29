@@ -45,7 +45,7 @@
         $sql = "INSERT INTO `messages`(`Message`, `Date`,`ID_E`,`ID_P`,`Emetteur`  ) VALUES ('$message',NOW(),'$etudiant','$prof', $emetteur)";
         
         if (mysqli_query($mysqli, $sql)) {
-            header("refresh:0,url=index.php");
+          header('Location: http://localhost/couton_garnier_wagner/message.php');
         }else 
         {
             echo "Erreur : " . $sql . "<br>" . mysqli_error($mysqli);

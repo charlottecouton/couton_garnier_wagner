@@ -9,7 +9,6 @@
     
     //POUR LES AFFICHAGE DE HAUT ET BAS DE PAGE
     require '../views/header2.php';
-    require '../views/footer.php'; 
 ?>
 
 <!--BARRE DES TACHES QUI PERMET D ALLER AU MOIS SUIVANT ET PRECEDENT ET AFFICHE LE MOIS ACTUEL DU CALENDRIER-->
@@ -108,7 +107,7 @@
                         }else{
                             $samedi =0;
                         }
-                        $id = 1;
+                        $id = $_SESSION['chat'];
                         $sql="SELECT ID, ID_E, Start, Nom FROM `events` WHERE ID_P = $id AND Start = '2022-".$date->format('m')."-".$date->format('d')." ".$l.":00:00'";
                         $sql1="SELECT * FROM `cours` WHERE ID_P = $id AND Start = '2022-".$date->format('m')."-".$date->format('d')." ".$l.":00:00'";
 

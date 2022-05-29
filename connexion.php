@@ -1,8 +1,15 @@
 <?php
     session_start();
+?>
 
-    require '../couton_garnier_wagner/Calendrier/views/header.php';
+<!DOCTYPE html>
+<html>
 
+<head>
+    <link rel="stylesheet" href="/couton_garnier_wagner/style.css">
+    <link rel="stylesheet" href="/couton_garnier_wagner/connexion.css">
+
+<?php
     //$mysqli = new mysqli("localhost","root","","omnes");
     $mysqli = new mysqli("localhost","root","root","omnes");
     //$mysqli = new mysqli("localhost","root","","omnes-1");
@@ -25,11 +32,11 @@
    
 
     if($mail==""){
-        $err_msg = "Veuillez remplir un email";
+        $err_msg = " un email";
     }
 
     if($password==""){
-        $err_msg = $err_msg."Veuillez remplir un password ";
+        $err_msg = $err_msg." un mot de passe ";
     }
 
     $compte = $_SESSION['connexion'];
@@ -58,10 +65,13 @@
                 while($row = $result->fetch_assoc()) {
                     
                     $id=$row["ID"];
+                    
                     $_SESSION['chat'] = $id;
                     $_SESSION['connecte'] = 1;
-                    if($_SESSION['connexion']== 2){
-                        header('Location: http://localhost/couton_garnier_wagner/administrateur.php');
+                    
+                    if($compte== 2){
+                        
+                        header("refresh:0,url=administrateur.php");
                     }
                     else{
                         header("refresh:0,url=index.php");
@@ -79,7 +89,7 @@
             }else{
                 $id_exists = false;
                 $_SESSION['connecte'] = 0;
-                echo '<body class="page ">
+                echo '<body class="page">
                     <div class="container err-msg">
                     <img src="dngr.png"></img>
                     <br>
@@ -94,6 +104,13 @@
         }
     }
     else{
-        echo $err_msg;
+        echo '<body class="page">
+        <div class="container err-msg">
+        <img src="dngr.png"></img>
+        <br>
+        <h1> Veuillez remplir '.$err_msg.'</h1>
+        </div>
+    </body>';
+    header("refresh:2,url=connexion1.php");
     }
 ?>

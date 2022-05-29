@@ -1,3 +1,10 @@
+<!--<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="/couton_garnier_wagner/style.css">
+    <link rel="stylesheet" href="/couton_garnier_wagner/connexion.css">-->
+
 <?php
 
     $mysqli = new mysqli("localhost","root","root","omnes");
@@ -17,6 +24,7 @@
     $mail = isset($_POST['mail'])?$_POST['mail']:'';
     $password = isset($_POST['mdp'])?$_POST['mdp']:'';
     $id_c = isset($_POST['id_c'])?$_POST['id_c']:'';
+    $labo = isset($_POST['labo'])?$_POST['labo']:'';
     $nom_photo = isset($_POST['photo'])?$_POST['photo']:'';
 
     $photo = "Profs/".$nom_photo.".png";
@@ -24,39 +32,90 @@
     $err_msg ="";
 
     if($nom==""){
-        $err_msg = $err_msg."Veuillez remplir un nom <br/>";
+        $err_msg = $err_msg." un nom <br/>";
     }if($prenom ==""){
-        $err_msg = $err_msg."Veuillez remplir un prenom <br/>";
+        $err_msg = $err_msg." un prenom <br/>";
     }if($mail==""){
-        $err_msg = $err_msg."Veuillez remplir un email <br/>";
+        $err_msg = $err_msg." un email <br/>";
     }if($password==""){
-        $err_msg = $err_msg."Veuillez remplir un mot de passe <br/>";
+        $err_msg = $err_msg." un mot de passe <br/>";
     }if($spe==""){
-        $err_msg = $err_msg."Veuillez remplir une specialite <br/>";
+        $err_msg = $err_msg." une specialite <br/>";
     }if($bureau==""){
-        $err_msg = $err_msg."Veuillez remplir un bureau <br/>";
+        $err_msg = $err_msg." un bureau <br/>";
     }if($tel==""){
-        $err_msg = $err_msg."Veuillez remplir un tel <br/>";
+        $err_msg = $err_msg." un tel <br/>";
     }if($id_c==""){
-        $err_msg = $err_msg."Veuillez remplir un id chercheur <br/>";
+        $err_msg = $err_msg." un id chercheur <br/>";
     }if($nom_photo==""){
-        $err_msg = $err_msg."Veuillez remplir l'adresse de la photo <br/>";
+        $err_msg = $err_msg." l'adresse de la photo <br/>";
+    }if($labo =="" && $id_c==1){
+        $err_msg = $err_msg." un laboratoire de recherche";
     }
 
     if($err_msg==""){
 
         $passwordHash = password_hash($password, PASSWORD_DEFAULT);
         
-            $sql = "INSERT INTO profs (Nom, Prenom, Spe, Bureau, ID_C,Tel, Mail,Photo, Mdp)VALUES('$nom', '$prenom', '$spe', '$bureau','$id_c', '$tel', '$mail','$photo', '$passwordHash')";
+            $sql = "INSERT INTO profs (Nom, Prenom, Spe, Bureau, ID_C, Tel, Mail,Photo, Mdp)VALUES('$nom', '$prenom', '$spe', '$bureau','$id_c', '$tel', '$mail','$photo', '$passwordHash')";
             
             if(mysqli_query($mysqli, $sql)){
-                header("refresh:0,url=administrateur.php");
+                
+                if($id_c == 1){
+                    echo "spe=1";
+                    
+                    $sql2 = "INSERT INTO Chercheurs (Labo)VALUES('$labo')";
+                    
+                    if(mysqli_query($mysqli, $sql2)){
+
+                        echo "max";
+                        
+                        $sql3 = "SELECT MAX(ID) FROM Chercheurs";
+                        
+                        if(mysqli_query($mysqli, $sql3)){
+
+                            
+                            
+                            if($result3 = $mysqli->query($sql3)){
+                                if($result3 -> num_rows >0){
+                                    while($row3 = $result3->fetch_row()) {
+
+                                       
+                                        $sql4 = "UPDATE Profs SET ID_C = '$row3[0]' WHERE Nom = '$nom'";
+                                        
+                                        if(mysqli_query($mysqli, $sql4)){
+                                            
+                                            header("refresh:0,url=administrateur.php");
+                                        }else{
+                                            echo "Erreur : " . $sql4 . "<br>" . mysqli_error($mysqli);
+                                            header("refresh:4,url=ajouter_prof1.php");
+                                        }
+                                    }
+                                }
+                            }
+                            
+                        }else{
+                        echo "Erreur : " . $sql3 . "<br>" . mysqli_error($mysqli);
+                            header("refresh:4,url=ajouter_prof1.php");
+                        }
+                        
+                    }else{
+                        
+                        echo "Erreur : " . $sql2 . "<br>" . mysqli_error($mysqli);
+                        header("refresh:4,url=ajouter_prof1.php");
+                    }
+                }else{
+                    header("refresh:0,url=administrateur.php");
+                }
+                
             }else{
                 echo "Erreur : " . $sql . "<br>" . mysqli_error($mysqli);
-                header("refresh:0,url=administrateur.php");
+                header("refresh:4,url=ajouter_prof1.php");
             }
+
+            
     }else{
-        echo '<h1>'.$err_msg.'</h1>';
-        header("refresh:0,url=ajouter_prof1.php");
+        echo '<h1> Veuillez remplir'.$err_msg.'</h1>';
+        header("refresh:4,url=ajouter_prof1.php");
     }
 ?>

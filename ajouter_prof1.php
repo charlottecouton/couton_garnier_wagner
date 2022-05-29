@@ -26,8 +26,12 @@
                         <input type="text" class="form-control" name="spe">
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Chercheur ? </label>
+                        <label class="form-label">Chercheur ? (1 si oui 0 sinon)</label>
                         <input type="number" class="form-control" name="id_c">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Laboratoire de recherche</label>
+                        <input type="text" class="form-control" name="labo">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Bureau</label>

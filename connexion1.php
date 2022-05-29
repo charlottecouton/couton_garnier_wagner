@@ -32,5 +32,4 @@
 
 <?php 
   require '../couton_garnier_wagner/Calendrier/views/footer.php';
-  //require '../Calendrier/views/footer.php';
 ?>

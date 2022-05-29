@@ -53,9 +53,9 @@ if($mysqli -> connect_errno)
     if($row_cnt1 >0){
         while($row1 = $result1 -> fetch_row() )
         {
-            echo 'Nom : '.$row1[1] .'<br/>';
-            echo 'Prenom : '.$row1[2].'<br/>';
-            echo 'Mail : '.$row1[9].'<br/>';
+            echo '<p class="textwhite"> Nom : '.$row1[1] .' </p>';
+            echo '<p class="textinfo"> Prenom : '.$row1[2].'</p>';
+            echo '<p class="textinfo"> Mail : '.$row1[9].'</p>';
         }
     }
 
@@ -68,9 +68,9 @@ if($mysqli -> connect_errno)
         if($row_cnt5 >0){
             while($row5 = $result5-> fetch_row() )
             {
-                echo 'Nom : '.$row5[1] .'<br/>';
-                echo 'Prenom : '.$row5[2].'<br/>';
-                echo 'Mail : '.$row5[9].'<br/>';
+                echo '<p class="textinfo"> Nom : '.$row5[1] .'</p>';
+                echo '<p class="textinfo"> Prenom : '.$row5[2].'</p>';
+                echo '<p class="textinfo"> Mail : '.$row5[9].'</p>';
             }
         }
     }
@@ -105,9 +105,9 @@ if($mysqli -> connect_errno)
             if($row_cnt2 >0){
                 while($row2 = $result2 -> fetch_row() )
                 {
-                    echo 'Message : '.$row2[1].'<br>';
-                    echo 'Heure de debut : '.$row2[2].'<br>';
-                    echo 'Heure de fin : '.$row2[3].'<br><br>';
+                    echo '<p class="textwhite"> Message : '.$row2[1].'</p>';
+                    echo '<p class="textinfo"> Heure de debut : '.$row2[2].'</p>';
+                    echo '<p class="textinfo"> Heure de fin : '.$row2[3].'</p><br>';
                 }
             }
     }else {
