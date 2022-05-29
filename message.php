@@ -92,10 +92,8 @@
                 {     
                   require '../couton_garnier_wagner/Calendrier/views/header.php';
                         echo '
-                                    <!--<button type="submit" name="btn_segado" value="segado" formaction="chatP.php">Segado</button>
-                                    <button type="submit" name="btn_hina" value="hina" formaction="chatP.php">Hina</button>-->
                             <div class="container d-flex justify-content-center">
-                                <div class="card bg-light mt-5" autofocus> 
+                                <div class="card bg-light mt-5 chatbox" autofocus> 
                                     <div class="d-flex flex-row justify-content-between p-3 adiv">
                                         <i class="fas fa-chevron-left"></i>
                                             <span class="pb-3">'.$nom.'</span>
@@ -144,10 +142,8 @@
                 }else{
                   require '../couton_garnier_wagner/Calendrier/views/header.php';
                   echo '
-                                    <!--<button type="submit" name="btn_segado" value="segado" formaction="chatP.php">Segado</button>
-                                    <button type="submit" name="btn_hina" value="hina" formaction="chatP.php">Hina</button>-->
                             <div class="container d-flex justify-content-center">
-                                <div class="card bg-light mt-5"> 
+                                <div class="card bg-light mt-5 chatbox" autofocus> 
                                     <div class="d-flex flex-row justify-content-between p-3 adiv">
                                         <i class="fas fa-chevron-left"></i>
                                             <span class="pb-3">'.$nom.'</span>
