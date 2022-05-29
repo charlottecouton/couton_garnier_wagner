@@ -51,4 +51,5 @@
             echo "Erreur : " . $sql . "<br>" . mysqli_error($mysqli);
         }    
     }
+ // }
 ?>
