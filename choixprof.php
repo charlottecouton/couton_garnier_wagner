@@ -13,13 +13,16 @@
 
     $sql = "SELECT Nom FROM profs ";
 
+    
     if(mysqli_query($mysqli, $sql)){
         if($result = $mysqli ->query($sql)){
             if($result->num_rows>0){
                 
                 while($row = $result->fetch_row()){
+                    
 
-                    if(isset($_POST['btn_'.$row[0]]) && $_POST['btn_'.$row[0]]==$row[0]){
+                    if((isset($_POST['btn_'.$row[0]])  &&  ($_POST['btn_'.$row[0]]==$row[0]))||
+                    (isset( $_GET['choix'])&&$_GET['choix'] == $row[0])){
                         
                         $sql2 = "SELECT ID FROM profs WHERE Nom = '$row[0]'";
                         
@@ -49,4 +52,5 @@
     }
 
     header("refresh:0,url=prof.php");
+
 ?>
