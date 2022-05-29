@@ -27,7 +27,7 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Chercheur ? (1 si oui 0 sinon)</label>
-                        <input type="number" class="form-control" name="id_c">
+                        <input type="number" min=0 max=1 class="form-control" name="id_c">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Laboratoire de recherche</label>

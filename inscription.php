@@ -44,17 +44,39 @@ require '../couton_garnier_wagner/Calendrier/views/header.php';
     }
 
     if($err_msg==""){
-
-        $passwordHash = password_hash($password, PASSWORD_DEFAULT);
         
-            $sql = "INSERT INTO Etudiants (Nom, Prenom, Adresse1, Adresse2, Ville, CP, Pays, Tel, Mail, Mdp)VALUES('$nom', '$prenom', '$ad1', '$ad2', '$ville', '$cp', '$pays', '$tel', '$mail', '$passwordHash')";
-            
-            if(mysqli_query($mysqli, $sql)){
-                header("refresh:0,url=index.php");
-            }else{
-                echo "Erreur : " . $sql . "<br>" . mysqli_error($mysqli);
-                header("refresh:0,url=index.php");
+        $sql2 = "SELECT * FROM Etudiants WHERE Mail = '$mail'";
+        if (mysqli_query($mysqli, $sql2)) 
+        {
+            if($result2 = $mysqli ->query($sql2))
+            {
+                if($result2 -> num_rows >0)
+                {
+                    echo '<body class="page">
+                    <div class="container err-msg">
+                    <img src="dngr.png"></img>
+                    <br>
+                    <p>Vous avez deja un compte, connectez-vous !</p>
+                    </div>
+                    
+            </body>';
+            header("refresh:2,url=inscription1.php");
+                }else{
+                    $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+        
+                    $sql = "INSERT INTO Etudiants (Nom, Prenom, Adresse1, Adresse2, Ville, CP, Pays, Tel, Mail, Mdp)VALUES('$nom', '$prenom', '$ad1', '$ad2', '$ville', '$cp', '$pays', '$tel', '$mail', '$passwordHash')";
+                    
+                    if(mysqli_query($mysqli, $sql)){
+                        header("refresh:0,url=index.php");
+                    }else{
+                        echo "Erreur : " . $sql . "<br>" . mysqli_error($mysqli);
+                        header("refresh:0,url=index.php");
+                    }
+                }
             }
+        }
+                    
+        
     }else{
         echo '<body class="page">
                     <div class="container err-msg">

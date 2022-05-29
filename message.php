@@ -4,13 +4,13 @@
     
     //Connection BBD
     /*accès Anais*/
-    $mysqli = new mysqli("localhost","root","","omnes-1");
+    //$mysqli = new mysqli("localhost","root","","omnes-1");
 
     /*accès Solène*/
     //$mysqli = new mysqli("localhost","root","","omnes");
     
     /*accès Charlotte*/
-   // $mysqli = new mysqli("localhost","root","root","omnes");
+    $mysqli = new mysqli("localhost","root","root","omnes");
     if($mysqli -> connect_errno)
     {  //Si la connection est fausse
         echo "Failed to connect to MySQL : " . $mysqli -> connect_error;
@@ -93,7 +93,7 @@
                 {     
                   require '../couton_garnier_wagner/Calendrier/views/header.php';
                         echo '
-                            <div class="container d-flex justify-content-center ">
+                            <div class="container d-flex justify-content-center tout ">
                                 <div class="card bg-light mt-5 chatbox" autofocus> 
                                     <div class="d-flex flex-row justify-content-between p-3 adiv">
                                         <i class="fas fa-chevron-left"></i>
@@ -134,16 +134,24 @@
                                     <button class="send btn btn-default-outline" id= "btn_envoi" type="submit" value="soumettre" name="btn_soumettre" formaction = "envoi.php"><img src="envoi.png" alt="send"> </button>
                                     <textarea name="message" id="content" class="form-control" rows="5" placeholder="Type your message" style="max-height: 100px"></textarea>
                                     <script> document.getElementById("message").scrollTop = document.getElementById("message").scrollHeight; console.log("scrollTop : ".document.getElementById("content").scrollTop);</script>
+                                    
                                     </form>
                                     </div>
+                                   
                             </div>
-                            
+                            <br>
+                            <div >
+                            <form method="post">
+                              <button class="btn btn-outline-danger" type=submit formaction="chat.php">Retour</button>
+                              </form>
+                            </div>
                         </body>
+                        
                       </html>';
                 }else{
                   require '../couton_garnier_wagner/Calendrier/views/header.php';
                   echo '
-                            <div class="container d-flex justify-content-center">
+                            <div class="container d-flex justify-content-center tout">
                                 <div class="card bg-light mt-5 chatbox" autofocus> 
                                     <div class="d-flex flex-row justify-content-between p-3 adiv">
                                         <i class="fas fa-chevron-left"></i>
@@ -162,8 +170,12 @@
                                     </form>
                                     </div>
                             </div>
-
-                            <button class="btn btn-outline-danger" type=submit>Retour</button>
+                            <br>
+                            <div >
+                            <form method="post">
+                              <button class="btn btn-outline-danger" type=submit formaction="chat.php" >Retour</button>
+                              </form>
+                            </div>
                         </body>
                       </html>';
                 }

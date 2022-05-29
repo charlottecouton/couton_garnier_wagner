@@ -36,7 +36,7 @@
                         echo "Pays : ".$rowE[7]."<br/>";
                         echo "Numero de tel : ".$rowE[8]."<br/>";
                         echo "Mail : ".$rowE[9]."<br/>";
-                        echo "Mot de Passe : ".$rowE[10]."<br/>";
+                        //echo "Mot de Passe : ".$rowE[10]."<br/>";
                         
                     }
                 }
@@ -56,7 +56,7 @@
                         echo "Prenom : ".$rowP[2]."<br/>";
                         echo "Specialite : ".$rowP[3]."<br/>";
                         echo "Mail : ".$rowP[4]."<br/>";
-                        echo "Mot de Passe : ".$rowP[5]."<br/>";
+                        //echo "Mot de Passe : ".$rowP[5]."<br/>";
                         echo "Telephone : ".$rowP[7]."<br/>";
                         echo "Bureau : ".$rowP[8]."<br/>";
                         echo '<form method="post">
@@ -78,7 +78,7 @@
                         echo "Nom : ".$rowA[1]."<br/>";
                         echo "Prenom : ".$rowA[2]."<br/>";
                         echo "Mail : ".$rowA[3]."<br/>";
-                        echo "Mot de Passe : ".$rowA[4]."<br/>";
+                        //echo "Mot de Passe : ".$rowA[4]."<br/>";
                     }
                 }
             }

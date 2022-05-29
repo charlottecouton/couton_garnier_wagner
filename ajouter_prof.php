@@ -57,18 +57,16 @@
 
         $passwordHash = password_hash($password, PASSWORD_DEFAULT);
         
-            $sql = "INSERT INTO profs (Nom, Prenom, Spe, Bureau, ID_C, Tel, Mail, Photo, Mdp, Teams)VALUES('$nom', '$prenom', '$spe', '$bureau','$id_c', '$tel', '$mail','$photo', '$passwordHash', $teams)";
+            $sql = "INSERT INTO profs (Nom, Prenom, Spe, Bureau, ID_C, Tel, Mail, Photo, Mdp, Teams, ID_CV)VALUES('$nom', '$prenom', '$spe', '$bureau','$id_c', '$tel', '$mail','$photo', '$passwordHash', '$teams', 0)";
             
             if(mysqli_query($mysqli, $sql)){
                 
                 if($id_c == 1){
-                    echo "spe=1";
                     
                     $sql2 = "INSERT INTO Chercheurs (Labo)VALUES('$labo')";
                     
                     if(mysqli_query($mysqli, $sql2)){
 
-                        echo "max";
                         
                         $sql3 = "SELECT MAX(ID) FROM Chercheurs";
                         
@@ -84,7 +82,7 @@
                                         $sql4 = "UPDATE Profs SET ID_C = '$row3[0]' WHERE Nom = '$nom'";
                                         
                                         if(mysqli_query($mysqli, $sql4)){
-                                            
+                        
                                             header("refresh:0,url=administrateur.php");
                                         }else{
                                             echo "Erreur : " . $sql4 . "<br>" . mysqli_error($mysqli);

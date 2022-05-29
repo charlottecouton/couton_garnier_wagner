@@ -48,7 +48,7 @@
                                 
                             //$sql3 = "SELECT Mail FROM `etudiants` INNER JOIN `events` ON etudiants.ID = events.ID_E";
                             //SELECTIONNE LE MAIL DE L ETUDIANT
-                            $sqlmail = "SELECT Mail FROM `etudiants` INNER JOIN `events` WHERE etudiants.ID = events.ID_E";
+                            $sqlmail = "SELECT Mail FROM `etudiants` WHERE ID = '$idc'";
                             if (mysqli_query($mysqli, $sqlmail)) 
                             {
                                 if($resultmail = $mysqli ->query($sqlmail))
@@ -67,17 +67,19 @@
                                 }
                             }
 
-                            echo "mail : ".$to;
-                                
-                            //$to = "inscription@provider.com";
-                            $subject = "Confirmation de RDV";
-                            $message = "Votre rdv du : 2022-".$month1.$month2."-".$day1.$day2." 1".$j.":00:00'";
-                            $from = "solene.garnier@edu.ece.fr";
-                            $headers = "From:" . $from;
-                            //ENVOI LE MAIL
-                            mail($to,$subject,$message,$headers);
-                            echo "Mail Sent.";
-                            die();
+                            
+
+                            $dest = $to;
+                            $sujet = "Email de test";
+                            $corp = "Salut ceci est un email de test envoyer par un script PHP";
+                            $headers = "From: VotreGmailId@gmail.com";
+                            if (mail($dest, $sujet, $corp, $headers)) {
+                                echo "Email envoyé avec succès à $dest ...";
+                            } else {
+                                echo "Échec de l'envoi de l'email...";
+                            }
+                         
+
                             //Envoie la requete à la bdd
                             mysqli_query($mysqli, $sql);
                             
@@ -114,7 +116,7 @@
                                 //echo "Rendez-vous de : 2022-".$month1.$month2.'-'.$day1.$day2.'-'.'1'.$j.'h<br/><br/>';
                                 
                                 //SELECTIONNE LE MAIL DE L ETUDIANT
-                            $sqlmail = "SELECT Mail FROM `etudiants` INNER JOIN `events` WHERE etudiants.ID = events.ID_E";
+                                $sqlmail = "SELECT Mail FROM `etudiants` WHERE ID = '$idc'";
                             if (mysqli_query($mysqli, $sqlmail)) 
                             {
                                 if($resultmail = $mysqli ->query($sqlmail))
@@ -133,16 +135,15 @@
                                 }
                             }
 
-                            echo "mail : ".$to;
-
-                            $subject = "Confirmation de RDV";
-                            $message = "Votre rdv du : 2022-".$month1.$month2."-".$day1.$day2." 1".$j.":00:00'";
-                            $from = "solene.garnier@edu.ece.fr";
-                            $headers = "From:" . $from;
-                            //ENVOI LE MAIL
-                            mail($to,$subject,$message,$headers);
-                            echo "Mail Sent.";
-                            die();
+                            $dest = $to;
+                            $sujet = "Email de test";
+                            $corp = "Salut ceci est un email de test envoyer par un script PHP";
+                            $headers = "From: VotreGmailId@gmail.com";
+                            if (mail($dest, $sujet, $corp, $headers)) {
+                                echo "Email envoyé avec succès à $dest ...";
+                            } else {
+                                echo "Échec de l'envoi de l'email...";
+                            }
 
                                 //Envoie la requete à la bdd
                                 mysqli_query($mysqli, $sql);
@@ -190,7 +191,7 @@
                                     VALUES ('barde a patate', '2022-$month1$month2-$day1$day2 1$j:00:00', '2022-$month1$month2-$day1$day2 1$heurePlusUn:00:00', $id,1)"; 
                                 
                                 //SELECTIONNE LE MAIL DE L ETUDIANT
-                            $sqlmail = "SELECT Mail FROM `etudiants` INNER JOIN `events` WHERE etudiants.ID = events.ID_E";
+                                $sqlmail = "SELECT Mail FROM `etudiants` WHERE ID = '$idc'";
                             if (mysqli_query($mysqli, $sqlmail)) 
                             {
                                 if($resultmail = $mysqli ->query($sqlmail))
@@ -209,16 +210,15 @@
                                 }
                             }
 
-                            $subject = "Confirmation de RDV";
-                            $message = "Votre rdv du : 2022-".$month1.$month2."-".$day1.$day2." 1".$j.":00:00'";
-                            $from = "solene.garnier@edu.ece.fr";
-                            $headers = "From:" . $from;
-                            //ENVOI LE MAIL
-                            mail($to,$subject,$message,$headers);
-                            echo "Mail Sent.";
-                            die();
-
-                            echo "mail : ".$to;
+                            $dest = $to;
+                            $sujet = "Email de test";
+                            $corp = "Salut ceci est un email de test envoyer par un script PHP";
+                            $headers = "From: VotreGmailId@gmail.com";
+                            if (mail($dest, $sujet, $corp, $headers)) {
+                                echo "Email envoyé avec succès à $dest ...";
+                            } else {
+                                echo "Échec de l'envoi de l'email...";
+                            }
 
                                 //Envoie la requete à la bdd
                                 mysqli_query($mysqli, $sql);
@@ -276,16 +276,15 @@
                                 }
                             }
 
-                            $subject = "Confirmation de RDV";
-                            $message = "Votre rdv du : 2022-".$month1.$month2."-".$day1.$day2." 1".$j.":00:00'";
-                            $from = "solene.garnier@edu.ece.fr";
-                            $headers = "From:" . $from;
-                            //ENVOI LE MAIL
-                            mail($to,$subject,$message,$headers);
-                            echo "Mail Sent.";
-                            die();
-
-                            echo "mail : ".$to;
+                            $dest = $to;
+                            $sujet = "Email de test";
+                            $corp = "Salut ceci est un email de test envoyer par un script PHP";
+                            $headers = "From: VotreGmailId@gmail.com";
+                            if (mail($dest, $sujet, $corp, $headers)) {
+                                echo "Email envoyé avec succès à $dest ...";
+                            } else {
+                                echo "Échec de l'envoi de l'email...";
+                            }
 
                                 //Envoie la requete à la bdd
                                 mysqli_query($mysqli, $sql);

@@ -35,7 +35,7 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Code Postal</label>
-                        <input type="text" class="form-control" name="cp">
+                        <input type="number" class="form-control" name="cp">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Pays</label>

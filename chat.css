@@ -78,4 +78,10 @@
 
 .chatbox{
 	height:450px;
+	width:31%;
+}
+
+.tout{
+	flex-direction: column;
+	align-items: center;
 }

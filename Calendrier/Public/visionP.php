@@ -16,8 +16,8 @@
     <!--Affiche le mois et l'annee-->
     <h3><?= $month->toString();?></h3>
     <div>
-        <a href="index.php?month=<?=$month->previousMonth()->month;?>&year=<?=$month->previousMonth()->year;?>" class="btn btn-outline-danger">&lt;</a>
-        <a href="index.php?month=<?=$month->nextMonth()->month;?>&year=<?=$month->nextMonth()->year;?>" class="btn btn-outline-danger">&gt;</a>
+        <a href="visionP.php?month=<?=$month->previousMonth()->month;?>&year=<?=$month->previousMonth()->year;?>" class="btn btn-outline-danger">&lt;</a>
+        <a href="visionP.php?month=<?=$month->nextMonth()->month;?>&year=<?=$month->nextMonth()->year;?>" class="btn btn-outline-danger">&gt;</a>
     </div>
 </div>
 <!--FIN DE CETTE BARRE DES TACHES***********************************************************************-->

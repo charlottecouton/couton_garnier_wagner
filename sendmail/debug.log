@@ -1,0 +1,141 @@
+22/05/29 01:52:45 ** --- MESSAGE BEGIN ---
+22/05/29 01:52:45 ** To: omnesscolaire2022@gmail.com
+22/05/29 01:52:45 ** Subject: Test mail
+22/05/29 01:52:45 ** MIME-Version: 1.0
+22/05/29 01:52:45 ** From:"PrimFX.com"<support@primfx.com>
+22/05/29 01:52:45 ** Content-Type:text/html; charset="uft-8"
+22/05/29 01:52:45 ** Content-Transfer-Encoding: 8bit
+22/05/29 01:52:45 ** 
+22/05/29 01:52:45 ** <html><body>Bonjour avec PHP</body></html>
+22/05/29 01:52:45 ** --- MESSAGE END ---
+22/05/29 01:52:45 ** Connecting to smtp.gmail.com:587
+22/05/29 01:52:46 ** Connected.
+22/05/29 01:52:46 << 220 smtp.gmail.com ESMTP b14-20020a056000054e00b0021023877ac5sm3004630wrf.107 - gsmtp<EOL>
+22/05/29 01:52:46 >> EHLO DESKTOP-C755FQD.gmail.com<EOL>
+22/05/29 01:52:46 << 250-smtp.gmail.com at your service, [89.157.206.25]<EOL>250-SIZE 35882577<EOL>250-8BITMIME<EOL>250-STARTTLS<EOL>250-ENHANCEDSTATUSCODES<EOL>250-PIPELINING<EOL>250-CHUNKING<EOL>250 SMTPUTF8<EOL>
+22/05/29 01:52:46 ** Authenticating as omnesscolaire2022@gmail.com
+22/05/29 01:52:46 >> STARTTLS<EOL>
+22/05/29 01:52:46 << 220 2.0.0 Ready to start TLS<EOL>
+22/05/29 01:52:46 >> EHLO DESKTOP-C755FQD.gmail.com<EOL>
+22/05/29 01:52:46 << 250-smtp.gmail.com at your service, [89.157.206.25]<EOL>250-SIZE 35882577<EOL>250-8BITMIME<EOL>250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH<EOL>250-ENHANCEDSTATUSCODES<EOL>250-PIPELINING<EOL>250-CHUNKING<EOL>250 SMTPUTF8<EOL>
+22/05/29 01:52:46 >> AUTH LOGIN<EOL>
+22/05/29 01:52:46 << 334 VXNlcm5hbWU6<EOL>
+22/05/29 01:52:46 >> b21uZXNzY29sYWlyZTIwMjJAZ21haWwuY29t<EOL>
+22/05/29 01:52:46 << 334 UGFzc3dvcmQ6<EOL>
+22/05/29 01:52:46 >> b21uZXMyMDIyLnNjbw==<EOL>
+22/05/29 01:52:46 << 535-5.7.8 Username and Password not accepted. Learn more at<EOL>535 5.7.8  https://support.google.com/mail/?p=BadCredentials b14-20020a056000054e00b0021023877ac5sm3004630wrf.107 - gsmtp<EOL>
+22/05/29 01:52:46 ** Disconnecting from smtp.gmail.com:587
+22/05/29 01:52:46 ** Disconnected.
+22/05/29 01:52:46 ** Disconnected.
+22/05/29 01:52:46 ** Username and Password not accepted. Learn more at<EOL> https://support.google.com/mail/?p=BadCredentials b14-20020a056000054e00b0021023877ac5sm3004630wrf.107 - gsmtp<EOL>
+22/05/29 01:53:45 ** --- MESSAGE BEGIN ---
+22/05/29 01:53:45 ** To: omnesscolaire2022@gmail.com
+22/05/29 01:53:45 ** Subject: Test mail
+22/05/29 01:53:45 ** MIME-Version: 1.0
+22/05/29 01:53:45 ** From:"PrimFX.com"<support@primfx.com>
+22/05/29 01:53:45 ** Content-Type:text/html; charset="uft-8"
+22/05/29 01:53:45 ** Content-Transfer-Encoding: 8bit
+22/05/29 01:53:45 ** 
+22/05/29 01:53:45 ** <html><body>Bonjour avec PHP</body></html>
+22/05/29 01:53:45 ** --- MESSAGE END ---
+22/05/29 01:53:46 ** Connecting to smtp.gmail.com:587
+22/05/29 01:53:46 ** Connected.
+22/05/29 01:53:46 << 220 smtp.gmail.com ESMTP b4-20020adfe644000000b0020fcd1704a4sm5220994wrn.61 - gsmtp<EOL>
+22/05/29 01:53:46 >> EHLO DESKTOP-C755FQD.gmail.com<EOL>
+22/05/29 01:53:46 << 250-smtp.gmail.com at your service, [89.157.206.25]<EOL>250-SIZE 35882577<EOL>250-8BITMIME<EOL>250-STARTTLS<EOL>250-ENHANCEDSTATUSCODES<EOL>250-PIPELINING<EOL>250-CHUNKING<EOL>250 SMTPUTF8<EOL>
+22/05/29 01:53:46 ** Authenticating as omnesscolaire2022@gmail.com
+22/05/29 01:53:46 >> STARTTLS<EOL>
+22/05/29 01:53:46 << 220 2.0.0 Ready to start TLS<EOL>
+22/05/29 01:53:46 >> EHLO DESKTOP-C755FQD.gmail.com<EOL>
+22/05/29 01:53:46 << 250-smtp.gmail.com at your service, [89.157.206.25]<EOL>250-SIZE 35882577<EOL>250-8BITMIME<EOL>250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH<EOL>250-ENHANCEDSTATUSCODES<EOL>250-PIPELINING<EOL>250-CHUNKING<EOL>250 SMTPUTF8<EOL>
+22/05/29 01:53:46 >> AUTH LOGIN<EOL>
+22/05/29 01:53:46 << 334 VXNlcm5hbWU6<EOL>
+22/05/29 01:53:46 >> b21uZXNzY29sYWlyZTIwMjJAZ21haWwuY29t<EOL>
+22/05/29 01:53:46 << 334 UGFzc3dvcmQ6<EOL>
+22/05/29 01:53:46 >> b21uZXMyMDIyLnNjbw==<EOL>
+22/05/29 01:53:46 << 535-5.7.8 Username and Password not accepted. Learn more at<EOL>535 5.7.8  https://support.google.com/mail/?p=BadCredentials b4-20020adfe644000000b0020fcd1704a4sm5220994wrn.61 - gsmtp<EOL>
+22/05/29 01:53:46 ** Disconnecting from smtp.gmail.com:587
+22/05/29 01:53:46 ** Disconnected.
+22/05/29 01:53:46 ** Disconnected.
+22/05/29 01:53:46 ** Username and Password not accepted. Learn more at<EOL> https://support.google.com/mail/?p=BadCredentials b4-20020adfe644000000b0020fcd1704a4sm5220994wrn.61 - gsmtp<EOL>
+22/05/29 01:56:25 ** --- MESSAGE BEGIN ---
+22/05/29 01:56:25 ** To: omnesscolaire@gmail.com
+22/05/29 01:56:25 ** Subject: Email de test
+22/05/29 01:56:25 ** From: VotreGmailId@gmail.com
+22/05/29 01:56:25 ** 
+22/05/29 01:56:25 ** Salut ceci est un email de test envoyer par un script PHP
+22/05/29 01:56:25 ** --- MESSAGE END ---
+22/05/29 01:56:25 ** Connecting to smtp.gmail.com:587
+22/05/29 01:56:25 ** Connected.
+22/05/29 01:56:25 << 220 smtp.gmail.com ESMTP p18-20020a5d48d2000000b0020fc4cd81f6sm2070044wrs.60 - gsmtp<EOL>
+22/05/29 01:56:25 >> EHLO DESKTOP-C755FQD.gmail.com<EOL>
+22/05/29 01:56:25 << 250-smtp.gmail.com at your service, [89.157.206.25]<EOL>250-SIZE 35882577<EOL>250-8BITMIME<EOL>250-STARTTLS<EOL>250-ENHANCEDSTATUSCODES<EOL>250-PIPELINING<EOL>250-CHUNKING<EOL>250 SMTPUTF8<EOL>
+22/05/29 01:56:25 ** Authenticating as omnesscolaire2022@gmail.com
+22/05/29 01:56:25 >> STARTTLS<EOL>
+22/05/29 01:56:25 << 220 2.0.0 Ready to start TLS<EOL>
+22/05/29 01:56:25 >> EHLO DESKTOP-C755FQD.gmail.com<EOL>
+22/05/29 01:56:25 << 250-smtp.gmail.com at your service, [89.157.206.25]<EOL>250-SIZE 35882577<EOL>250-8BITMIME<EOL>250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH<EOL>250-ENHANCEDSTATUSCODES<EOL>250-PIPELINING<EOL>250-CHUNKING<EOL>250 SMTPUTF8<EOL>
+22/05/29 01:56:25 >> AUTH LOGIN<EOL>
+22/05/29 01:56:25 << 334 VXNlcm5hbWU6<EOL>
+22/05/29 01:56:25 >> b21uZXNzY29sYWlyZTIwMjJAZ21haWwuY29t<EOL>
+22/05/29 01:56:25 << 334 UGFzc3dvcmQ6<EOL>
+22/05/29 01:56:25 >> b21uZXMyMDIyLnNjbw==<EOL>
+22/05/29 01:56:26 << 535-5.7.8 Username and Password not accepted. Learn more at<EOL>535 5.7.8  https://support.google.com/mail/?p=BadCredentials p18-20020a5d48d2000000b0020fc4cd81f6sm2070044wrs.60 - gsmtp<EOL>
+22/05/29 01:56:26 ** Disconnecting from smtp.gmail.com:587
+22/05/29 01:56:26 ** Disconnected.
+22/05/29 01:56:26 ** Disconnected.
+22/05/29 01:56:26 ** Username and Password not accepted. Learn more at<EOL> https://support.google.com/mail/?p=BadCredentials p18-20020a5d48d2000000b0020fc4cd81f6sm2070044wrs.60 - gsmtp<EOL>
+22/05/29 01:59:37 ** --- MESSAGE BEGIN ---
+22/05/29 01:59:37 ** To: omnesscolaire@gmail.com
+22/05/29 01:59:37 ** Subject: Email de test
+22/05/29 01:59:37 ** From: VotreGmailId@gmail.com
+22/05/29 01:59:37 ** 
+22/05/29 01:59:37 ** Salut ceci est un email de test envoyer par un script PHP
+22/05/29 01:59:37 ** --- MESSAGE END ---
+22/05/29 01:59:37 ** Connecting to smtp.gmail.com:587
+22/05/29 01:59:37 ** Connected.
+22/05/29 01:59:37 << 220 smtp.gmail.com ESMTP 10-20020a056000154a00b0020ff4b8efc6sm5556901wry.80 - gsmtp<EOL>
+22/05/29 01:59:37 >> EHLO DESKTOP-C755FQD.gmail.com<EOL>
+22/05/29 01:59:37 << 250-smtp.gmail.com at your service, [89.157.206.25]<EOL>250-SIZE 35882577<EOL>250-8BITMIME<EOL>250-STARTTLS<EOL>250-ENHANCEDSTATUSCODES<EOL>250-PIPELINING<EOL>250-CHUNKING<EOL>250 SMTPUTF8<EOL>
+22/05/29 01:59:37 ** Authenticating as omnesscolaire2022@gmail.com
+22/05/29 01:59:37 >> STARTTLS<EOL>
+22/05/29 01:59:37 << 220 2.0.0 Ready to start TLS<EOL>
+22/05/29 01:59:37 >> EHLO DESKTOP-C755FQD.gmail.com<EOL>
+22/05/29 01:59:37 << 250-smtp.gmail.com at your service, [89.157.206.25]<EOL>250-SIZE 35882577<EOL>250-8BITMIME<EOL>250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH<EOL>250-ENHANCEDSTATUSCODES<EOL>250-PIPELINING<EOL>250-CHUNKING<EOL>250 SMTPUTF8<EOL>
+22/05/29 01:59:37 >> AUTH LOGIN<EOL>
+22/05/29 01:59:37 << 334 VXNlcm5hbWU6<EOL>
+22/05/29 01:59:37 >> b21uZXNzY29sYWlyZTIwMjJAZ21haWwuY29t<EOL>
+22/05/29 01:59:37 << 334 UGFzc3dvcmQ6<EOL>
+22/05/29 01:59:37 >> b21uZXMyMDIyLnNjbw==<EOL>
+22/05/29 01:59:38 << 535-5.7.8 Username and Password not accepted. Learn more at<EOL>535 5.7.8  https://support.google.com/mail/?p=BadCredentials 10-20020a056000154a00b0020ff4b8efc6sm5556901wry.80 - gsmtp<EOL>
+22/05/29 01:59:38 ** Disconnecting from smtp.gmail.com:587
+22/05/29 01:59:38 ** Disconnected.
+22/05/29 01:59:38 ** Disconnected.
+22/05/29 01:59:38 ** Username and Password not accepted. Learn more at<EOL> https://support.google.com/mail/?p=BadCredentials 10-20020a056000154a00b0020ff4b8efc6sm5556901wry.80 - gsmtp<EOL>
+22/05/29 01:59:40 ** --- MESSAGE BEGIN ---
+22/05/29 01:59:40 ** To: omnesscolaire@gmail.com
+22/05/29 01:59:40 ** Subject: Email de test
+22/05/29 01:59:40 ** From: VotreGmailId@gmail.com
+22/05/29 01:59:40 ** 
+22/05/29 01:59:40 ** Salut ceci est un email de test envoyer par un script PHP
+22/05/29 01:59:40 ** --- MESSAGE END ---
+22/05/29 01:59:40 ** Connecting to smtp.gmail.com:587
+22/05/29 01:59:40 ** Connected.
+22/05/29 01:59:40 << 220 smtp.gmail.com ESMTP v18-20020adfebd2000000b0020c5253d8besm5204197wrn.10 - gsmtp<EOL>
+22/05/29 01:59:40 >> EHLO DESKTOP-C755FQD.gmail.com<EOL>
+22/05/29 01:59:40 << 250-smtp.gmail.com at your service, [89.157.206.25]<EOL>250-SIZE 35882577<EOL>250-8BITMIME<EOL>250-STARTTLS<EOL>250-ENHANCEDSTATUSCODES<EOL>250-PIPELINING<EOL>250-CHUNKING<EOL>250 SMTPUTF8<EOL>
+22/05/29 01:59:40 ** Authenticating as omnesscolaire2022@gmail.com
+22/05/29 01:59:40 >> STARTTLS<EOL>
+22/05/29 01:59:40 << 220 2.0.0 Ready to start TLS<EOL>
+22/05/29 01:59:40 >> EHLO DESKTOP-C755FQD.gmail.com<EOL>
+22/05/29 01:59:41 << 250-smtp.gmail.com at your service, [89.157.206.25]<EOL>250-SIZE 35882577<EOL>250-8BITMIME<EOL>250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH<EOL>250-ENHANCEDSTATUSCODES<EOL>250-PIPELINING<EOL>250-CHUNKING<EOL>250 SMTPUTF8<EOL>
+22/05/29 01:59:41 >> AUTH LOGIN<EOL>
+22/05/29 01:59:41 << 334 VXNlcm5hbWU6<EOL>
+22/05/29 01:59:41 >> b21uZXNzY29sYWlyZTIwMjJAZ21haWwuY29t<EOL>
+22/05/29 01:59:41 << 334 UGFzc3dvcmQ6<EOL>
+22/05/29 01:59:41 >> b21uZXMyMDIyLnNjbw==<EOL>
+22/05/29 01:59:41 << 535-5.7.8 Username and Password not accepted. Learn more at<EOL>535 5.7.8  https://support.google.com/mail/?p=BadCredentials v18-20020adfebd2000000b0020c5253d8besm5204197wrn.10 - gsmtp<EOL>
+22/05/29 01:59:41 ** Disconnecting from smtp.gmail.com:587
+22/05/29 01:59:41 ** Disconnected.
+22/05/29 01:59:41 ** Disconnected.
+22/05/29 01:59:41 ** Username and Password not accepted. Learn more at<EOL> https://support.google.com/mail/?p=BadCredentials v18-20020adfebd2000000b0020c5253d8besm5204197wrn.10 - gsmtp<EOL>

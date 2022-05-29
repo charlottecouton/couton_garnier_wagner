@@ -54,7 +54,7 @@ if($mysqli -> connect_errno)
     if($row_cnt1 >0){
         while($row1 = $result1 -> fetch_row() )
         {
-            echo 'Nom : '.$row1[1] .'<br/>';
+            echo ' <div class="texteinfo">Nom : '.$row1[1] .'<br/>';
             echo 'Prenom : '.$row1[2].'<br/>';
             echo 'Mail : '.$row1[9].'<br/>';
         }
